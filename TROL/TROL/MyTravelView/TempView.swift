@@ -1,20 +1,21 @@
 //
-//  MyTravelView.swift
+//  TempView.swift
 //  TROL
 //
-//  Created by MBSoo on 2022/06/07.
+//  Created by Chicken on 2022/06/08.
 //
 
 import SwiftUI
 
-struct MyTravelView: View {
+// MARK: 여행 추가하기 뷰
+struct TempView: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
-struct MyTravelView_Previews: PreviewProvider {
+struct TempView_Previews: PreviewProvider {
     static var previews: some View {
-        MyTravelView()
+        TempView()
     }
 }
