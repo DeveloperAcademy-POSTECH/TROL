@@ -29,7 +29,7 @@ struct FriendRoleView: View {
             HStack{
                 Spacer()
                 Button() {
-                    self.presentationMode.wrappedValue.dismiss()
+//                    self.presentationMode.wrappedValue.dismiss()
                 } label: {
                     Text("닫기")
                         .font(.system(size: 17))

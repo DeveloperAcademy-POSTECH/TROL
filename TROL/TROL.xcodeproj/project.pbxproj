@@ -28,6 +28,7 @@
 		835443E5284F4CA100AF2F1F /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835443E4284F4CA100AF2F1F /* TabBarView.swift */; };
 		835443E9284F4CD400AF2F1F /* RoleGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835443E8284F4CD400AF2F1F /* RoleGameView.swift */; };
 		835443EB284F4CE400AF2F1F /* MyTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835443EA284F4CE400AF2F1F /* MyTravelView.swift */; };
+		838273A82851D81B00FC6301 /* LadderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838273A72851D81B00FC6301 /* LadderView.swift */; };
 		E15840B12851C25900F39095 /* Happiness-Sans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E15840AE2851C25900F39095 /* Happiness-Sans-Bold.ttf */; };
 		E15840B22851C25900F39095 /* Happiness-Sans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E15840AF2851C25900F39095 /* Happiness-Sans-Regular.ttf */; };
 		E15840B32851C25900F39095 /* Happiness-Sans-Title.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E15840B02851C25900F39095 /* Happiness-Sans-Title.ttf */; };
@@ -80,6 +81,7 @@
 		835443E4284F4CA100AF2F1F /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		835443E8284F4CD400AF2F1F /* RoleGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleGameView.swift; sourceTree = "<group>"; };
 		835443EA284F4CE400AF2F1F /* MyTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTravelView.swift; sourceTree = "<group>"; };
+		838273A72851D81B00FC6301 /* LadderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LadderView.swift; sourceTree = "<group>"; };
 		E15840AE2851C25900F39095 /* Happiness-Sans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Happiness-Sans-Bold.ttf"; sourceTree = "<group>"; };
 		E15840AF2851C25900F39095 /* Happiness-Sans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Happiness-Sans-Regular.ttf"; sourceTree = "<group>"; };
 		E15840B02851C25900F39095 /* Happiness-Sans-Title.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Happiness-Sans-Title.ttf"; sourceTree = "<group>"; };
@@ -151,6 +153,8 @@
 		835443A9284F4C7200AF2F1F = {
 			isa = PBXGroup;
 			children = (
+				838273A62851D80C00FC6301 /* RoleGame */,
+				838273A32851D4A400FC6301 /* TabBar */,
 				E15840B42851CA3300F39095 /* MyRoleView */,
 				835443B4284F4C7200AF2F1F /* TROL */,
 				36477E73284F70720067B480 /* MyTravelView */,
@@ -211,6 +215,21 @@
 				835443D7284F4C7500AF2F1F /* TROLUITestsLaunchTests.swift */,
 			);
 			path = TROLUITests;
+			sourceTree = "<group>";
+		};
+		838273A32851D4A400FC6301 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		838273A62851D80C00FC6301 /* RoleGame */ = {
+			isa = PBXGroup;
+			children = (
+				838273A72851D81B00FC6301 /* LadderView.swift */,
+			);
+			path = RoleGame;
 			sourceTree = "<group>";
 		};
 		E15840B42851CA3300F39095 /* MyRoleView */ = {
@@ -358,6 +377,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				36094D0D2850FB3F00132DE5 /* RoleGridView.swift in Sources */,
+				838273A82851D81B00FC6301 /* LadderView.swift in Sources */,
 				835443BF284F4C7500AF2F1F /* Persistence.swift in Sources */,
 				E15840B62851CA7600F39095 /* MyRoleView.swift in Sources */,
 				36477E86284F79C00067B480 /* FriendRoleView.swift in Sources */,
