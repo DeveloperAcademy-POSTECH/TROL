@@ -18,34 +18,49 @@ struct FriendRoleView: View {
         VStack {
             
             // 닫기 버튼
-            Button() {
-                self.presentationMode.wrappedValue.dismiss()
-            } label: {
-                Text("닫기")
-                    .font(.system(size: 17))
-                    .frame(width: 354, height: 10, alignment: .trailing)
-                    .padding(.horizontal)
+            HStack{
+                Spacer()
+                Image(systemName: "minus")
+                    .resizable()
+                    .frame(width: 50, height: 5)
                     .foregroundColor(.black)
+                Spacer()
             }
+            HStack{
+                Spacer()
+                Button() {
+                    self.presentationMode.wrappedValue.dismiss()
+                } label: {
+                    Text("닫기")
+                        .font(.system(size: 17))
+                        .padding(.horizontal)
+                        .foregroundColor(.black)
+                }
+                
+                
+                
+            }
+            
             
             
             // 역할 이름 & 이미지
             RoleRectangleView(testFriend: $testFriend)
-
+            
             // 역할 소개
             VStack(alignment: .leading) {
                 Text("역할 소개")
                     .font(.system(size: 20))
                     .bold()
-                    .padding(.bottom, 5)
+                    .padding(.vertical, 5)
                     .foregroundColor(.black)
-
+                
                 ForEach(testFriend.introduce.indices, id: \.self) { i in
                     VStack(alignment: .leading) {
-                        HStack {
+                        HStack(alignment: .firstTextBaseline) {
                             Image(systemName: "checkmark")
                                 .foregroundColor(Color("trolGreen"))
-
+                                .font(Font.body.weight(.bold))
+                            
                             Text("\(testFriend.introduce[i])")
                                 .frame(width: 300, alignment: .leading)
                                 .font(.system(size: 17))
@@ -56,8 +71,8 @@ struct FriendRoleView: View {
                     }
                 }
             }
-
-
+            
+            
             // 역할 가이드
             VStack(alignment: .leading) {
                 Text("역할 가이드")
@@ -68,10 +83,10 @@ struct FriendRoleView: View {
                 
                 ForEach(testFriend.guiding.indices, id: \.self) { i in
                     VStack(alignment: .leading) {
-                        HStack {
+                        HStack(alignment: .firstTextBaseline) {
                             Image(systemName: "quote.opening")
                                 .foregroundColor(Color("trolGreen"))
-
+                            
                             Text("\(testFriend.guiding[i])")
                                 .frame(width: 300, alignment: .leading)
                                 .font(.system(size: 17))
@@ -82,12 +97,14 @@ struct FriendRoleView: View {
                     }
                 }
             }
+            Spacer()
         }
+        
     }
 }
 
 struct FriendRoleView_Previews: PreviewProvider {
     static var previews: some View {
-        FriendRoleView(testFriend: .constant(ocean))
+        FriendRoleView(testFriend: .constant(Friend.friends[0]))
     }
 }

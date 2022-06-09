@@ -23,8 +23,8 @@ struct EmptyMyTravelView: View {
                 
                 Spacer()
                 
-                Text("텅")
-                    .font(.system(size: 270))
+                Text("휑")
+                    .font(.custom("Happiness-Sans-Title.", size: 270))
                     .bold()
                     .foregroundColor(Color("trolDimGray"))
                     .overlay(Image("LyingBear")
@@ -38,7 +38,7 @@ struct EmptyMyTravelView: View {
                     .font(.system(size: 12))
                 
                 NavigationLink {
-                    TempView()
+                    AddTravelView()
                 } label: {
                     Text("새로운 여행 추가하기")
                         .foregroundColor(.white)

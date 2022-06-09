@@ -33,6 +33,6 @@ struct GridView: View {
 
 struct GridView_Previews: PreviewProvider {
     static var previews: some View {
-        GridView(testFriend: .constant(ocean))
+        GridView(testFriend: .constant(Friend.friends[0]))
     }
 }

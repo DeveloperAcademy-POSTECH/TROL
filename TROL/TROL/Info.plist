@@ -4,10 +4,9 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Happiness-Sans-Bold.otf</string>
-		<string>Happiness-Sans-Regular.otf</string>
-		<string>Happiness-Sans-Title.otf</string>
-		<string>HappinessSansVF.ttf</string>
+		<string>Happiness-Sans-Bold.ttf</string>
+		<string>Happiness-Sans-Regular.ttf</string>
+		<string>Happiness-Sans-Title.ttf</string>
 	</array>
 </dict>
 </plist>
