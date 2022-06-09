@@ -26,7 +26,8 @@ struct TicketBackgroundView: View{
     var body: some View{
         ZStack{
             RoundedRectangle(cornerRadius: 10)
-                .fill(Color("trolYellow"))-141-41-68  ~/Documents/GitH                .frame(width: 354, height: 174)
+                .fill(Color("trolYellow"))
+                .frame(width: 354, height: 174)
             
             Image("HiBear")
                 .resizable()
