@@ -29,6 +29,9 @@
 		835443E5284F4CA100AF2F1F /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835443E4284F4CA100AF2F1F /* TabBarView.swift */; };
 		835443E9284F4CD400AF2F1F /* RoleGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835443E8284F4CD400AF2F1F /* RoleGameView.swift */; };
 		835443EB284F4CE400AF2F1F /* MyTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835443EA284F4CE400AF2F1F /* MyTravelView.swift */; };
+		835647742854839F003148D7 /* ladder2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 835647712854839F003148D7 /* ladder2.wav */; };
+		835647752854839F003148D7 /* ladder3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 835647722854839F003148D7 /* ladder3.wav */; };
+		835647762854839F003148D7 /* ladder1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 835647732854839F003148D7 /* ladder1.wav */; };
 		838273A82851D81B00FC6301 /* LadderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838273A72851D81B00FC6301 /* LadderView.swift */; };
 		E15840B12851C25900F39095 /* Happiness-Sans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E15840AE2851C25900F39095 /* Happiness-Sans-Bold.ttf */; };
 		E15840B22851C25900F39095 /* Happiness-Sans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E15840AF2851C25900F39095 /* Happiness-Sans-Regular.ttf */; };
@@ -83,6 +86,9 @@
 		835443E4284F4CA100AF2F1F /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		835443E8284F4CD400AF2F1F /* RoleGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleGameView.swift; sourceTree = "<group>"; };
 		835443EA284F4CE400AF2F1F /* MyTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTravelView.swift; sourceTree = "<group>"; };
+		835647712854839F003148D7 /* ladder2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ladder2.wav; sourceTree = "<group>"; };
+		835647722854839F003148D7 /* ladder3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ladder3.wav; sourceTree = "<group>"; };
+		835647732854839F003148D7 /* ladder1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ladder1.wav; sourceTree = "<group>"; };
 		838273A72851D81B00FC6301 /* LadderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LadderView.swift; sourceTree = "<group>"; };
 		E15840AE2851C25900F39095 /* Happiness-Sans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Happiness-Sans-Bold.ttf"; sourceTree = "<group>"; };
 		E15840AF2851C25900F39095 /* Happiness-Sans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Happiness-Sans-Regular.ttf"; sourceTree = "<group>"; };
@@ -238,6 +244,9 @@
 		838273A62851D80C00FC6301 /* RoleGame */ = {
 			isa = PBXGroup;
 			children = (
+				835647732854839F003148D7 /* ladder1.wav */,
+				835647712854839F003148D7 /* ladder2.wav */,
+				835647722854839F003148D7 /* ladder3.wav */,
 				838273A72851D81B00FC6301 /* LadderView.swift */,
 			);
 			path = RoleGame;
@@ -361,8 +370,11 @@
 				835443BD284F4C7500AF2F1F /* Preview Assets.xcassets in Resources */,
 				E15840B32851C25900F39095 /* Happiness-Sans-Title.ttf in Resources */,
 				E15840B12851C25900F39095 /* Happiness-Sans-Bold.ttf in Resources */,
+				835647742854839F003148D7 /* ladder2.wav in Resources */,
 				E15840B22851C25900F39095 /* Happiness-Sans-Regular.ttf in Resources */,
 				835443BA284F4C7500AF2F1F /* Assets.xcassets in Resources */,
+				835647752854839F003148D7 /* ladder3.wav in Resources */,
+				835647762854839F003148D7 /* ladder1.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

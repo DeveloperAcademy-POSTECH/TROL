@@ -112,6 +112,8 @@ class GameScene: SKScene {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else { return }
         let location = touch.location(in: self)
+        
+        if !isjoon{
         let playerjoon = SKShapeNode(circleOfRadius: 16)
         playerjoon.fillColor = .cyan
         playerjoon.strokeColor = .black
@@ -120,10 +122,40 @@ class GameScene: SKScene {
         
         playerjoon.physicsBody?.affectedByGravity = true
         playerjoon.physicsBody?.isDynamic = true
-        
         //        playerjoon.physicsBody?.restitution = 0.7
         
         addChild(playerjoon)
+        isjoon = true
+        }
+        else if(!isocean){
+            let playerocean = SKShapeNode(circleOfRadius: 16)
+            playerocean.fillColor = .brown
+            playerocean.strokeColor = .black
+            playerocean.physicsBody = SKPhysicsBody(circleOfRadius: 16)
+            playerocean.position = location
+            
+            playerocean.physicsBody?.affectedByGravity = true
+            playerocean.physicsBody?.isDynamic = true
+            //        playerjoon.physicsBody?.restitution = 0.7
+            
+            addChild(playerocean)
+            isocean = true
+        }
+        else if (!isbuckil){
+            let playerbuckil = SKShapeNode(circleOfRadius: 16)
+            playerbuckil.fillColor = .green
+            playerbuckil.strokeColor = .black
+            playerbuckil.physicsBody = SKPhysicsBody(circleOfRadius: 16)
+            playerbuckil.position = location
+            
+            playerbuckil.physicsBody?.affectedByGravity = true
+            playerbuckil.physicsBody?.isDynamic = true
+            //        playerjoon.physicsBody?.restitution = 0.7
+            
+            addChild(playerbuckil)
+            isbuckil = true
+        }
+        
         //        if isjoon{
         //            addChild(playerocean)
         //            isocean.toggle()
