@@ -9,7 +9,7 @@ import SpriteKit
 import SwiftUI
 
 
-class GameScene: SKScene {
+class GameScene: SKScene, SKPhysicsContactDelegate {
     let players: [Friend] = [Friend.friends[0], Friend.friends[1], Friend.friends[2]]
     let playerocean = SKShapeNode(circleOfRadius: 16)
     let playerbuckil = SKShapeNode(circleOfRadius: 16)
@@ -17,13 +17,17 @@ class GameScene: SKScene {
     var isocean: Bool = false
     var isbuckil: Bool = false
     var isjoon: Bool = false
-    
+    var isEnded: Bool = false
     var startTouch = CGPoint()
     var endTouch = CGPoint()
+    var endLabel:SKLabelNode!
     
-    let terrain1 = SKShapeNode(rectOf: CGSize(width: 30, height: 700))
-    let terrain2 = SKShapeNode(rectOf: CGSize(width: 30, height: 700))
-    let terrain3 = SKShapeNode(rectOf: CGSize(width: 30, height: 700))
+//    let terrain1 = SKShapeNode(rectOf: CGSize(width: 30, height: 700))
+//    let terrain2 = SKShapeNode(rectOf: CGSize(width: 30, height: 700))
+//    let terrain3 = SKShapeNode(rectOf: CGSize(width: 30, height: 700))
+    
+    let roleCategory: [UInt32] = [0x1 << 0, 0x1 << 1, 0x1 << 2]
+    let peopleCatergory: [UInt32] = [0x1 << 0, 0x1 << 1, 0x1 << 2]
     
     override func didMove(to view: SKView) {
         //        physicsBody = SKPhysicsBody(edgeLoopFrom: frame)
@@ -58,7 +62,21 @@ class GameScene: SKScene {
             terrain.position = .init(x: position , y: 200)
             addChild(terrain)
         }
-        
+        for i in 1...roles.count {
+            let rolesNode = SKShapeNode(rectOf: CGSize(width: 40, height: 10), cornerRadius:10)
+            let position = 200 + (i % 2 == 0 ? 1 : -1) * (80 * i.quotientAndRemainder(dividingBy: 2).quotient)
+            rolesNode.position = .init(x: position, y: 100)
+            rolesNode.fillColor = .blue
+            rolesNode.strokeColor = .black
+            rolesNode.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 40, height: 10))
+            rolesNode.physicsBody?.isDynamic = true
+            
+            rolesNode.physicsBody?.categoryBitMask = roleCategory[i-1]
+            rolesNode.physicsBody?.contactTestBitMask = peopleCatergory[i-1]
+            rolesNode.physicsBody?.collisionBitMask = 1
+            rolesNode.physicsBody?.usesPreciseCollisionDetection = true
+            self.addChild(rolesNode)
+        }
         //        switch Roles.count {
         //        case 1...3:
         //            terrain1.strokeColor = .brown
@@ -122,8 +140,9 @@ class GameScene: SKScene {
         
         playerjoon.physicsBody?.affectedByGravity = true
         playerjoon.physicsBody?.isDynamic = true
-        //        playerjoon.physicsBody?.restitution = 0.7
-        
+        playerjoon.physicsBody?.categoryBitMask = peopleCatergory[0]
+            playerjoon.physicsBody?.contactTestBitMask = roleCategory[0]
+            playerjoon.physicsBody?.collisionBitMask = 0
         addChild(playerjoon)
         isjoon = true
         }
@@ -136,6 +155,9 @@ class GameScene: SKScene {
             
             playerocean.physicsBody?.affectedByGravity = true
             playerocean.physicsBody?.isDynamic = true
+            playerocean.physicsBody?.categoryBitMask = peopleCatergory[1]
+            playerocean.physicsBody?.contactTestBitMask = roleCategory[1]
+            playerocean.physicsBody?.collisionBitMask = 0
             //        playerjoon.physicsBody?.restitution = 0.7
             
             addChild(playerocean)
@@ -150,39 +172,66 @@ class GameScene: SKScene {
             
             playerbuckil.physicsBody?.affectedByGravity = true
             playerbuckil.physicsBody?.isDynamic = true
+            playerbuckil.physicsBody?.categoryBitMask = peopleCatergory[2]
+            playerbuckil.physicsBody?.contactTestBitMask = roleCategory[2]
+            playerbuckil.physicsBody?.collisionBitMask = 0
             //        playerjoon.physicsBody?.restitution = 0.7
             
             addChild(playerbuckil)
             isbuckil = true
         }
         
-        //        if isjoon{
-        //            addChild(playerocean)
-        //            isocean.toggle()
-        //        }
-        //        else if isocean{
-        //            addChild(playerbuckil)
-        //            isbuckil.toggle()
-        //        }
-        //
-        //        if !isjoon{
-        //            addChild(playerjoon)
-        //            isjoon.toggle()
-        //        }
-        //        addChild(box)
+    }
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if (!isbuckil || !isEnded){
+            fallingSound()
+            
+            isEnded = true
+        }
     }
     
-//    override func
+    func fallingSound(){
+        self.run(SKAction.playSoundFileNamed(soundFiles.randomElement() ?? "ladder1.wav", waitForCompletion: false))
     
+        
+        
+        
+        
+    }
+    
+    func didBegin(_ contact: SKPhysicsContact) {
+        var firstBody:SKPhysicsBody
+        var secondBody:SKPhysicsBody
+        
+        if contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask {
+            firstBody = contact.bodyA
+            secondBody = contact.bodyB
+        }else{
+            firstBody = contact.bodyB
+            secondBody = contact.bodyA
+        }
+        
+        if (peopleCatergory.contains(firstBody.categoryBitMask)) && ( roleCategory.contains(secondBody.categoryBitMask))  {
+            collideWithRoles(roleNode: firstBody.node as! SKShapeNode, personNode: secondBody.node as! SKShapeNode)
+        }
+        
+    }
+    func collideWithRoles (roleNode:SKShapeNode, personNode:SKShapeNode){
+        endLabel = SKLabelNode(text: "역할 분배 완료!")
+        endLabel.position = CGPoint(x: self.frame.size.width / 2, y: self.frame.size.height/2)
+        endLabel.fontName = "Happiness-Sans-Bold"
+        endLabel.fontSize = 36
+        endLabel.fontColor = UIColor.white
+    }
 }
 
-var Roles: [String] { return ["총무", "길라잡이", "DJ"]}
+var roles: [String] { return ["총무", "길라잡이", "DJ"]}
 var isFirst: Bool = false
 func randomSampling(samples:[String]) -> [String]{
     return samples.shuffled()
 }
 
-
+var soundFiles: [String] {return ["ladder1.wav", "ladder2.wav", "ladder3.wav"]}
 
 
 struct LadderView: View {
@@ -205,7 +254,7 @@ struct LadderView: View {
 //                        .foregroundColor(.indigo)
 //                        .frame(width: 800, height: 200, alignment: .bottom)
                     HStack{
-                        ForEach(randomSampling(samples: Roles), id: \.self) { temp in
+                        ForEach(randomSampling(samples: roles), id: \.self) { temp in
                             Text(temp)
                                 .font(.custom("Happiness-Sans-Bold", size: 20))
                         }
