@@ -33,6 +33,7 @@
 		835647752854839F003148D7 /* ladder3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 835647722854839F003148D7 /* ladder3.wav */; };
 		835647762854839F003148D7 /* ladder1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 835647732854839F003148D7 /* ladder1.wav */; };
 		838273A82851D81B00FC6301 /* LadderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838273A72851D81B00FC6301 /* LadderView.swift */; };
+		BFA9F3762854870B0026D60D /* TapTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA9F3752854870B0026D60D /* TapTap.swift */; };
 		E15840B12851C25900F39095 /* Happiness-Sans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E15840AE2851C25900F39095 /* Happiness-Sans-Bold.ttf */; };
 		E15840B22851C25900F39095 /* Happiness-Sans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E15840AF2851C25900F39095 /* Happiness-Sans-Regular.ttf */; };
 		E15840B32851C25900F39095 /* Happiness-Sans-Title.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E15840B02851C25900F39095 /* Happiness-Sans-Title.ttf */; };
@@ -90,6 +91,7 @@
 		835647722854839F003148D7 /* ladder3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ladder3.wav; sourceTree = "<group>"; };
 		835647732854839F003148D7 /* ladder1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ladder1.wav; sourceTree = "<group>"; };
 		838273A72851D81B00FC6301 /* LadderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LadderView.swift; sourceTree = "<group>"; };
+		BFA9F3752854870B0026D60D /* TapTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapTap.swift; sourceTree = "<group>"; };
 		E15840AE2851C25900F39095 /* Happiness-Sans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Happiness-Sans-Bold.ttf"; sourceTree = "<group>"; };
 		E15840AF2851C25900F39095 /* Happiness-Sans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Happiness-Sans-Regular.ttf"; sourceTree = "<group>"; };
 		E15840B02851C25900F39095 /* Happiness-Sans-Title.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Happiness-Sans-Title.ttf"; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 				835647712854839F003148D7 /* ladder2.wav */,
 				835647722854839F003148D7 /* ladder3.wav */,
 				838273A72851D81B00FC6301 /* LadderView.swift */,
+				BFA9F3752854870B0026D60D /* TapTap.swift */,
 			);
 			path = RoleGame;
 			sourceTree = "<group>";
@@ -412,6 +415,7 @@
 				36477E8E284F93E30067B480 /* TempFriends.swift in Sources */,
 				E15840BC2851CAB500F39095 /* TodoListView.swift in Sources */,
 				835443EB284F4CE400AF2F1F /* MyTravelView.swift in Sources */,
+				BFA9F3762854870B0026D60D /* TapTap.swift in Sources */,
 				835443C2284F4C7500AF2F1F /* TROL.xcdatamodeld in Sources */,
 				835443E5284F4CA100AF2F1F /* TabBarView.swift in Sources */,
 				E15840BA2851CAAF00F39095 /* TicketPunchingView.swift in Sources */,
