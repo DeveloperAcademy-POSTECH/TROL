@@ -9,16 +9,14 @@
 /* Begin PBXBuildFile section */
 		36094D0D2850FB3F00132DE5 /* RoleGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36094D0C2850FB3F00132DE5 /* RoleGridView.swift */; };
 		36094D0F2851026200132DE5 /* CustomGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36094D0E2851026200132DE5 /* CustomGridView.swift */; };
-		3609BC4728571D6000B550B3 /* DefaultRoles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3609BC4628571D6000B550B3 /* DefaultRoles.swift */; };
 		36477E86284F79C00067B480 /* FriendRoleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36477E85284F79C00067B480 /* FriendRoleView.swift */; };
 		36477E88284F79D00067B480 /* EmptyMyTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36477E87284F79D00067B480 /* EmptyMyTravelView.swift */; };
+		36477E8E284F93E30067B480 /* TempFriends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36477E8D284F93E30067B480 /* TempFriends.swift */; };
 		36553A642850EBE80095016B /* TravelRole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36553A632850EBE80095016B /* TravelRole.swift */; };
 		365CE5A82851E8B60000BC6A /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365CE5A72851E8B60000BC6A /* Model.swift */; };
 		36D4C2A92850E18700A585E6 /* AddTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D4C2A82850E18700A585E6 /* AddTravelView.swift */; };
 		36D96F4F28503F560076BFE5 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D96F4E28503F560076BFE5 /* GridView.swift */; };
 		36D96F51285046460076BFE5 /* RoleRectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D96F50285046460076BFE5 /* RoleRectangleView.swift */; };
-		36F7E97B2857271C009EC456 /* MyTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F7E97A2857271C009EC456 /* MyTravelView.swift */; };
-		36F7E97D28572A9C009EC456 /* RoleCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F7E97C28572A9C009EC456 /* RoleCustomView.swift */; };
 		835443B6284F4C7200AF2F1F /* TROLApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835443B5284F4C7200AF2F1F /* TROLApp.swift */; };
 		835443B8284F4C7200AF2F1F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835443B7284F4C7200AF2F1F /* ContentView.swift */; };
 		835443BA284F4C7500AF2F1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 835443B9284F4C7500AF2F1F /* Assets.xcassets */; };
@@ -30,7 +28,7 @@
 		835443D8284F4C7500AF2F1F /* TROLUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835443D7284F4C7500AF2F1F /* TROLUITestsLaunchTests.swift */; };
 		835443E5284F4CA100AF2F1F /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835443E4284F4CA100AF2F1F /* TabBarView.swift */; };
 		835443E9284F4CD400AF2F1F /* RoleGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835443E8284F4CD400AF2F1F /* RoleGameView.swift */; };
-		835443EB284F4CE400AF2F1F /* ProgressingMyTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835443EA284F4CE400AF2F1F /* ProgressingMyTravelView.swift */; };
+		835443EB284F4CE400AF2F1F /* MyTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835443EA284F4CE400AF2F1F /* MyTravelView.swift */; };
 		838273A82851D81B00FC6301 /* LadderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838273A72851D81B00FC6301 /* LadderView.swift */; };
 		BFA9F3762854870B0026D60D /* TapTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA9F3752854870B0026D60D /* TapTap.swift */; };
 		E15840B12851C25900F39095 /* Happiness-Sans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E15840AE2851C25900F39095 /* Happiness-Sans-Bold.ttf */; };
@@ -63,17 +61,15 @@
 /* Begin PBXFileReference section */
 		36094D0C2850FB3F00132DE5 /* RoleGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleGridView.swift; sourceTree = "<group>"; };
 		36094D0E2851026200132DE5 /* CustomGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomGridView.swift; sourceTree = "<group>"; };
-		3609BC4628571D6000B550B3 /* DefaultRoles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRoles.swift; sourceTree = "<group>"; };
 		36477E74284F721C0067B480 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		36477E85284F79C00067B480 /* FriendRoleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendRoleView.swift; sourceTree = "<group>"; };
 		36477E87284F79D00067B480 /* EmptyMyTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyMyTravelView.swift; sourceTree = "<group>"; };
+		36477E8D284F93E30067B480 /* TempFriends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempFriends.swift; sourceTree = "<group>"; };
 		36553A632850EBE80095016B /* TravelRole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelRole.swift; sourceTree = "<group>"; };
 		365CE5A72851E8B60000BC6A /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		36D4C2A82850E18700A585E6 /* AddTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTravelView.swift; sourceTree = "<group>"; };
 		36D96F4E28503F560076BFE5 /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
 		36D96F50285046460076BFE5 /* RoleRectangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleRectangleView.swift; sourceTree = "<group>"; };
-		36F7E97A2857271C009EC456 /* MyTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTravelView.swift; sourceTree = "<group>"; };
-		36F7E97C28572A9C009EC456 /* RoleCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleCustomView.swift; sourceTree = "<group>"; };
 		835443B2284F4C7200AF2F1F /* TROL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TROL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		835443B5284F4C7200AF2F1F /* TROLApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TROLApp.swift; sourceTree = "<group>"; };
 		835443B7284F4C7200AF2F1F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -88,7 +84,7 @@
 		835443D7284F4C7500AF2F1F /* TROLUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TROLUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		835443E4284F4CA100AF2F1F /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		835443E8284F4CD400AF2F1F /* RoleGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleGameView.swift; sourceTree = "<group>"; };
-		835443EA284F4CE400AF2F1F /* ProgressingMyTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressingMyTravelView.swift; sourceTree = "<group>"; };
+		835443EA284F4CE400AF2F1F /* MyTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTravelView.swift; sourceTree = "<group>"; };
 		838273A72851D81B00FC6301 /* LadderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LadderView.swift; sourceTree = "<group>"; };
 		BFA9F3752854870B0026D60D /* TapTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapTap.swift; sourceTree = "<group>"; };
 		E15840AE2851C25900F39095 /* Happiness-Sans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Happiness-Sans-Bold.ttf"; sourceTree = "<group>"; };
@@ -129,12 +125,12 @@
 		36477E73284F70720067B480 /* MyTravelView */ = {
 			isa = PBXGroup;
 			children = (
-				36F7E97A2857271C009EC456 /* MyTravelView.swift */,
-				835443EA284F4CE400AF2F1F /* ProgressingMyTravelView.swift */,
-				36477E87284F79D00067B480 /* EmptyMyTravelView.swift */,
+				835443EA284F4CE400AF2F1F /* MyTravelView.swift */,
 				36D96F4E28503F560076BFE5 /* GridView.swift */,
+				36477E87284F79D00067B480 /* EmptyMyTravelView.swift */,
 				36477E85284F79C00067B480 /* FriendRoleView.swift */,
 				36D96F50285046460076BFE5 /* RoleRectangleView.swift */,
+				36477E8D284F93E30067B480 /* TempFriends.swift */,
 			);
 			path = MyTravelView;
 			sourceTree = "<group>";
@@ -153,7 +149,6 @@
 			isa = PBXGroup;
 			children = (
 				365CE5A72851E8B60000BC6A /* Model.swift */,
-				3609BC4628571D6000B550B3 /* DefaultRoles.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -165,7 +160,6 @@
 				36094D0C2850FB3F00132DE5 /* RoleGridView.swift */,
 				36094D0E2851026200132DE5 /* CustomGridView.swift */,
 				36553A632850EBE80095016B /* TravelRole.swift */,
-				36F7E97C28572A9C009EC456 /* RoleCustomView.swift */,
 			);
 			path = AddTravelView;
 			sourceTree = "<group>";
@@ -417,19 +411,17 @@
 				E15840B82851CAA500F39095 /* TicketInfoView.swift in Sources */,
 				36D96F4F28503F560076BFE5 /* GridView.swift in Sources */,
 				835443E9284F4CD400AF2F1F /* RoleGameView.swift in Sources */,
-				3609BC4728571D6000B550B3 /* DefaultRoles.swift in Sources */,
 				36094D0F2851026200132DE5 /* CustomGridView.swift in Sources */,
+				36477E8E284F93E30067B480 /* TempFriends.swift in Sources */,
 				E15840BC2851CAB500F39095 /* TodoListView.swift in Sources */,
-				835443EB284F4CE400AF2F1F /* ProgressingMyTravelView.swift in Sources */,
+				835443EB284F4CE400AF2F1F /* MyTravelView.swift in Sources */,
 				BFA9F3762854870B0026D60D /* TapTap.swift in Sources */,
 				835443C2284F4C7500AF2F1F /* TROL.xcdatamodeld in Sources */,
 				835443E5284F4CA100AF2F1F /* TabBarView.swift in Sources */,
-				36F7E97B2857271C009EC456 /* MyTravelView.swift in Sources */,
 				E15840BA2851CAAF00F39095 /* TicketPunchingView.swift in Sources */,
 				36477E88284F79D00067B480 /* EmptyMyTravelView.swift in Sources */,
 				36D96F51285046460076BFE5 /* RoleRectangleView.swift in Sources */,
 				36D4C2A92850E18700A585E6 /* AddTravelView.swift in Sources */,
-				36F7E97D28572A9C009EC456 /* RoleCustomView.swift in Sources */,
 				365CE5A82851E8B60000BC6A /* Model.swift in Sources */,
 				835443B6284F4C7200AF2F1F /* TROLApp.swift in Sources */,
 				36553A642850EBE80095016B /* TravelRole.swift in Sources */,

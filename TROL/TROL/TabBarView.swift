@@ -22,14 +22,13 @@ struct TabBarView: View {
                     RoleGameTab()
                 }
                 .tag(1)
-            MyTravelView()
+            MyTravelView(selectedFriend: Friend.friends[0])
                 .tabItem{
                     MyTravelTab()
                 }
-                .tag(2)
             
         }
-        .accentColor(Color("TrolGreen"))
+        .accentColor(Color("trolGreen"))
     }
 }
 
@@ -46,7 +45,7 @@ struct MyRoleTab:View{
     }
 }
 
-struct RoleGameTab: View{
+struct RoleGameTab:View{
     var body: some View{
         VStack{
         Image(systemName: "checkmark.seal.fill")

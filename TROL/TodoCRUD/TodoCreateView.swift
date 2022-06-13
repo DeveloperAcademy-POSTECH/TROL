@@ -9,9 +9,6 @@ import SwiftUI
 
 struct TodoCreateView: View {
     
-    @EnvironmentObject var travelData: TravelData
-    @EnvironmentObject var roleData: RoleData
-    
     @State private var newTodo: String = ""
     @Environment(\.presentationMode) var presentation
     
@@ -49,11 +46,10 @@ struct TodoCreateView: View {
             Spacer()
             
             Button(action: {
-                travelData.travel.users[0].toDoList?.append(ToDoList(id: 10, title: newTodo, isChecked: false))
                 presentation.wrappedValue.dismiss()
             }) {
                 RoundedRectangle(cornerRadius: 10)
-                    .fill(Color("TrolGreen"))
+                    .fill(Color("trolGreen"))
                     .frame(width: 354, height: 50)
                     .overlay(
                         Text("저장하기")
@@ -105,7 +101,7 @@ struct TodoInfoView: View {
                 
             }
             .frame(width: 354, height: 60)
-            .background(Color("TrolIvory"))
+            .background(Color("trolIvory"))
             .cornerRadius(10)
             
             

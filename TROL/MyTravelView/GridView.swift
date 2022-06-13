@@ -9,12 +9,12 @@ import SwiftUI
 
 struct GridView: View {
     
-    @Binding var testFriend: User
+    @Binding var testFriend: Friend
     
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 10)
-                .fill(Color("TrolDimGray"))
+                .fill(Color("trolDimGray"))
                 .frame(width: 110, height: 110)
             
             Text(testFriend.name)
@@ -31,8 +31,8 @@ struct GridView: View {
     }
 }
 
-//struct GridView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        GridView(testFriend: .constant(Friend.friends[0]))
-//    }
-//}
+struct GridView_Previews: PreviewProvider {
+    static var previews: some View {
+        GridView(testFriend: .constant(Friend.friends[0]))
+    }
+}

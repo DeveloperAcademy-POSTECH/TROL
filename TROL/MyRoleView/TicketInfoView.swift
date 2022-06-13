@@ -26,7 +26,7 @@ struct TicketInfoView: View {
                 
             }
             .frame(width: 354, height: 60)
-            .background(Color("TrolIvory"))
+            .background(Color("trolIvory"))
             .cornerRadius(10)
             
             

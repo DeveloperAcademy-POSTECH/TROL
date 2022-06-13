@@ -7,17 +7,7 @@
 
 import SwiftUI
 
-var dateformat: DateFormatter {
-    let formatter = DateFormatter()
-    formatter.dateFormat = "YYYY.MM.d"
-    return formatter
-}
-
 struct MyRoleView: View {
-    
-    @EnvironmentObject var travelData: TravelData
-    @EnvironmentObject var roleData: RoleData
-    
     var body: some View {
         ScrollView{
             
@@ -29,10 +19,7 @@ struct MyRoleView: View {
                 }
             }
             TicketInfoView()
-            if let _ = travelData.travel.users[0].toDoList {
-                TodoListView()
-            }
-//            TodoListView()
+            TodoListView()
         }
         
     }
@@ -42,7 +29,7 @@ struct TicketBackgroundView: View{
     var body: some View{
         ZStack{
             RoundedRectangle(cornerRadius: 10)
-                .fill(Color("TrolYellow"))
+                .fill(Color("trolYellow"))
                 .frame(width: 354, height: 174)
             
             
@@ -61,44 +48,29 @@ struct TicketBackgroundView: View{
 }
 
 struct TicketContentView: View{
-    
-    @EnvironmentObject var travelData: TravelData
-    @EnvironmentObject var roleData: RoleData
-//    static let dateformat: DateFormatter {
-//        let formatter = DateFormatter()
-//        formatter.dateFormat = "YYYY.MM.DD"
-//        return formatter
-//    }()
-//    guard let realTempRole = self.travelData.travel.users[0].myRole else{ return }
     var body: some View{
         VStack(alignment:.leading, spacing: 32){
             VStack(alignment:.leading){
-                Text("\(travelData.travel.name)")
+                Text("졸업여행")
                     .font(.system(size: 20))
                     .bold()
-                Text("\(travelData.travel.startDate, formatter: dateformat) ~ \(travelData.travel.endDate, formatter: dateformat)")
+                Text("2022.06.26~2022.07.01")
                     .font(.system(size: 12))
             }
             HStack(spacing: 41){
-                VStack(alignment:.leading) {
+                VStack(alignment:.leading){
                     Text("이름")
                         .font(.system(size: 12))
-                    Text("\(travelData.travel.users[0].name)")
+                    Text("바밤바")
                         .bold()
                         .font(.system(size: 20))
                 }
                 VStack(alignment:.leading){
                     Text("역할")
                         .font(.system(size: 12))
-                    if let realTempRole = travelData.travel.users[0].myRole {
-                        Text("\(realTempRole.name)")
-                            .bold()
-                            .font(.system(size: 20))
-                    } else {
-                        Text("")
-                            .bold()
-                            .font(.system(size: 20))
-                    }
+                    Text("총무")
+                        .bold()
+                        .font(.system(size: 20))
                 }
             }
         }
@@ -109,7 +81,5 @@ struct TicketContentView: View{
 struct MyRoleView_Previews: PreviewProvider {
     static var previews: some View {
         MyRoleView()
-            .environmentObject(TravelData())
-            .environmentObject(RoleData())
     }
 }
