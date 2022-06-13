@@ -7,72 +7,80 @@
 
 import SwiftUI
 
-struct TodoList: View {
+struct TodoListView: View {
+    @State private var showTodoCreate = false
+    
+    struct ToDo: Identifiable{
+        var id:Int
+        var title: String
+        var isChecked: Bool = false
+    }
+    
+    private var todo = [
+        ToDo(id: 0, title: "항공권 가격 비교하기", isChecked: true),
+        ToDo(id: 1, title: "항공권 예약하기", isChecked: false),
+        ToDo(id: 2, title: "숙소+항공권 가격 정산", isChecked: false),
+        ToDo(id: 3, title: "숙소 알아보기", isChecked: true),
+        ToDo(id: 4, title: "내 계좌 알려주기", isChecked: true)
+    ]
+    
+    @State private var checked = false
+    
     var body: some View {
-        VStack{
-            HStack{
+        VStack(alignment: .leading, spacing: 0){
+            HStack(){
                 Text("내가 할 일").bold().font(.system(size: 28))
-                Spacer()
-                Button("편집하기"){
-                    
-                }
+                    .padding([.leading], 18.5)
             }
             
             Button(action: {
-                print("할 일 추가뷰 연결")
+                self.showTodoCreate = true
             }) {
                 Text("내가 할 일 추가하기")
-                    .foregroundColor(Color.green)
+                    .foregroundColor(Color("TrolGreen"))
                     .bold()
                     .font(.system(size: 17))
                     .padding()
                     .frame(maxWidth: .infinity)
+                    .sheet(isPresented: self.$showTodoCreate){
+                        TodoCreateView()
+                    }
                     .padding()
                     .overlay(
-                        RoundedRectangle(cornerRadius: 8)
-                                    .strokeBorder(.gray, lineWidth: 1)
-                                    .frame(width: 354, height: 50)
+                        RoundedRectangle(cornerRadius: 10)
+                            .strokeBorder(.gray, lineWidth: 1)
+                            .frame(width: 354, height: 50)
                     )
-
+                
             }
-           ListView()
-        }
-    }
-}
-
-struct Weather: Identifiable {
-    var id = UUID()
-    var image: String
-    var temp: Int
-    var city: String
-}
-struct ListView: View {
-    
-    let modelData: [Weather] =
-    [
-        Weather(image: "cloud.rain", temp: 21, city: "Amsterdam"),
-        Weather(image: "cloud.sun.rain", temp: 18, city: "London"),
-        Weather(image: "sun.max", temp: 25, city: "Paris"),
-        Weather(image: "cloud.sun", temp: 23, city: "Tokyo")]
-    
-    var body: some View {
-        List(modelData) { weather in
-            HStack {
-                // 2.
-                Image(systemName: weather.image)
-                    .frame(width: 50, height: 10, alignment: .leading)
-                Text("\(weather.temp)º")
-                    .frame(width: 50, height: 10, alignment: .leading)
-                VStack {
-                    Text(weather.city)
-                }
-            }.font(.title)
+            ForEach(todo) { item in
+                CheckView(isChecked: item.isChecked, title: item.title).padding(EdgeInsets(top: 5, leading: 15, bottom: 0, trailing: 0))
+            }
+            
         }
     }
 }
 
 struct TodoList_Previews: PreviewProvider {
     static var previews: some View {
-        TodoList()
+        TodoListView()
+    }
+}
+
+struct CheckView: View {
+    @State var isChecked:Bool = false
+    var title:String
+    func toggle(){isChecked = !isChecked}
+    var body: some View {
+        VStack(alignment: .leading){
+            Divider()
+            HStack(alignment: .top, spacing: 12) {
+                
+                Button(action: toggle) {
+                    Image(systemName: isChecked ? "square.fill" : "square")
+                }
+                isChecked ? Text(title).strikethrough().font(.system(size: 17)) : Text(title).font(.system(size: 17))
+            }
+        }
     }
 }

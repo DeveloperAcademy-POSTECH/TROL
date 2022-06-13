@@ -41,6 +41,7 @@
 		E15840B82851CAA500F39095 /* TicketInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15840B72851CAA500F39095 /* TicketInfoView.swift */; };
 		E15840BA2851CAAF00F39095 /* TicketPunchingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15840B92851CAAF00F39095 /* TicketPunchingView.swift */; };
 		E15840BC2851CAB500F39095 /* TodoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15840BB2851CAB500F39095 /* TodoListView.swift */; };
+		E1B2089828531BD400C3B521 /* TodoCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2089728531BD400C3B521 /* TodoCreateView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		E15840B72851CAA500F39095 /* TicketInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketInfoView.swift; sourceTree = "<group>"; };
 		E15840B92851CAAF00F39095 /* TicketPunchingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketPunchingView.swift; sourceTree = "<group>"; };
 		E15840BB2851CAB500F39095 /* TodoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListView.swift; sourceTree = "<group>"; };
+		E1B2089728531BD400C3B521 /* TodoCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCreateView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 				838273A62851D80C00FC6301 /* RoleGame */,
 				838273A32851D4A400FC6301 /* TabBar */,
 				835443B4284F4C7200AF2F1F /* TROL */,
+				E1B2089628531B5800C3B521 /* TodoCRUD */,
 				E15840B42851CA3300F39095 /* MyRoleView */,
 				36477E73284F70720067B480 /* MyTravelView */,
 				36D4C2A72850E15900A585E6 /* AddTravelView */,
@@ -264,6 +267,14 @@
 				E15840BB2851CAB500F39095 /* TodoListView.swift */,
 			);
 			path = MyRoleView;
+			sourceTree = "<group>";
+		};
+		E1B2089628531B5800C3B521 /* TodoCRUD */ = {
+			isa = PBXGroup;
+			children = (
+				E1B2089728531BD400C3B521 /* TodoCreateView.swift */,
+			);
+			path = TodoCRUD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -402,6 +413,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1B2089828531BD400C3B521 /* TodoCreateView.swift in Sources */,
 				36094D0D2850FB3F00132DE5 /* RoleGridView.swift in Sources */,
 				838273A82851D81B00FC6301 /* LadderView.swift in Sources */,
 				835443BF284F4C7500AF2F1F /* Persistence.swift in Sources */,

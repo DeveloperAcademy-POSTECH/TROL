@@ -10,6 +10,7 @@ import SwiftUI
 struct MyRoleView: View {
     var body: some View {
         ScrollView{
+            
             VStack(alignment: .leading) {
                 Text("나의 여행티켓").bold().font(.system(size: 28))
                 ZStack(alignment: .topLeading) {
@@ -18,7 +19,9 @@ struct MyRoleView: View {
                 }
             }
             TicketInfoView()
+            TodoListView()
         }
+        
     }
 }
 
@@ -28,7 +31,7 @@ struct TicketBackgroundView: View{
             RoundedRectangle(cornerRadius: 10)
                 .fill(Color("trolYellow"))
                 .frame(width: 354, height: 174)
-
+            
             
             Image("HiBear")
                 .resizable()
@@ -71,7 +74,7 @@ struct TicketContentView: View{
                 }
             }
         }
-
+        
     }
 }
 
