@@ -9,15 +9,12 @@ import SwiftUI
 
 struct AddTravelView: View {
     
-//    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-//    @Binding var isTravelExist: Bool
-    @EnvironmentObject var travelData: TravelData
-    @EnvironmentObject var roleData: RoleData
-    
     @State var travelName: String = ""
-    @State var travelStartDate = Date()
-    @State var travelEndDate = Date()
-    @State var selectedRoles: [Role] = []
+    @State var startDate = Date()
+    @State var endDate = Date()
+    
+    @State var roles: [TravelRole] = [account, direction, driver, photographer, planner, communicator, crown, dj, cook, humanRouter, slave, maid]
+    @State var selectedRoles: [TravelRole] = []
     
     let columns = [ GridItem(.adaptive(minimum: 100)) ]
     
@@ -36,13 +33,13 @@ struct AddTravelView: View {
                     .font(.custom("Happiness-Sans-Bold", size: 22))
                 
                 HStack {
-                    DatePicker("", selection: $travelStartDate, displayedComponents: .date)
+                    DatePicker("", selection: $startDate, displayedComponents: .date)
                         .labelsHidden()
-                        .foregroundColor(Color("TrolGreen"))
+                        .foregroundColor(Color("trolGreen"))
                     
                     Text("~")
                     
-                    DatePicker("", selection: $travelEndDate, displayedComponents: .date)
+                    DatePicker("", selection: $endDate, displayedComponents: .date)
                         .labelsHidden()
                 }
                 
@@ -56,7 +53,7 @@ struct AddTravelView: View {
                         print("add this area later")
                     } label: {
                         Image(systemName: "info.circle")
-                            .foregroundColor(Color("TrolGreen"))
+                            .foregroundColor(Color("trolGreen"))
                     }
                 }
                 
@@ -84,16 +81,16 @@ struct AddTravelView: View {
                 .cornerRadius(10)
                 
                 LazyVGrid(columns: columns, spacing: 20) {
-                    ForEach(roleData.roles.indices, id: \.self) { i in
-                        RoleGridView(role: $roleData.roles[i])
+                    ForEach(roles.indices, id: \.self) { i in
+                        RoleGridView(role: $roles[i])
                             .onTapGesture {
-//                                print("\(roleData.roles[i].name) called")
-                                roleData.roles[i].isChecked.toggle()
-//                                print("\(roles[i].name): \(roleData.roles[i].isCheck)")
+//                                print("\(roles[i].name) called")
+                                roles[i].isCheck.toggle()
+//                                print("\(roles[i].name): \(roles[i].isCheck)")
                                 
-                                if roleData.roles[i].isChecked { selectedRoles.append(roleData.roles[i]) }
+                                if roles[i].isCheck { selectedRoles.append(roles[i]) }
                                 else {
-                                    guard let index = selectedRoles.firstIndex(where: { $0.name == roleData.roles[i].name }) else { return }
+                                    guard let index = selectedRoles.firstIndex(where: { $0.name == roles[i].name }) else { return }
                                     selectedRoles.remove(at: index)
                                 }
                                 
@@ -104,47 +101,28 @@ struct AddTravelView: View {
                             }
                     }
                     
-                    NavigationLink {
-                        RoleCustomView()
-                    } label: {
-                        CustomGridView()
-                    }
+                    CustomGridView()
                 }
                 .padding(.horizontal)
                 
-                
-                // 여행 저장 버튼
-                Button {
-//                    isTravelExist.toggle()
-                    
-                    travelData.saveTravel(isExist: true, name: travelName, startDate: travelStartDate, endDate: travelEndDate, usingRoles: selectedRoles)
-                    
-                    print("\(travelData.travel)")
-                    print("\(travelData.travel.isExist)")
-//                    print(travelData.travel.usingRoles)
-//                    print(travelData.travel)
-//                    self.presentationMode.wrappedValue.dismiss()
+                NavigationLink {
+                    EmptyView()
                 } label: {
                     Text("새로운 여행 저장하기")
                         .foregroundColor(.white)
                         .font(.custom("Happiness-Sans-Bold", size: 17))
                         .bold()
                         .frame(width: 354, height: 54)
-                        .background(Color("TrolGreen"))
+                        .background(Color("trolGreen"))
                         .cornerRadius(10)
                 }
-                
-                
-            }//scrollview
-        }//vstack
+            }
+        }
 //        .padding()
     }
 }
-
 struct AddTravelView_Previews: PreviewProvider {
     static var previews: some View {
         AddTravelView()
-            .environmentObject(TravelData())
-            .environmentObject(RoleData())
     }
 }
