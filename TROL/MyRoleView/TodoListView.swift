@@ -8,10 +8,6 @@
 import SwiftUI
 
 struct TodoListView: View {
-    
-    @EnvironmentObject var travelData: TravelData
-    @EnvironmentObject var roleData: RoleData
-    
     @State private var showTodoCreate = false
     
     struct ToDo: Identifiable{
@@ -57,9 +53,10 @@ struct TodoListView: View {
                     )
                 
             }
-            ForEach(travelData.travel.users[0].toDoList!) { item in
+            ForEach(todo) { item in
                 CheckView(isChecked: item.isChecked, title: item.title).padding(EdgeInsets(top: 5, leading: 15, bottom: 0, trailing: 0))
             }
+            
         }
     }
 }

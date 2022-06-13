@@ -26,7 +26,7 @@ struct EmptyMyTravelView: View {
                 Text("휑")
                     .font(.custom("Happiness-Sans-Title.", size: 270))
                     .bold()
-                    .foregroundColor(Color("TrolDimGray"))
+                    .foregroundColor(Color("trolDimGray"))
                     .overlay(Image("LyingBear")
                         .offset(y: 120)
                     )
@@ -37,17 +37,17 @@ struct EmptyMyTravelView: View {
                 Text("아직 진행 중인 여행이 없어요!")
                     .font(.system(size: 12))
                 
-                NavigationLink {
-                    AddTravelView()
-                } label: {
-                    Text("새로운 여행 추가하기")
-                        .foregroundColor(.white)
-                        .font(.system(size: 17))
-                        .bold()
-                        .frame(width: 354, height: 54)
-                        .background(Color("TrolGreen"))
-                        .cornerRadius(10)
-                }
+//                NavigationLink {
+//                    AddTravelView()
+//                } label: {
+//                    Text("새로운 여행 추가하기")
+//                        .foregroundColor(.white)
+//                        .font(.system(size: 17))
+//                        .bold()
+//                        .frame(width: 354, height: 54)
+//                        .background(Color("trolGreen"))
+//                        .cornerRadius(10)
+//                }
 
             }
         }
