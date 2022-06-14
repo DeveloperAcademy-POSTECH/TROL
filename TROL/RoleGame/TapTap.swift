@@ -25,48 +25,68 @@ struct TapTap: View {
     let screenHeight = UIScreen.main.bounds.height
     
     var body: some View {
-        NavigationView{
-            ScrollView{//임시 스크롤 뷰
-                VStack{
-                    //게임 남은 시간 체크
-                    Text("남은 시간 \(timeRemaining)")
-                        .fontWeight(.bold)
-                        .onReceive(timer){_ in
-                            if isGameStart{
-                                timeRemaining -= 1
-                                if timeRemaining == 0{
-                                    isGameEnd = true
-                                }
+        NavigationView{//임시 네비게이션 뷰
+            VStack(spacing: 35){
+                //게임 남은 시간 체크
+                Text("남은 시간 \(timeRemaining)")
+                    .font(.system(size: 50))
+                    .padding()
+                    .background(RoundedRectangle(cornerRadius: 7).fill(Color("TrolYellow")))
+                    .foregroundColor(Color("TrolGreen"))
+                    .onReceive(timer){_ in
+                        if isGameStart{
+                            timeRemaining -= 1
+                            if timeRemaining == 0{
+                                isGameEnd = true
                             }
                         }
-                    //게임 시작 시간 표시
-                    Text(startTime >= 1 ? "\(startTime)초 후 시작합니다!" : "탭하세요!")
-                        .onReceive(timer){_ in
-                            startTime -= 1
-                            
+                    }
+                //게임 시작 시간 표시
+                Text(startTime >= 1 ? "\(startTime)초 후 시작합니다!" : "탭하세요!")
+                    .onReceive(timer){_ in
+                        startTime -= 1
+                    }
+                
+                ZStack{
+                    Circle().fill(Color("TrolYellow")).frame(width: 250, height: 250)
+                    Circle().fill(.green).frame(width: 200, height: 200)
+                    VStack{
+                        HStack{
+                            Spacer()
+                            Circle().fill(.black).frame(width:40, height: 40)
+                            Spacer().frame(width:35)
+                            Circle().fill(.black).frame(width:40, height: 40)
+                            Spacer()
                         }
+                        Circle().trim(from: 0.0,to: 0.5).fill(.red).opacity(0.75).frame(width:150, height:60)
+                        
+                    }
+                    
                 }
+                
                 //게임 탭 한 횟수 표시
                 Text("you tap \(CountTap) !")
-                    .frame(width: screenWidth, height: screenHeight)
+                    //.foregroundColor(Color("TrolGreen"))
+                    .font(.system(size: 30))
+                    .padding()
+                    .background(RoundedRectangle(cornerRadius: 7).fill(Color("TrolYellow")))
                 NavigationLink(destination:AfterGame(CountTap: CountTap),isActive: $isGameEnd, label: {
                     Text("")
                 })
-                
             }
+            .frame(width: screenWidth, height: screenHeight)
             .onAppear(perform: {
                 DispatchQueue.main.asyncAfter(deadline: .now()+3){
                     print("Start~")
-                    isGameStart = true
-                    
-                }
+                    isGameStart = true                }
             })
-            .contentShape(Rectangle())  //전체 화면 터치 위해
+            .contentShape(Rectangle()).ignoresSafeArea(.all)  //전체 화면 터치 위해
             .onTapGesture {
                 if isGameStart{
                     CountTap += 1   //화면 터치시 CountTap +1
                 }
             }
+            .background(Color("TrolIvory"))
         }
     }
 }
@@ -78,6 +98,7 @@ struct AfterGame:View{
         VStack{
             Spacer()
             Text("you tap \(CountTap)!")
+                .foregroundColor(Color("TrolGreen"))
                 .navigationBarHidden(true)
             Spacer()
             Button("선택하러 가기"){
