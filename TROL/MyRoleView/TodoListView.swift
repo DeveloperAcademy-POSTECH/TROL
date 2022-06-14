@@ -13,6 +13,7 @@ struct TodoListView: View {
     @EnvironmentObject var roleData: RoleData
     
     @State private var showTodoCreate = false
+    @State private var showTodoUpdate = false
     
     struct ToDo: Identifiable{
         var id:Int
@@ -52,14 +53,18 @@ struct TodoListView: View {
                     .padding()
                     .overlay(
                         RoundedRectangle(cornerRadius: 10)
-                            .strokeBorder(.gray, lineWidth: 1)
+                            .strokeBorder(Color.gray, lineWidth: 1)
                             .frame(width: 354, height: 50)
                     )
                 
             }
             ForEach(travelData.travel.users[0].toDoList!) { item in
-                CheckView(isChecked: item.isChecked, title: item.title).padding(EdgeInsets(top: 5, leading: 15, bottom: 0, trailing: 0))
+                CheckView(isChecked: item.isChecked, title: item.title)
+                    .onTapGesture {
+                        showTodoUpdate.toggle()
+                    }
             }
+            Divider()
         }
     }
 }
@@ -67,6 +72,8 @@ struct TodoListView: View {
 struct TodoList_Previews: PreviewProvider {
     static var previews: some View {
         TodoListView()
+            .environmentObject(TravelData())
+            .environmentObject(RoleData())
     }
 }
 
@@ -75,14 +82,18 @@ struct CheckView: View {
     var title:String
     func toggle(){isChecked = !isChecked}
     var body: some View {
-        VStack(alignment: .leading){
+        VStack(alignment: .leading, spacing: 0){
             Divider()
-            HStack(alignment: .top, spacing: 12) {
-                
+            HStack() {
+                Spacer().frame(width: 18)
                 Button(action: toggle) {
-                    Image(systemName: isChecked ? "square.fill" : "square")
+                    Image(systemName: isChecked ? "square.fill" : "square").font(.system(size: 20)).foregroundColor(Color("TrolGreen"))
                 }
-                isChecked ? Text(title).strikethrough().font(.system(size: 17)) : Text(title).font(.system(size: 17))
+                Spacer().frame(width: 12)
+                isChecked ? Text(title).strikethrough().font(.system(size: 17)).padding(.top, 15)
+                    .padding(.bottom, 15) : Text(title).font(.system(size: 17))
+                    .padding(.top, 15)
+                    .padding(.bottom, 15)
             }
         }
     }
