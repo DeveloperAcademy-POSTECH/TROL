@@ -19,7 +19,7 @@ struct RoleDictionaryView: View {
                 LazyVGrid(columns: columns, spacing: 20) {
                     ForEach(roleData.roles.indices, id: \.self) { i in
                         NavigationLink(destination:{
-                            RoleDictionaryDetailView()
+                            RoleDictionaryDetailView(selection: i)
                         }, label: {
                             RoleGridView(role: $roleData.roles[i])
                         })

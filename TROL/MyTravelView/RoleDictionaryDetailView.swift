@@ -9,9 +9,9 @@ import SwiftUI
 
 struct RoleDictionaryDetailView: View {
     @EnvironmentObject var roleData: RoleData
+    @State var selection : Int
     var body: some View{
-        TabView{
-            
+        TabView(selection: $selection){
             ForEach(roleData.roles.indices, id: \.self) { i in
                 //역할 이름 & 이미지
                 VStack(alignment: .leading, spacing: 33){
@@ -98,7 +98,7 @@ struct RoleDictionaryDetailView: View {
                     
                     
                     Spacer()
-                }//vstack
+                }.tag(i)//vstack
                 
             }//foreach
             
@@ -112,7 +112,7 @@ struct RoleDictionaryDetailView: View {
 
 struct RoleDictionaryDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        RoleDictionaryDetailView()
+        RoleDictionaryDetailView(selection: 1)
             .environmentObject(RoleData())
     }
 }
