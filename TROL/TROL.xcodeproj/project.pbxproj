@@ -32,6 +32,7 @@
 		835443E9284F4CD400AF2F1F /* RoleGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835443E8284F4CD400AF2F1F /* RoleGameView.swift */; };
 		835443EB284F4CE400AF2F1F /* ProgressingMyTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835443EA284F4CE400AF2F1F /* ProgressingMyTravelView.swift */; };
 		838273A82851D81B00FC6301 /* LadderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838273A72851D81B00FC6301 /* LadderView.swift */; };
+		83F59FCB2859F67400D3751E /* GameCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F59FCA2859F67400D3751E /* GameCollectionView.swift */; };
 		BFA9F3762854870B0026D60D /* TapTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA9F3752854870B0026D60D /* TapTap.swift */; };
 		E15840B12851C25900F39095 /* Happiness-Sans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E15840AE2851C25900F39095 /* Happiness-Sans-Bold.ttf */; };
 		E15840B22851C25900F39095 /* Happiness-Sans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E15840AF2851C25900F39095 /* Happiness-Sans-Regular.ttf */; };
@@ -90,6 +91,7 @@
 		835443E8284F4CD400AF2F1F /* RoleGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleGameView.swift; sourceTree = "<group>"; };
 		835443EA284F4CE400AF2F1F /* ProgressingMyTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressingMyTravelView.swift; sourceTree = "<group>"; };
 		838273A72851D81B00FC6301 /* LadderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LadderView.swift; sourceTree = "<group>"; };
+		83F59FCA2859F67400D3751E /* GameCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCollectionView.swift; sourceTree = "<group>"; };
 		BFA9F3752854870B0026D60D /* TapTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapTap.swift; sourceTree = "<group>"; };
 		E15840AE2851C25900F39095 /* Happiness-Sans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Happiness-Sans-Bold.ttf"; sourceTree = "<group>"; };
 		E15840AF2851C25900F39095 /* Happiness-Sans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Happiness-Sans-Regular.ttf"; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 				835443E8284F4CD400AF2F1F /* RoleGameView.swift */,
 				838273A72851D81B00FC6301 /* LadderView.swift */,
 				BFA9F3752854870B0026D60D /* TapTap.swift */,
+				83F59FCA2859F67400D3751E /* GameCollectionView.swift */,
 			);
 			path = RoleGame;
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 				E15840BC2851CAB500F39095 /* TodoListView.swift in Sources */,
 				835443EB284F4CE400AF2F1F /* ProgressingMyTravelView.swift in Sources */,
 				BFA9F3762854870B0026D60D /* TapTap.swift in Sources */,
+				83F59FCB2859F67400D3751E /* GameCollectionView.swift in Sources */,
 				835443C2284F4C7500AF2F1F /* TROL.xcdatamodeld in Sources */,
 				835443E5284F4CA100AF2F1F /* TabBarView.swift in Sources */,
 				36F7E97B2857271C009EC456 /* MyTravelView.swift in Sources */,

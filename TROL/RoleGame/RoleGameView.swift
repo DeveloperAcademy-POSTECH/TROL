@@ -30,9 +30,9 @@ struct RoleGameView: View {
                 Spacer()
                 LazyVGrid(columns: columns, spacing: 20){
                     ForEach(gameNames, id:\.self){ name in
-//                        NavigationLink(destination: GameCollectionView(gameName: name), label: {
+                        NavigationLink(destination: GameCollectionView(gameName: name), label: {
                             GameTap(gameName: name)
-//                        })
+                        })
                         
                     }
                 }
