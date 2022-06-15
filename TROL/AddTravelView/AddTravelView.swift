@@ -66,8 +66,8 @@ struct AddTravelView: View {
                         
                         Spacer()
                         
-                        Button {
-                            print("add this area later")
+                        NavigationLink {
+                            RoleDictionaryView()
                         } label: {
                             Image(systemName: "info.circle")
                                 .foregroundColor(Color("TrolGreen"))
