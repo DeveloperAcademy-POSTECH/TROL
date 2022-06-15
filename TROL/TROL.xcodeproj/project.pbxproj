@@ -32,6 +32,8 @@
 		835443E9284F4CD400AF2F1F /* RoleGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835443E8284F4CD400AF2F1F /* RoleGameView.swift */; };
 		835443EB284F4CE400AF2F1F /* ProgressingMyTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835443EA284F4CE400AF2F1F /* ProgressingMyTravelView.swift */; };
 		838273A82851D81B00FC6301 /* LadderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838273A72851D81B00FC6301 /* LadderView.swift */; };
+		BF21EA0D2858BBCE00560BD3 /* RoleDictionaryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF21EA0C2858BBCE00560BD3 /* RoleDictionaryDetailView.swift */; };
+		BF21EA0F2858BC0300560BD3 /* RoleDictionaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF21EA0E2858BC0300560BD3 /* RoleDictionaryView.swift */; };
 		BFA9F3762854870B0026D60D /* TapTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA9F3752854870B0026D60D /* TapTap.swift */; };
 		E15840B12851C25900F39095 /* Happiness-Sans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E15840AE2851C25900F39095 /* Happiness-Sans-Bold.ttf */; };
 		E15840B22851C25900F39095 /* Happiness-Sans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E15840AF2851C25900F39095 /* Happiness-Sans-Regular.ttf */; };
@@ -90,6 +92,8 @@
 		835443E8284F4CD400AF2F1F /* RoleGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleGameView.swift; sourceTree = "<group>"; };
 		835443EA284F4CE400AF2F1F /* ProgressingMyTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressingMyTravelView.swift; sourceTree = "<group>"; };
 		838273A72851D81B00FC6301 /* LadderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LadderView.swift; sourceTree = "<group>"; };
+		BF21EA0C2858BBCE00560BD3 /* RoleDictionaryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleDictionaryDetailView.swift; sourceTree = "<group>"; };
+		BF21EA0E2858BC0300560BD3 /* RoleDictionaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleDictionaryView.swift; sourceTree = "<group>"; };
 		BFA9F3752854870B0026D60D /* TapTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapTap.swift; sourceTree = "<group>"; };
 		E15840AE2851C25900F39095 /* Happiness-Sans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Happiness-Sans-Bold.ttf"; sourceTree = "<group>"; };
 		E15840AF2851C25900F39095 /* Happiness-Sans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Happiness-Sans-Regular.ttf"; sourceTree = "<group>"; };
@@ -135,6 +139,8 @@
 				36D96F4E28503F560076BFE5 /* GridView.swift */,
 				36477E85284F79C00067B480 /* FriendRoleView.swift */,
 				36D96F50285046460076BFE5 /* RoleRectangleView.swift */,
+				BF21EA0E2858BC0300560BD3 /* RoleDictionaryView.swift */,
+				BF21EA0C2858BBCE00560BD3 /* RoleDictionaryDetailView.swift */,
 			);
 			path = MyTravelView;
 			sourceTree = "<group>";
@@ -413,6 +419,7 @@
 				835443BF284F4C7500AF2F1F /* Persistence.swift in Sources */,
 				E15840B62851CA7600F39095 /* MyRoleView.swift in Sources */,
 				36477E86284F79C00067B480 /* FriendRoleView.swift in Sources */,
+				BF21EA0F2858BC0300560BD3 /* RoleDictionaryView.swift in Sources */,
 				835443B8284F4C7200AF2F1F /* ContentView.swift in Sources */,
 				E15840B82851CAA500F39095 /* TicketInfoView.swift in Sources */,
 				36D96F4F28503F560076BFE5 /* GridView.swift in Sources */,
@@ -429,6 +436,7 @@
 				36477E88284F79D00067B480 /* EmptyMyTravelView.swift in Sources */,
 				36D96F51285046460076BFE5 /* RoleRectangleView.swift in Sources */,
 				36D4C2A92850E18700A585E6 /* AddTravelView.swift in Sources */,
+				BF21EA0D2858BBCE00560BD3 /* RoleDictionaryDetailView.swift in Sources */,
 				36F7E97D28572A9C009EC456 /* RoleCustomView.swift in Sources */,
 				365CE5A82851E8B60000BC6A /* Model.swift in Sources */,
 				835443B6284F4C7200AF2F1F /* TROLApp.swift in Sources */,

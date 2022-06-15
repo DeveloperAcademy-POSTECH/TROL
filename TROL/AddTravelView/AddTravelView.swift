@@ -9,8 +9,8 @@ import SwiftUI
 
 struct AddTravelView: View {
     
-//    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-//    @Binding var isTravelExist: Bool
+    //    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    //    @Binding var isTravelExist: Bool
     @EnvironmentObject var travelData: TravelData
     @EnvironmentObject var roleData: RoleData
     
@@ -51,13 +51,13 @@ struct AddTravelView: View {
                         .font(.custom("Happiness-Sans-Bold", size: 22))
                     
                     Spacer()
-                    
-                    Button {
-                        print("add this area later")
-                    } label: {
+                    NavigationLink(destination: {
+                        RoleDictionaryView()
+                    }, label: {
                         Image(systemName: "info.circle")
                             .foregroundColor(Color("TrolGreen"))
-                    }
+                            .padding(.horizontal, 10)
+                    })
                 }
                 
                 HStack {
@@ -87,9 +87,9 @@ struct AddTravelView: View {
                     ForEach(roleData.roles.indices, id: \.self) { i in
                         RoleGridView(role: $roleData.roles[i])
                             .onTapGesture {
-//                                print("\(roleData.roles[i].name) called")
+                                //                                print("\(roleData.roles[i].name) called")
                                 roleData.roles[i].isChecked.toggle()
-//                                print("\(roles[i].name): \(roleData.roles[i].isCheck)")
+                                //                                print("\(roles[i].name): \(roleData.roles[i].isCheck)")
                                 
                                 if roleData.roles[i].isChecked { selectedRoles.append(roleData.roles[i]) }
                                 else {
@@ -115,15 +115,15 @@ struct AddTravelView: View {
                 
                 // 여행 저장 버튼
                 Button {
-//                    isTravelExist.toggle()
+                    //                    isTravelExist.toggle()
                     
                     travelData.saveTravel(isExist: true, name: travelName, startDate: travelStartDate, endDate: travelEndDate, usingRoles: selectedRoles)
                     
                     print("\(travelData.travel)")
                     print("\(travelData.travel.isExist)")
-//                    print(travelData.travel.usingRoles)
-//                    print(travelData.travel)
-//                    self.presentationMode.wrappedValue.dismiss()
+                    //                    print(travelData.travel.usingRoles)
+                    //                    print(travelData.travel)
+                    //                    self.presentationMode.wrappedValue.dismiss()
                 } label: {
                     Text("새로운 여행 저장하기")
                         .foregroundColor(.white)
@@ -137,7 +137,7 @@ struct AddTravelView: View {
                 
             }//scrollview
         }//vstack
-//        .padding()
+        //        .padding()
     }
 }
 
