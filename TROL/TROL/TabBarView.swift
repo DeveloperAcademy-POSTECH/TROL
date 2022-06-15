@@ -12,7 +12,7 @@ struct TabBarView: View {
     
     var body: some View {
         TabView(selection: $selection){
-            MyRoleView()
+            MyRoleView(selection: $selection)
                 .tabItem{
                     MyRoleTab()
                 }

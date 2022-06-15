@@ -18,6 +18,7 @@ struct MyRoleView: View {
     @EnvironmentObject var travelData: TravelData
     @EnvironmentObject var roleData: RoleData
  
+    @Binding var selection: Int
     
     var body: some View {
         ScrollView {
@@ -29,7 +30,7 @@ struct MyRoleView: View {
                         Spacer().frame(height: 13)
                     ZStack(alignment: .topLeading) {
                         TicketBackgroundView()
-                        TicketContentView().padding(EdgeInsets(top: 21, leading: 18, bottom: 0, trailing: 0)) // 여행 이름 역할 등 티켓 내용
+                        TicketContentView().padding(EdgeInsets(top: 21, leading: 18, bottom: 0, trailing: 0))
                     }
                         Spacer().frame(height: 14)
                     TicketInfoView()
@@ -45,7 +46,7 @@ struct MyRoleView: View {
                         Spacer().frame(height: 203)
                         ZStack(alignment: .topLeading) {
                             TicketBackgroundView()
-                            TicketContentView().padding(EdgeInsets(top: 21, leading: 18, bottom: 0, trailing: 0)) // 여행 이름 역할 등 티켓 내용
+                            TicketContentView().padding(EdgeInsets(top: 21, leading: 18, bottom: 0, trailing: 0))
                         }
                     }
                     Spacer().frame(height: 149)
@@ -53,6 +54,7 @@ struct MyRoleView: View {
                         Text("아직 나의 역할이 분배되지 않았어요!").font(.system(size: 12))
                         //역할 분배하러가기 버튼(TabBar) RoleGameView
                         Button {
+                            selection = 1
 
                         } label: {
                             Text("역할 분배 하러가기")
@@ -133,10 +135,10 @@ struct TicketContentView: View{
     }
 }
 
-struct MyRoleView_Previews: PreviewProvider {
-    static var previews: some View {
-        MyRoleView()
-            .environmentObject(TravelData())
-            .environmentObject(RoleData())
-    }
-}
+//struct MyRoleView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MyRoleView()
+//            .environmentObject(TravelData())
+//            .environmentObject(RoleData())
+//    }
+//}
