@@ -11,20 +11,15 @@ import UIKit
 struct ChopsticksView: View {
     @EnvironmentObject var travelData: TravelData
     @EnvironmentObject var roleData: RoleData
-    
+
     @State private var isGameStarted: Bool = true
     @State private var isGameEnded: Bool = false
     @State private var isGameResult: Bool = false
-    
+
     @State private var isTapped: [Bool] = [false]
-    
+
     var chopstickUsers: ChopstickGame {
-        get {
-            return ChopstickGame(travelData: travelData)
-        }
-        set {
-            self.chopstickUsers = ChopstickGame(travelData: travelData)
-        }
+        return ChopstickGame(travelData: travelData)
     }
     
     let screenWidth = UIScreen.main.bounds.size.width
@@ -39,7 +34,7 @@ struct ChopsticksView: View {
                 HStack(spacing: 40){
                     ForEach(0..<chopstickUsers.users.count){ index in
                         VStack{
-                            
+                            Text("\(chopstickUsers.heights[index])")
                             Rectangle()
                                 .foregroundColor(.black)
                                 .frame(width: 40, height: CGFloat(chopstickUsers.heights[index]), alignment: .leading)
@@ -52,14 +47,14 @@ struct ChopsticksView: View {
 //                            Text("\(tempChop[index].name):\(tempChop[index].myHeight, specifier: "%.0lf")")
                             Spacer().frame(height: 50)
                         }
-                        .onAppear {
-//                            chopstickUsers.heights[index] = randomHeight.randomElement() ?? 400.0
-                            chopstickUsers.changeHeight(randomHeight.randomElement() ?? 400.0)
-                        }
+//                        .onAppear {
+////                            chopstickUsers.heights[index] = randomHeight.randomElement() ?? 400.0
+//                            chopstickUsers.changeHeight(randomHeight.randomElement() ?? 400.0)
+//                        }
                     }
-                    
+
                     }
-                    
+
 //            HStack(spacing: 40){
 //                ForEach(0..<tempChop.count){ index in
 //                    chopstick(tempperson: tempChop[index])
@@ -92,7 +87,7 @@ struct ChopsticksView: View {
         }
         }
         else if(isGameEnded){
-            
+
         }
     }
 }
@@ -131,6 +126,8 @@ struct ChopstickGame {
     var isHeightSet: [Bool] = []
     var heights: [Double] = []
     var usersIndex: Int = 0
+
+    private var randomHeight: [Double] = [350.0, 330.0, 300.0, 400.0, 370.0]
     
     init(travelData: TravelData){
         self.travelData = travelData
@@ -138,7 +135,7 @@ struct ChopstickGame {
         self.isTransition = false
         for _ in 0..<users.count{
             self.Role.append("")
-            self.heights.append(300.0)
+            self.heights.append(randomHeight.randomElement() ?? 400)
             self.isHeightSet.append(false)
         }
     }
