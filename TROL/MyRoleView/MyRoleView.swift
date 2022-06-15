@@ -17,40 +17,56 @@ struct MyRoleView: View {
     
     @EnvironmentObject var travelData: TravelData
     @EnvironmentObject var roleData: RoleData
+ 
     
     var body: some View {
         ScrollView {
             
-            
-            VStack(alignment: .leading) {
-                Text("나의 여행티켓").bold().font(.system(size: 28))
-                ZStack(alignment: .topLeading) {
-                    TicketBackgroundView()
-                    TicketContentView().padding(EdgeInsets(top: 21, leading: 18, bottom: 0, trailing: 0))
+            if let _ = travelData.travel.users[0].myRole{ //역할 O : 기존페이지
+                VStack(alignment: .leading) {
+                    VStack(alignment: .leading){
+                    Text("나의 여행티켓").bold().font(.system(size: 28))
+                        Spacer().frame(height: 13)
+                    ZStack(alignment: .topLeading) {
+                        TicketBackgroundView()
+                        TicketContentView().padding(EdgeInsets(top: 21, leading: 18, bottom: 0, trailing: 0)) // 여행 이름 역할 등 티켓 내용
+                    }
+                        Spacer().frame(height: 14)
+                    TicketInfoView()
+                    }.padding(.leading,18)
+                    Spacer().frame(height: 21)
+                        TodoListView()
+                    
+                }
+            } else { //역할X
+                VStack(spacing: 0) {
+                    VStack(alignment: .leading){
+                        Text("나의 여행티켓").bold().font(.system(size: 28))
+                        Spacer().frame(height: 203)
+                        ZStack(alignment: .topLeading) {
+                            TicketBackgroundView()
+                            TicketContentView().padding(EdgeInsets(top: 21, leading: 18, bottom: 0, trailing: 0)) // 여행 이름 역할 등 티켓 내용
+                        }
+                    }
+                    Spacer().frame(height: 149)
+                    VStack(alignment: .center){
+                        Text("아직 나의 역할이 분배되지 않았어요!").font(.system(size: 12))
+                        //역할 분배하러가기 버튼(TabBar) RoleGameView
+                        Button {
+
+                        } label: {
+                            Text("역할 분배 하러가기")
+                                .foregroundColor(.white)
+                                .font(.custom("Happiness-Sans-Bold", size: 17))
+                                .bold()
+                                .frame(width: 354, height: 54)
+                                .background(Color("TrolGreen"))
+                                .cornerRadius(10)
+                        }
+                    }
                 }
             }
-            
-//            if let travelData.travel.users[0].myRole {
-//                Text("\(realTempRole.name)")
-//                    .bold()
-//                    .font(.system(size: 20))
-//            } else {
-//                Text("-")
-//                    .bold()
-//                    .font(.system(size: 20))
-//            }
-            
-            TicketInfoView()
-            if let _ = travelData.travel.users[0].toDoList {
-                TodoListView()
-            }
-            
-            
-            //1. 역할 존재여부
-            //2. 여행 존재여부
-            
         }
-        
     }
 }
 

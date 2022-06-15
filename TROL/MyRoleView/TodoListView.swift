@@ -22,7 +22,6 @@ struct TodoListView: View {
                 Text("내가 할 일").bold().font(.system(size: 28))
                     .padding([.leading], 18.5)
             }
-            
             Button(action: {
                 self.showTodoCreate = true
             }) {

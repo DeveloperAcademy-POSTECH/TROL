@@ -59,7 +59,7 @@ struct TodoCreateView: View {
             
             TodoInfoView().padding(EdgeInsets(top: 14.5, leading: 18.5, bottom: 0, trailing: 0))
             
-            Spacer()
+            Spacer().frame(height: 217)
             
             Button(action: {
                 travelData.travel.users[0].toDoList?.append(ToDoList(id: 10, title: newTodo, isChecked: false))
@@ -74,6 +74,7 @@ struct TodoCreateView: View {
                             .bold()
                     )
             }.padding([.leading], 18.5)
+            
             
         }
     }
