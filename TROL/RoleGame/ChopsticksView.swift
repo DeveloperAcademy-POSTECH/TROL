@@ -12,9 +12,9 @@ struct ChopsticksView: View {
     @EnvironmentObject var travelData: TravelData
     @EnvironmentObject var roleData: RoleData
 
-    @State private var isGameStarted: Bool = true
-    @State private var isGameEnded: Bool = false
-    @State private var isGameResult: Bool = false
+    @Binding var isGameStarted: Bool
+    @Binding var isGameEnded: Bool
+    @Binding var isGameResult: Bool
 
     @State private var isTapped: [Bool] = [false]
 
@@ -27,7 +27,7 @@ struct ChopsticksView: View {
     var randomAngle: [Double] {return [-0.3,-0.2, -0.1, 0, 0.1, 0.2, 0.3]}
     var randomHeight: [Double] = [350.0, 330.0, 300.0, 400.0, 370.0]
     var body: some View {
-        if(isGameStarted){
+//        if(isGameStarted){
         ZStack{
             VStack{
                 Spacer().frame(height: 100)
@@ -86,10 +86,7 @@ struct ChopsticksView: View {
             .ignoresSafeArea()
         }
         }
-        else if(isGameEnded){
-
-        }
-    }
+//    }
 }
 
 //struct chopstick: View{
@@ -163,10 +160,10 @@ struct ChopstickGame {
     }
 }
 
-
-struct chopsticks_Previews: PreviewProvider {
-    static var previews: some View {
-        ChopsticksView()
-            .environmentObject(TravelData())
-    }
-}
+//
+//struct chopsticks_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ChopsticksView()
+//            .environmentObject(TravelData())
+//    }
+//}
