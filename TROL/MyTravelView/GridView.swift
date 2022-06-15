@@ -17,16 +17,16 @@ struct GridView: View {
                 .fill(Color("TrolDimGray"))
                 .frame(width: 110, height: 110)
             
-            Text(testFriend.name)
-                .foregroundColor(.black)
-                .offset(x: -33, y: 40)
-            
             Image("HiBear")
                 .resizable()
                 .scaledToFill()
                 .offset(x: 15, y: 30)
                 .frame(width: 110, height: 110)
                 .clipped()
+            
+            Text(testFriend.name)
+                .foregroundColor(.black)
+                .offset(x: -33, y: 40)
         }
     }
 }

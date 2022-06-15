@@ -164,8 +164,8 @@
 				36D4C2A82850E18700A585E6 /* AddTravelView.swift */,
 				36094D0C2850FB3F00132DE5 /* RoleGridView.swift */,
 				36094D0E2851026200132DE5 /* CustomGridView.swift */,
-				36553A632850EBE80095016B /* TravelRole.swift */,
 				36F7E97C28572A9C009EC456 /* RoleCustomView.swift */,
+				36553A632850EBE80095016B /* TravelRole.swift */,
 			);
 			path = AddTravelView;
 			sourceTree = "<group>";

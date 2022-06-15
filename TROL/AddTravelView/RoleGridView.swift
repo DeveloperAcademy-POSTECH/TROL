@@ -23,16 +23,58 @@ struct RoleGridView: View {
                     .frame(width: 110, height: 110)
             }
             
-            Text("\(role.name)")
-                .foregroundColor(.black)
-                .offset(x: -33, y: 40)
-            
             Image("HiBear")
                 .resizable()
                 .scaledToFill()
                 .offset(x: 15, y: 30)
                 .frame(width: 110, height: 110)
                 .clipped()
+            
+            
+            switch role.name.count {
+            case 1:
+                Text("\(role.name)")
+                    .font(.custom("Happiness-Sans-Regular", size: 12))
+                    .foregroundColor(.black)
+                    .lineLimit(1)
+                    .offset(x: -33, y: 38)
+            case 2:
+                Text("\(role.name)")
+                    .font(.custom("Happiness-Sans-Regular", size: 12))
+                    .foregroundColor(.black)
+                    .lineLimit(1)
+                    .offset(x: -28, y: 38)
+            case 3:
+                Text("\(role.name)")
+                    .font(.custom("Happiness-Sans-Regular", size: 12))
+                    .foregroundColor(.black)
+                    .lineLimit(1)
+                    .offset(x: -23, y: 38)
+            case 4:
+                Text("\(role.name)")
+                    .font(.custom("Happiness-Sans-Regular", size: 12))
+                    .foregroundColor(.black)
+                    .lineLimit(1)
+                    .offset(x: -18, y: 38)
+            case 5:
+                Text("\(role.name)")
+                    .font(.custom("Happiness-Sans-Regular", size: 12))
+                    .foregroundColor(.black)
+                    .lineLimit(1)
+                    .offset(x: -13, y: 38)
+            case 6:
+                Text("\(role.name)")
+                    .font(.custom("Happiness-Sans-Regular", size: 12))
+                    .foregroundColor(.black)
+                    .lineLimit(1)
+                    .offset(x: -10, y: 38)
+            default:
+                Text("\(role.name)")
+                    .font(.custom("Happiness-Sans-Regular", size: 12))
+                    .foregroundColor(.black)
+                    .lineLimit(1)
+                    .offset(x: 0, y: 40)
+            }
         }
     }
 }
