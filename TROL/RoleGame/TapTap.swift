@@ -46,7 +46,7 @@ struct TapTap: View {
                     .onReceive(timer){_ in
                         startTime -= 1
                     }
-                
+                //북 모양
                 ZStack{
                     Circle().fill(Color("TrolYellow")).frame(width: 250, height: 250)
                     Circle().fill(.green).frame(width: 200, height: 200)
@@ -60,13 +60,14 @@ struct TapTap: View {
                         }
                         Circle().trim(from: 0.0,to: 0.5).fill(.red).opacity(0.75).frame(width:150, height:60)
                         
-                    }
+                    };
                     
-                }
+                }.navigationTitle("TapTap!")
+                
                 
                 //게임 탭 한 횟수 표시
                 Text("you tap \(CountTap) !")
-                    //.foregroundColor(Color("TrolGreen"))
+                //.foregroundColor(Color("TrolGreen"))
                     .font(.system(size: 30))
                     .padding()
                     .background(RoundedRectangle(cornerRadius: 7).fill(Color("TrolYellow")))
@@ -97,22 +98,41 @@ struct AfterGame:View{
     var body: some View{
         VStack{
             Spacer()
-            Text("you tap \(CountTap)!")
+            Text("you got \(CountTap) point!")
+                .multilineTextAlignment(.center)
+                .font(.system(size: 50))
+                .frame(width:300, height:300 )
+                .padding()
+                .background(RoundedRectangle(cornerRadius: 7).fill(Color("TrolYellow")))
                 .foregroundColor(Color("TrolGreen"))
                 .navigationBarHidden(true)
+            
             Spacer()
-            Button("선택하러 가기"){
-                //순위 뷰로 넘어가기
-                confirmResult = true
-                
-            }.buttonStyle(.bordered)
+            //다음으로 가기
             NavigationLink(destination: GameResult(),isActive: $confirmResult, label:{
-                Text("")
+                Text("")})
+            //선택하러 가기 버튼
+            Button(action: {
+                confirmResult = true
+            }, label:{
+                RoundedRectangle(cornerRadius: 10)
+                    .fill(Color("TrolGreen"))
+                    .frame(width: 354, height: 50)
+                    .overlay(
+                        Text("선택하러 가기")
+                            .foregroundColor(Color.white)
+                            .bold()
+                    )
+                
             })
-        }
+            
+        }//vstack
+        .navigationTitle("TapTap결과창")
+        
+        
     }
 }
-//순위대로 역할 선택하기
+//순위대로 역할 선택하기 //추후 버킬코드로 갈아 끼울 예정
 struct GameResult: View{
     @State private var tempRole = ["총무", "드라이버", "광대", "요리사"]
     var columns: [GridItem] = [
@@ -123,7 +143,42 @@ struct GameResult: View{
         
         ScrollView{
             VStack{
-                Text("역할을 선택하세요")
+                HStack(alignment: .center, spacing: 200) {
+                    Text("역할 선택하기")
+                        .font(.custom("Happiness-Sans-Bold", size: 22))
+                    
+                    
+                    Button {
+                        print("add this area later")
+                    } label: {
+                        Image(systemName: "info.circle")
+                            .foregroundColor(Color("TrolGreen"))
+                    }
+                    
+                }
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text("각 역할들의 디테일이 궁금할 땐?")
+                            .font(.custom("Happiness-Sans-Bold", size: 12))
+                        
+                        HStack {
+                            Image(systemName: "info.circle")
+                                .font(Font.subheadline.weight(.light))
+                            
+                            Text("를 클릭하면 역할 도감을 볼 수 있어요!")
+                                .font(.custom("Happiness-Sans-Regular", size: 12))
+                                .offset(x: -8)
+                        }
+                    }
+                    
+                    Spacer()
+                    
+                    Text("👀")
+                }
+                .padding()
+                .background(Color("TrolIvory"))
+                .cornerRadius(10)
+                
                 
                 LazyVGrid(columns: columns, alignment: .center, spacing: 20){
                     ForEach(tempRole, id:\.self){i in
@@ -139,15 +194,17 @@ struct GameResult: View{
                                     .foregroundColor(.black)
                             }
                         })
-                        
                     }
                 }
-            }.navigationBarHidden(true)
-        }
+            }
+        }.navigationBarHidden(true)
     }
 }
+
 struct TapTap_Previews: PreviewProvider {
     static var previews: some View {
-        TapTap()
+                        TapTap()
+        //        AfterGame(CountTap: 3)
+//        GameResult()
     }
 }
