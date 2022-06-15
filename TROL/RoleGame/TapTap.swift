@@ -56,8 +56,90 @@ struct TapTap: View {
     
     var body: some View {
         ZStack{
-        VStack(alignment: .center,spacing: 60){
-            //탭탭 제목
+            VStack(alignment: .center,spacing: 60){
+                //탭탭 제목
+                Text("탭탭!")
+                    .foregroundColor(Color("TrolGreen"))
+                    .font(.custom("Happiness-Sans-Bold", size: 28))
+                    .bold()
+                    .background(Image("Cloud")
+                        .resizable().frame(width: 261, height: 90))
+                    .padding(.top, 100)
+                
+                //남은시간
+                VStack(spacing: 11){
+                    //아무데나 탭하세요
+                    Text("아무데나 탭하세요")
+                        .foregroundColor(.black)
+                    Text("남은 시간 ")
+                        .font(.custom("Happiness-Sans-Bold", size: 17))
+                    
+                    ZStack(alignment:.center){
+                        Image("ClockFrame")
+                        Text("\(timeRemaining)")
+                            .font(.system(size: 50))
+                            .onReceive(timer){_ in
+                                if isGameStart{
+                                    timeRemaining -= 1
+                                    if timeRemaining == 0{
+                                        isGameEnd = true
+                                    }
+                                }
+                            }
+                    }
+                }.foregroundColor(Color("TrolGreen"))
+                
+                //            //게임 시작 시간 표시
+                //            Text(startTime >= 1 ? "\(startTime)초 후 시작합니다!" : "탭하세요!")
+                //                .onReceive(timer){_ in
+                //                    startTime -= 1
+                //                }
+                Spacer()
+                //게임 탭 한 횟수 표시
+                VStack(alignment: .center){
+                    Text("내가 탭한 횟수")
+                        .font(.custom("Happiness-Sans-Title", size: 17))
+                        .padding(.top)
+                    Text("\(CountTap)")
+                        .font(.custom("Happiness-Sans-Title", size: 120))
+                    
+                    NavigationLink(destination:AfterGame(CountTap: CountTap),isActive: $isGameEnd, label: {
+                        Text("")
+                    })
+                }.foregroundColor(Color("TrolGreen"))
+                    .frame(width: 354, height:192)
+                
+                    .background(Color("TrolIvory"))
+                    .padding(.bottom)
+                
+                
+            }
+            
+            .navigationBarHidden(true)
+            //        .frame(width: screenWidth, height: screenHeight)
+            .onAppear(perform: {
+                DispatchQueue.main.asyncAfter(deadline: .now()+3){
+                    print("Start~")
+                    isGameStart = true                }
+            })
+            //        .contentShape(Rectangle()).ignoresSafeArea(.all)  //전체 화면 터치 위해
+            .onTapGesture {
+                if isGameStart{
+                    CountTap += 1   //화면 터치시 CountTap +1
+                }
+            }
+            
+        }
+    }
+}
+//게임이 끝나고 결과 확인
+struct AfterGame:View{
+    //임시 유저
+    @StateObject var tempUsers = TempUsers()
+    var CountTap: Int
+    @State private var confirmResult :Bool = false
+    var body: some View{
+        VStack{
             Text("탭탭!")
                 .foregroundColor(Color("TrolGreen"))
                 .font(.custom("Happiness-Sans-Bold", size: 28))
@@ -65,90 +147,50 @@ struct TapTap: View {
                 .background(Image("Cloud")
                     .resizable().frame(width: 261, height: 90))
                 .padding(.top, 100)
-            
-            //남은시간
-            VStack(spacing: 11){
-                //아무데나 탭하세요
-                Text("아무데나 탭하세요")
-                    .foregroundColor(.black)
-                Text("남은 시간 ")
-                    .font(.custom("Happiness-Sans-Bold", size: 17))
-                
-                ZStack(alignment:.center){
-                    Image("ClockFrame")
-                    Text("\(timeRemaining)")
-                        .font(.system(size: 50))
-                        .onReceive(timer){_ in
-                            if isGameStart{
-                                timeRemaining -= 1
-                                if timeRemaining == 0{
-                                    isGameEnd = true
-                                }
-                            }
-                        }
+                .padding(.bottom, 50)
+            HStack(alignment:.top, spacing:75){
+                VStack{
+                    Spacer().frame(height:25)
+                    Text("내가 탭한 횟수")
+                        .font(.custom("Happiness-Sans-Title", size: 17))
                 }
-            }.foregroundColor(Color("TrolGreen"))
-            
-            //            //게임 시작 시간 표시
-            //            Text(startTime >= 1 ? "\(startTime)초 후 시작합니다!" : "탭하세요!")
-            //                .onReceive(timer){_ in
-            //                    startTime -= 1
-            //                }
-            Spacer()
-            //게임 탭 한 횟수 표시
-            VStack(alignment: .center){
-                Text("내가 탭한 횟수")
-                    .font(.custom("Happiness-Sans-Title", size: 17))
-                    .padding(.top)
                 Text("\(CountTap)")
                     .font(.custom("Happiness-Sans-Title", size: 120))
-                
-                NavigationLink(destination:AfterGame(CountTap: CountTap),isActive: $isGameEnd, label: {
-                    Text("")
-                })
             }.foregroundColor(Color("TrolGreen"))
-                .frame(width: 354, height:192)
             
-                .background(Color("TrolIvory"))
-                .padding(.bottom)
-            
-            
-        }
-        
-        .navigationBarHidden(true)
-        //        .frame(width: screenWidth, height: screenHeight)
-            .onAppear(perform: {
-                DispatchQueue.main.asyncAfter(deadline: .now()+3){
-                    print("Start~")
-                    isGameStart = true                }
-            })
-        //        .contentShape(Rectangle()).ignoresSafeArea(.all)  //전체 화면 터치 위해
-            .onTapGesture {
-                if isGameStart{
-                    CountTap += 1   //화면 터치시 CountTap +1
+                .frame(width:354,height:146)
+                .background(RoundedRectangle(cornerRadius: 8).fill(Color("TrolIvory")))
+            VStack{
+                HStack{
+                    Text("랭킹 살펴보기")
+                        .padding()
+                        .font(.custom("Happiness-Sans-Title", size: 28))
+                    Spacer()
+                }
+                
+                List{
+                    
+                    ForEach(tempUsers.sortedRank.indices, id: \.self){index in
+                        HStack(spacing:15){
+                            Text("\(index + 1)")
+                            Text(tempUsers.sortedRank[index].name)
+                            Spacer()
+                            Text("\(tempUsers.sortedRank[index].countTap)")
+                        }
+                        .foregroundColor(tempUsers.sortedRank[index].name == "오션" ? Color("TrolGreen") : Color.black)
+                    }.font(.custom("Happiness-Sans-Regular", size: 17))
+                        
+                }.listStyle(.inset)
+                
+            }.onAppear(){
+                for index in tempUsers.tempRank.indices{
+                    if tempUsers.tempRank[index].name == "오션" {
+                        tempUsers.tempRank[index].countTap = CountTap
+                    }
                 }
             }
-        
-        }   
-    }
-}
-//게임이 끝나고 결과 확인
-struct AfterGame:View{
-    var CountTap: Int
-    @State private var confirmResult :Bool = false
-    var body: some View{
-        VStack{
             Spacer()
-            Text("you got \(CountTap) point!")
-                .multilineTextAlignment(.center)
-                .font(.system(size: 50))
-                .frame(width:300, height:300 )
-                .padding()
-                .background(RoundedRectangle(cornerRadius: 7).fill(Color("TrolYellow")))
-                .foregroundColor(Color("TrolGreen"))
-                .navigationBarHidden(true)
             
-            Spacer()
             //다음으로 가기
             NavigationLink(destination: GameResult(),isActive: $confirmResult, label:{
                 Text("")})
@@ -168,7 +210,8 @@ struct AfterGame:View{
             })
             
         }//vstack
-        .navigationTitle("TapTap결과창")
+        .navigationBarHidden(true)
+        
         
         
     }
@@ -244,10 +287,38 @@ struct GameResult: View{
 
 struct TapTap_Previews: PreviewProvider {
     static var previews: some View {
-        //        BeforeTap()
-        TapTap()
-        //        AfterGame(CountTap: 3)
+                        BeforeTap()
+        //        TapTap()
+//        AfterGame(CountTap: 3)
         //        GameResult()
     }
 }
 
+
+//임시 데이터 모델
+
+//임시 유저, 이름과 탭한 횟수를 받아옴
+struct TempUserRank {
+    var name: String
+    var countTap: Int
+}
+//임시 사람들
+class TempUsers: ObservableObject{
+    @Published var tempRank = [
+        TempUserRank(name: "밀키", countTap: 34),
+        TempUserRank(name: "준", countTap: 22),
+        TempUserRank(name: "버킬", countTap: 28),
+        TempUserRank(name: "오션", countTap: 32),
+        TempUserRank(name: "린다", countTap: 11),
+        TempUserRank(name: "데일", countTap: 18)
+    ]
+    //countTap에 따라 순위를 다시 재설정함
+    var sortedRank: [TempUserRank] {
+        get {
+            tempRank.sorted(by: { $0.countTap > $1.countTap })
+        }
+        set {
+            tempRank = newValue
+        }
+    }
+}
