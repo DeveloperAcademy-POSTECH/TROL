@@ -14,21 +14,6 @@ struct TodoListView: View {
     
     @State private var showTodoCreate = false
     @State private var showTodoUpdate = false
-    
-    struct ToDo: Identifiable{
-        var id:Int
-        var title: String
-        var isChecked: Bool = false
-    }
-    
-    private var todo = [
-        ToDo(id: 0, title: "항공권 가격 비교하기", isChecked: true),
-        ToDo(id: 1, title: "항공권 예약하기", isChecked: false),
-        ToDo(id: 2, title: "숙소+항공권 가격 정산", isChecked: false),
-        ToDo(id: 3, title: "숙소 알아보기", isChecked: true),
-        ToDo(id: 4, title: "내 계좌 알려주기", isChecked: true)
-    ]
-    
     @State private var checked = false
     
     var body: some View {
@@ -62,6 +47,10 @@ struct TodoListView: View {
                 CheckView(isChecked: item.isChecked, title: item.title)
                     .onTapGesture {
                         showTodoUpdate.toggle()
+                    }
+                    .sheet(isPresented: self.$showTodoUpdate){
+                        TodoUpdateView()
+//                        TodoUpdateView(todoId: self.$travelData.travel.users[0].toDoList.)
                     }
             }
             Divider()

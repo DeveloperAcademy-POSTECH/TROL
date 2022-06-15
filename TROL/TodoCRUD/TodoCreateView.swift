@@ -90,7 +90,7 @@ struct ClearButton: ViewModifier {
             }) {
                 Image(systemName: "multiply")
                     .foregroundColor(.secondary)
-                    .padding([.trailing], 18.5)
+                    .padding(.trailing, 18.5)
             }
         }
     }

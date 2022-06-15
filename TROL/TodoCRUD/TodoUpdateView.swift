@@ -11,7 +11,8 @@ struct TodoUpdateView: View {
     @EnvironmentObject var travelData: TravelData
     @EnvironmentObject var roleData: RoleData
     
-    @State private var newTodo: String = ""
+    @State private var updateTodo: String = ""
+//    @Binding private var todoId: Int
     @Environment(\.presentationMode) var presentation
     
     var body: some View {
@@ -41,7 +42,7 @@ struct TodoUpdateView: View {
             
             TextField(
                 "내용을 적어 주세요!",
-                text: $newTodo
+                text: $updateTodo
             )
                 .disableAutocorrection(true)
                 .padding(.leading, 18)
@@ -60,7 +61,7 @@ struct TodoUpdateView: View {
             Spacer()
             
             Button(action: {
-                travelData.travel.users[0].toDoList?.append(ToDoList(id: 10, title: newTodo, isChecked: false))
+                travelData.travel.users[0].toDoList?.append(ToDoList(id: 10, title: updateTodo, isChecked: false))
                 presentation.wrappedValue.dismiss()
             }) {
                 RoundedRectangle(cornerRadius: 10)

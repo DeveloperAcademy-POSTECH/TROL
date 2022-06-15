@@ -19,7 +19,8 @@ struct MyRoleView: View {
     @EnvironmentObject var roleData: RoleData
     
     var body: some View {
-        ScrollView{
+        ScrollView {
+            
             
             VStack(alignment: .leading) {
                 Text("나의 여행티켓").bold().font(.system(size: 28))
@@ -28,11 +29,26 @@ struct MyRoleView: View {
                     TicketContentView().padding(EdgeInsets(top: 21, leading: 18, bottom: 0, trailing: 0))
                 }
             }
+            
+//            if let travelData.travel.users[0].myRole {
+//                Text("\(realTempRole.name)")
+//                    .bold()
+//                    .font(.system(size: 20))
+//            } else {
+//                Text("-")
+//                    .bold()
+//                    .font(.system(size: 20))
+//            }
+            
             TicketInfoView()
             if let _ = travelData.travel.users[0].toDoList {
                 TodoListView()
             }
-//            TodoListView()
+            
+            
+            //1. 역할 존재여부
+            //2. 여행 존재여부
+            
         }
         
     }
@@ -64,12 +80,7 @@ struct TicketContentView: View{
     
     @EnvironmentObject var travelData: TravelData
     @EnvironmentObject var roleData: RoleData
-//    static let dateformat: DateFormatter {
-//        let formatter = DateFormatter()
-//        formatter.dateFormat = "YYYY.MM.DD"
-//        return formatter
-//    }()
-//    guard let realTempRole = self.travelData.travel.users[0].myRole else{ return }
+    
     var body: some View{
         VStack(alignment:.leading, spacing: 32){
             VStack(alignment:.leading){
@@ -95,7 +106,7 @@ struct TicketContentView: View{
                             .bold()
                             .font(.system(size: 20))
                     } else {
-                        Text("")
+                        Text("-")
                             .bold()
                             .font(.system(size: 20))
                     }
