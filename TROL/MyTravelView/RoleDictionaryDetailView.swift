@@ -15,21 +15,22 @@ struct RoleDictionaryDetailView: View {
             ForEach(roleData.roles.indices, id: \.self) { i in
                 //역할 이름 & 이미지
                 VStack(alignment: .leading, spacing: 33){
+//                    Spacer().frame(height: 15)
                     ZStack{
                         RoundedRectangle(cornerRadius: 10)
-                            .frame(width: 354, height: 160)
+                            .frame(width: 354, height: 80)
                             .foregroundColor(Color("TrolYellow"))
                             .padding(.horizontal)
                         
                         Image("HiBear")
                             .resizable()
                             .scaledToFill()
-                            .frame(width: 150, height: 160)
+                            .frame(width: 150, height: 80)
                             .offset(x: 80, y: 30)
                             .mask {
                                 VStack {
                                     Rectangle()
-                                        .frame(width: 350, height: 160)
+                                        .frame(width: 350, height: 80)
                                 }
                             }
                         
@@ -43,7 +44,7 @@ struct RoleDictionaryDetailView: View {
                                 .bold()
                                 .foregroundColor(.black)
                         }
-                        .offset(x: -90, y: 40)
+                        .offset(x: -90, y: 3)
                     }//zstack
                     // 역할 소개
                     VStack(alignment: .leading){
@@ -104,7 +105,8 @@ struct RoleDictionaryDetailView: View {
             
         }//tabview
         .tabViewStyle(.page(indexDisplayMode: .never))
-        .navigationTitle("역할 도감")
+        .navigationTitle("")
+        //.navigationTitle("역할 도감")
         
         
     }
