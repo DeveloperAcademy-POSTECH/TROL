@@ -7,6 +7,7 @@
 import Foundation
 import SwiftUI
 import UIKit
+
 struct BeforeTap: View{
     var body: some View{
         NavigationView{
@@ -42,8 +43,8 @@ struct TapTap: View {
     
     @State private var CountTap = 0 //누른 횟수
     
-    @State private var isGameEnd : Bool = false
-    @State private var isGameStart : Bool = false
+    @State private var isGameEnd: Bool = false
+    @State private var isGameStart: Bool = false
     
     //타임 매니저 사용
     @State private var timeRemaining = 5 //게임 남은 시간
@@ -113,212 +114,210 @@ struct TapTap: View {
                     .padding(.bottom)
                 
                 
-            }
-            
+            }//vstack
             .navigationBarHidden(true)
-            //        .frame(width: screenWidth, height: screenHeight)
             .onAppear(perform: {
                 DispatchQueue.main.asyncAfter(deadline: .now()+3){
                     print("Start~")
                     isGameStart = true                }
             })
-            //        .contentShape(Rectangle()).ignoresSafeArea(.all)  //전체 화면 터치 위해
             .onTapGesture {
                 if isGameStart{
                     CountTap += 1   //화면 터치시 CountTap +1
                 }
             }
-            
-        }
+        }//zstack
+                
+        
     }
 }
-//게임이 끝나고 결과 확인
-struct AfterGame:View{
-    //임시 유저
-    @StateObject var tempUsers = TempUsers()
-    var CountTap: Int
-    @State private var confirmResult :Bool = false
-    var body: some View{
-        VStack{
-            Text("탭탭!")
-                .foregroundColor(Color("TrolGreen"))
-                .font(.custom("Happiness-Sans-Bold", size: 28))
-                .bold()
-                .background(Image("Cloud")
-                    .resizable().frame(width: 261, height: 90))
-                .padding(.top, 100)
-                .padding(.bottom, 50)
-            HStack(alignment:.top, spacing:75){
+    //게임이 끝나고 결과 확인
+    struct AfterGame:View{
+        //임시 유저
+        @StateObject var tempUsers = TempUsers()
+        var CountTap: Int
+        @State private var confirmResult :Bool = false
+        var body: some View{
+            VStack{
+                Text("탭탭!")
+                    .foregroundColor(Color("TrolGreen"))
+                    .font(.custom("Happiness-Sans-Bold", size: 28))
+                    .bold()
+                    .background(Image("Cloud")
+                        .resizable().frame(width: 261, height: 90))
+                    .padding(.top, 100)
+                    .padding(.bottom, 50)
+                HStack(alignment:.top, spacing:75){
+                    VStack{
+                        Spacer().frame(height:25)
+                        Text("내가 탭한 횟수")
+                            .font(.custom("Happiness-Sans-Title", size: 17))
+                    }
+                    Text("\(CountTap)")
+                        .font(.custom("Happiness-Sans-Title", size: 120))
+                }.foregroundColor(Color("TrolGreen"))
+                
+                    .frame(width:354,height:146)
+                    .background(RoundedRectangle(cornerRadius: 8).fill(Color("TrolIvory")))
                 VStack{
-                    Spacer().frame(height:25)
-                    Text("내가 탭한 횟수")
-                        .font(.custom("Happiness-Sans-Title", size: 17))
-                }
-                Text("\(CountTap)")
-                    .font(.custom("Happiness-Sans-Title", size: 120))
-            }.foregroundColor(Color("TrolGreen"))
-            
-                .frame(width:354,height:146)
-                .background(RoundedRectangle(cornerRadius: 8).fill(Color("TrolIvory")))
-            VStack{
-                HStack{
-                    Text("랭킹 살펴보기")
-                        .padding()
-                        .font(.custom("Happiness-Sans-Title", size: 28))
-                    Spacer()
-                }
-                
-                List{
+                    HStack{
+                        Text("랭킹 살펴보기")
+                            .padding()
+                            .font(.custom("Happiness-Sans-Title", size: 28))
+                        Spacer()
+                    }
                     
-                    ForEach(tempUsers.sortedRank.indices, id: \.self){index in
-                        HStack(spacing:15){
-                            Text("\(index + 1)")
-                            Text(tempUsers.sortedRank[index].name)
-                            Spacer()
-                            Text("\(tempUsers.sortedRank[index].countTap)")
-                        }
-                        .foregroundColor(tempUsers.sortedRank[index].name == "오션" ? Color("TrolGreen") : Color.black)
-                    }.font(.custom("Happiness-Sans-Regular", size: 17))
+                    List{
                         
-                }.listStyle(.inset)
-                
-            }.onAppear(){
-                for index in tempUsers.tempRank.indices{
-                    if tempUsers.tempRank[index].name == "오션" {
-                        tempUsers.tempRank[index].countTap = CountTap
-                    }
-                }
-            }
-            Spacer()
-            
-            //다음으로 가기
-            NavigationLink(destination: GameResult(),isActive: $confirmResult, label:{
-                Text("")})
-            //선택하러 가기 버튼
-            Button(action: {
-                confirmResult = true
-            }, label:{
-                RoundedRectangle(cornerRadius: 10)
-                    .fill(Color("TrolGreen"))
-                    .frame(width: 354, height: 50)
-                    .overlay(
-                        Text("선택하러 가기")
-                            .foregroundColor(Color.white)
-                            .bold()
-                    )
-                
-            })
-            
-        }//vstack
-        .navigationBarHidden(true)
-        
-        
-        
-    }
-}
-//순위대로 역할 선택하기 //추후 버킬코드로 갈아 끼울 예정
-struct GameResult: View{
-    @State private var tempRole = ["총무", "드라이버", "광대", "요리사"]
-    var columns: [GridItem] = [
-        GridItem(.flexible()),
-        GridItem(.flexible())
-    ]
-    var body: some View{
-        
-        ScrollView{
-            VStack{
-                HStack(alignment: .center, spacing: 200) {
-                    Text("역할 선택하기")
-                        .font(.custom("Happiness-Sans-Bold", size: 22))
-                    
-                    
-                    Button {
-                        print("add this area later")
-                    } label: {
-                        Image(systemName: "info.circle")
-                            .foregroundColor(Color("TrolGreen"))
-                    }
-                    
-                }
-                HStack {
-                    VStack(alignment: .leading) {
-                        Text("각 역할들의 디테일이 궁금할 땐?")
-                            .font(.custom("Happiness-Sans-Bold", size: 12))
-                        
-                        HStack {
-                            Image(systemName: "info.circle")
-                                .font(Font.subheadline.weight(.light))
-                            
-                            Text("를 클릭하면 역할 도감을 볼 수 있어요!")
-                                .font(.custom("Happiness-Sans-Regular", size: 12))
-                                .offset(x: -8)
-                        }
-                    }
-                    
-                    Spacer()
-                    
-                    Text("👀")
-                }
-                .padding()
-                .background(Color("TrolIvory"))
-                .cornerRadius(10)
-                
-                
-                LazyVGrid(columns: columns, alignment: .center, spacing: 20){
-                    ForEach(tempRole, id:\.self){i in
-                        Button(action: {
-                            
-                        }, label: {
-                            ZStack(alignment:.bottomLeading){
-                                Image("HiBear").resizable()
-                                    .frame(width: 150)
-                                
-                                Text(i)
-                                    .padding()
-                                    .foregroundColor(.black)
+                        ForEach(tempUsers.sortedRank.indices, id: \.self){index in
+                            HStack(spacing:15){
+                                Text("\(index + 1)")
+                                Text(tempUsers.sortedRank[index].name)
+                                Spacer()
+                                Text("\(tempUsers.sortedRank[index].countTap)")
                             }
-                        })
+                            .foregroundColor(tempUsers.sortedRank[index].name == "오션" ? Color("TrolGreen") : Color.black)
+                        }.font(.custom("Happiness-Sans-Regular", size: 17))
+                        
+                    }.listStyle(.inset)
+                    
+                }.onAppear(){
+                    for index in tempUsers.tempRank.indices{
+                        if tempUsers.tempRank[index].name == "오션" {
+                            tempUsers.tempRank[index].countTap = CountTap
+                        }
                     }
                 }
+                Spacer()
+                
+                //다음으로 가기
+                NavigationLink(destination: GameResult(),isActive: $confirmResult, label:{
+                    Text("")})
+                //선택하러 가기 버튼
+                Button(action: {
+                    confirmResult = true
+                }, label:{
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(Color("TrolGreen"))
+                        .frame(width: 354, height: 50)
+                        .overlay(
+                            Text("선택하러 가기")
+                                .foregroundColor(Color.white)
+                                .bold()
+                        )
+                    
+                })
+                
+            }//vstack
+            .navigationBarHidden(true)
+            
+            
+            
+        }
+    }
+    //순위대로 역할 선택하기 //추후 버킬코드로 갈아 끼울 예정
+    struct GameResult: View{
+        @State private var tempRole = ["총무", "드라이버", "광대", "요리사"]
+        var columns: [GridItem] = [
+            GridItem(.flexible()),
+            GridItem(.flexible())
+        ]
+        var body: some View{
+            
+            ScrollView{
+                VStack{
+                    HStack(alignment: .center, spacing: 200) {
+                        Text("역할 선택하기")
+                            .font(.custom("Happiness-Sans-Bold", size: 22))
+                        
+                        
+                        Button {
+                            print("add this area later")
+                        } label: {
+                            Image(systemName: "info.circle")
+                                .foregroundColor(Color("TrolGreen"))
+                        }
+                        
+                    }
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text("각 역할들의 디테일이 궁금할 땐?")
+                                .font(.custom("Happiness-Sans-Bold", size: 12))
+                            
+                            HStack {
+                                Image(systemName: "info.circle")
+                                    .font(Font.subheadline.weight(.light))
+                                
+                                Text("를 클릭하면 역할 도감을 볼 수 있어요!")
+                                    .font(.custom("Happiness-Sans-Regular", size: 12))
+                                    .offset(x: -8)
+                            }
+                        }
+                        
+                        Spacer()
+                        
+                        Text("👀")
+                    }
+                    .padding()
+                    .background(Color("TrolIvory"))
+                    .cornerRadius(10)
+                    
+                    
+                    LazyVGrid(columns: columns, alignment: .center, spacing: 20){
+                        ForEach(tempRole, id:\.self){i in
+                            Button(action: {
+                                
+                            }, label: {
+                                ZStack(alignment:.bottomLeading){
+                                    Image("HiBear").resizable()
+                                        .frame(width: 150)
+                                    
+                                    Text(i)
+                                        .padding()
+                                        .foregroundColor(.black)
+                                }
+                            })
+                        }
+                    }
+                }
+            }.navigationBarHidden(true)
+        }
+    }
+    
+    struct TapTap_Previews: PreviewProvider {
+        static var previews: some View {
+            //                        BeforeTap()
+            TapTap()
+            //        AfterGame(CountTap: 3)
+            //        GameResult()
+        }
+    }
+    
+    
+    //임시 데이터 모델
+    
+    //임시 유저, 이름과 탭한 횟수를 받아옴
+    struct TempUserRank {
+        var name: String
+        var countTap: Int
+    }
+    //임시 사람들
+    class TempUsers: ObservableObject{
+        @Published var tempRank = [
+            TempUserRank(name: "밀키", countTap: 34),
+            TempUserRank(name: "준", countTap: 22),
+            TempUserRank(name: "버킬", countTap: 28),
+            TempUserRank(name: "오션", countTap: 32),
+            TempUserRank(name: "린다", countTap: 11),
+            TempUserRank(name: "데일", countTap: 18)
+        ]
+        //countTap에 따라 순위를 다시 재설정함
+        var sortedRank: [TempUserRank] {
+            get {
+                tempRank.sorted(by: { $0.countTap > $1.countTap })
             }
-        }.navigationBarHidden(true)
-    }
-}
-
-struct TapTap_Previews: PreviewProvider {
-    static var previews: some View {
-                        BeforeTap()
-        //        TapTap()
-//        AfterGame(CountTap: 3)
-        //        GameResult()
-    }
-}
-
-
-//임시 데이터 모델
-
-//임시 유저, 이름과 탭한 횟수를 받아옴
-struct TempUserRank {
-    var name: String
-    var countTap: Int
-}
-//임시 사람들
-class TempUsers: ObservableObject{
-    @Published var tempRank = [
-        TempUserRank(name: "밀키", countTap: 34),
-        TempUserRank(name: "준", countTap: 22),
-        TempUserRank(name: "버킬", countTap: 28),
-        TempUserRank(name: "오션", countTap: 32),
-        TempUserRank(name: "린다", countTap: 11),
-        TempUserRank(name: "데일", countTap: 18)
-    ]
-    //countTap에 따라 순위를 다시 재설정함
-    var sortedRank: [TempUserRank] {
-        get {
-            tempRank.sorted(by: { $0.countTap > $1.countTap })
-        }
-        set {
-            tempRank = newValue
+            set {
+                tempRank = newValue
+            }
         }
     }
-}
