@@ -24,6 +24,11 @@ struct ProgressingMyTravelView: View {
     @State var tempAddUser: [String] = ["밀키", "린다", "데일", "버킬", "준"]
     @State var selectedFriend: User = User.myself
     
+    
+    @State private var isShowingAlert = false
+    @State private var alertInput = ""
+
+    
     var pasteBoard = UIPasteboard.general //나의 코드 누르면 복사
     
     let columns = [ GridItem(.adaptive(minimum: 100)) ]
@@ -110,21 +115,34 @@ struct ProgressingMyTravelView: View {
                                 .font(.custom("Happiness-Sans-Bold", size: 12))
                                 .bold()
                                 .padding(.top)
-                            
-                            TextField("+ 친구코드 추가하기", text: $FriendCode)
-                                .padding()
-                                .frame(width: screenWidth - 39*2, height: 44)
-                                .background(.white)
-                                .cornerRadius(10)
-                                .disableAutocorrection(true) //자동수정 막기
-                                .font(.custom("Happiness-Sans-Regular", size: 15))
-                                
-                                .padding(.bottom)
-                                .onSubmit {
-                                    FriendCode = ""
-                                    travelData.travel.users.append(User(name: tempAddUser[0], myRole: nil, toDoList: nil))
-                                    tempAddUser.removeFirst()
-                                }
+                            Button(action: {
+                                               withAnimation {
+                                                   self.isShowingAlert.toggle()
+                                               }
+                                           }) {
+                                               Text("+ 친구코드 추가하기")
+                                                   .padding()
+                                                                                   .frame(width: screenWidth - 39*2, height: 44)
+                                                                                   .background(.white)
+                                                                                   .cornerRadius(7)
+                                                                                   .font(.custom("Happiness-Sans-Regular", size: 15))
+                                                                                   
+                                                                                                                   .padding(.bottom)
+                                           }
+//                            TextField("+ 친구코드 추가하기", text: $FriendCode)
+//                                .padding()
+//                                .frame(width: screenWidth - 39*2, height: 44)
+//                                .background(.white)
+//                                .cornerRadius(10)
+//                                .disableAutocorrection(true) //자동수정 막기
+//                                .font(.custom("Happiness-Sans-Regular", size: 15))
+//
+//                                .padding(.bottom)
+//                                .onSubmit {
+//                                    FriendCode = ""
+//                                    travelData.travel.users.append(User(name: tempAddUser[0], myRole: nil, toDoList: nil))
+//                                    tempAddUser.removeFirst()
+//                                }
                             
                         }
                         //                    .padding(25)
@@ -132,10 +150,12 @@ struct ProgressingMyTravelView: View {
                         //                    .background(Color("TrolYellow"))
                         //                    .cornerRadius(10)
                         
-                    }.padding(25)
+                    }
+                    .padding(25)
                         .frame(width: screenWidth - 19*2, height: 280)
                         .background(Color("TrolYellow"))
                         .cornerRadius(10)
+                    
                     // 친구들의 역할
                     VStack(alignment: .leading) {
                         Text("친구들의 역할")
@@ -175,6 +195,7 @@ struct ProgressingMyTravelView: View {
                     }
                 }
             }.navigationBarHidden(true)
+                .textFieldAlert(isShowing: $isShowingAlert, text: $alertInput, title: "Alert")
         }
     }
 }
@@ -199,3 +220,70 @@ struct ProgressingTravelView_Previews: PreviewProvider {
             .environmentObject(TravelData())
     }
 }
+//Alert
+struct TextFieldAlert<Presenting>: View where Presenting: View {
+
+    @Binding var isShowing: Bool
+    @Binding var text: String
+    let presenting: Presenting
+    let title: String
+
+    var body: some View {
+        GeometryReader { (deviceSize: GeometryProxy) in
+            ZStack {
+                self.presenting
+                    .disabled(isShowing)
+//                    .background(.black).opacity(0.1)
+                VStack {
+                    Text(self.title)
+                    TextField(self.text,text:self.$text)
+                        .background(.green.opacity(0.2))
+                    Divider()
+                    HStack(alignment:.center, spacing: 55) {
+                        Button(action:{
+                            withAnimation{
+                                self.isShowing.toggle()
+                            }
+                        },label: {
+                            Text("취소")
+                                .foregroundColor(.red)
+                        })
+                        Button(action: {
+                            withAnimation {
+                                self.isShowing.toggle()
+                            }
+                        }) {
+                            Text("확인")
+                        }
+                    }
+                }
+                .padding()
+                .background(RoundedRectangle(cornerRadius: 7).foregroundColor(.white))
+//                .background(Color.white)
+                .frame(
+                                    width: deviceSize.size.width*0.7,
+                                    height: deviceSize.size.height*0.7
+                                )
+                                .shadow(radius: 1)
+                                .opacity(self.isShowing ? 1 : 0)
+                            }
+                        }
+                    }
+
+                }
+
+
+extension View {
+
+    func textFieldAlert(isShowing: Binding<Bool>,
+                        text: Binding<String>,
+                        title: String) -> some View {
+        TextFieldAlert(isShowing: isShowing,
+                       text: text,
+                       presenting: self,
+                       title: title)
+    }
+
+}
+//https://stackoverflow.com/questions/56726663/how-to-add-a-textfield-to-alert-in-swiftui
+//alert안에 textfield넣기
