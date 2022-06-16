@@ -17,7 +17,7 @@ struct GameCollectionView: View {
     @State var isGameResult: Bool = false
     var body: some View {
         NavigationView{
-        VStack{
+        ZStack{
         switch gameName{
         case "젓가락 뽑기":
             ChopsticksView(isGameStarted: $isGameStarted, isGameEnded: $isGameEnded, isGameResult: $isGameResult)
@@ -31,7 +31,8 @@ struct GameCollectionView: View {
         default:
             EmptyView()
         }
-            
+            VStack{
+                Spacer().frame(height: screenHeight / 1.5)
             if(isGameStarted){
             Button(action: {
                 isGameEnded.toggle()
@@ -40,7 +41,7 @@ struct GameCollectionView: View {
                 GameButton()
                     .overlay{
                         Text("시작하기")
-                            .foregroundColor(Color.white)
+                            .foregroundColor(Color("TrolGreen"))
                     }
             })
             }
@@ -63,8 +64,10 @@ struct GameCollectionView: View {
                     GameButton()
                         .overlay{
                             Text("역할 선정하러 가기")
+                                .foregroundColor(Color.white)
                         }
                 })
+            }
             }
         }
         .navigationTitle(Text("\(gameName)"))
@@ -83,7 +86,7 @@ struct GameButton: View {
     var body: some View {
         Rectangle()
             .cornerRadius(7)
-            .foregroundColor(Color("TrolGreen"))
+            .foregroundColor(Color(.white))
             .frame(width: 354, height: 54)
             
     }
