@@ -18,7 +18,7 @@ struct RoleGridView: View {
                     .stroke(Color("TrolGreen"), lineWidth: 3)
                     .frame(width: 110, height: 110)
             } else {
-                RoundedRectangle(cornerRadius: 10)
+            RoundedRectangle(cornerRadius: 10)
                     .fill(Color("TrolDimGray"))
                     .frame(width: 110, height: 110)
             }

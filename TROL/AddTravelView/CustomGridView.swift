@@ -19,6 +19,7 @@ struct CustomGridView: View {
                 .frame(width: 70, alignment: .leading)
                 .foregroundColor(.black)
                 .font(.custom("Happiness-Sans-Regular", size: 12))
+                .multilineTextAlignment(.leading)
                 .offset(y: -25)
             
             Text("+ 커스텀하기")

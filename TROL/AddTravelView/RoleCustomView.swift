@@ -48,7 +48,7 @@ struct RoleCustomView: View {
                         HStack(alignment: .firstTextBaseline) {
                             if roleInfo[i].isEmpty {
                                 Image(systemName: "checkmark")
-                                    .foregroundColor(Color("TrolDimGray"))
+//                                    .foregroundColor(Color("DeepGray"))
                                     .font(Font.body.weight(.bold))
                             } else {
                                 Image(systemName: "checkmark")
@@ -68,7 +68,7 @@ struct RoleCustomView: View {
                     }
                 }
             }
-            .padding(.bottom)
+//            .padding(.bottom)
             
             VStack(alignment: .leading) {
                 Text("역할 가이드")
@@ -80,7 +80,7 @@ struct RoleCustomView: View {
                         HStack(alignment: .firstTextBaseline) {
                             if roleGuide[i].isEmpty {
                                 Image(systemName: "quote.opening")
-                                    .foregroundColor(Color("TrolDimGray"))
+//                                    .foregroundColor(Color("DeepGray"))
                                     .font(Font.body.weight(.bold))
                             } else {
                                 Image(systemName: "quote.opening")

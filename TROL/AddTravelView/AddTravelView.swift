@@ -37,6 +37,7 @@ struct AddTravelView: View {
                     
                     Rectangle()
                         .frame(width: 354, height: 1)
+//                        .foregroundColor()
                         .offset(y: 5)
                 }
                 .padding(.bottom)
@@ -49,9 +50,9 @@ struct AddTravelView: View {
                     HStack(alignment: .top) {
                         DatePicker("", selection: $travelStartDate, displayedComponents: .date)
                             .labelsHidden()
-                            .foregroundColor(Color("TrolGreen"))
                         
                         Text("~")
+                            .offset(y: 5)
                         
                         DatePicker("", selection: $travelEndDate, displayedComponents: .date)
                             .labelsHidden()
@@ -77,7 +78,7 @@ struct AddTravelView: View {
                     }
                     
                     HStack {
-                        VStack(alignment: .leading) {
+                        VStack(alignment: .leading, spacing: 2) {
                             Text("각 역할들의 디테일이 궁금할 땐?")
                                 .font(.custom("Happiness-Sans-Bold", size: 12))
                             
@@ -98,6 +99,7 @@ struct AddTravelView: View {
                     .padding()
                     .background(Color("TrolIvory"))
                     .cornerRadius(10)
+                    .padding(.bottom, 5)
                     
                     LazyVGrid(columns: columns, spacing: 13) {
                         ForEach(roleData.roles.indices, id: \.self) { i in
@@ -136,6 +138,7 @@ struct AddTravelView: View {
                             .background(Color("TrolGreen"))
                             .cornerRadius(10)
                     }
+                    .padding(.top, 10)
                 }
             }
             .padding()
