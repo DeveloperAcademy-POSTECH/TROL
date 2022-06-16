@@ -62,21 +62,25 @@ struct ProgressingMyTravelView: View {
                             }
                             
                             Spacer()
+                            VStack(alignment: .leading){
+                                Text("나의 코드")
+                                    .padding(.top, 20)
+                                    .font(.custom("Happiness-Sans-Bold", size: 12))
+                                //나의 코드 누르면 복사
+                                Button(action: {
+                                    pasteBoard.string = self.myCode
+                                }, label: {
+                                    Text(myCode)
+                                        .bold()
+                                        .padding()
+                                        .foregroundColor(.black)
+                                        .frame(width: screenWidth - 39*2, height: 44, alignment: .leading)
+                                        .background(.white)
+                                        .cornerRadius(10)
+                                })
+                            }
                             
-                            TextField("+ 친구코드 추가하기", text: $FriendCode)
-                                .padding()
-                                .frame(width: screenWidth - 39*2, height: 44)
-                                .background(.white)
-                                .cornerRadius(10)
-                                .disableAutocorrection(true) //자동수정 막기
-                                .font(.custom("Happiness-Sans-Regular", size: 15))
-                                .padding(.top, 50)
-                                .padding(.bottom)
-                                .onSubmit {
-                                    FriendCode = ""
-                                    travelData.travel.users.append(User(name: tempAddUser[0], myRole: nil, toDoList: nil))
-                                    tempAddUser.removeFirst()
-                                }
+                            
                             
                         }
                         //                    .padding(25)
@@ -101,23 +105,26 @@ struct ProgressingMyTravelView: View {
                         
                         // 티켓 하단
                         VStack(alignment: .leading) {
-                            Text("나의 코드")
+                            Text("친구코드 추가하기")
                                 .font(.system(size: 12))
                                 .font(.custom("Happiness-Sans-Bold", size: 12))
                                 .bold()
                                 .padding(.top)
-                            //나의 코드 누르면 복사
-                            Button(action: {
-                                pasteBoard.string = self.myCode
-                            }, label: {
-                                Text(myCode)
-                                    .bold()
-                                    .padding()
-                                    .foregroundColor(.black)
-                                    .frame(width: screenWidth - 39*2, height: 44, alignment: .leading)
-                                    .background(.white)
-                                    .cornerRadius(10)
-                            })
+                            
+                            TextField("+ 친구코드 추가하기", text: $FriendCode)
+                                .padding()
+                                .frame(width: screenWidth - 39*2, height: 44)
+                                .background(.white)
+                                .cornerRadius(10)
+                                .disableAutocorrection(true) //자동수정 막기
+                                .font(.custom("Happiness-Sans-Regular", size: 15))
+                                
+                                .padding(.bottom)
+                                .onSubmit {
+                                    FriendCode = ""
+                                    travelData.travel.users.append(User(name: tempAddUser[0], myRole: nil, toDoList: nil))
+                                    tempAddUser.removeFirst()
+                                }
                             
                         }
                         //                    .padding(25)
