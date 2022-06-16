@@ -10,13 +10,13 @@ import SwiftUI
 struct PickRoleView: View {
 
     @EnvironmentObject var travelData: TravelData
-
+    @EnvironmentObject var tempUsers: TempUsers
     @State var selectedRole: Role = Role.defaultRoles[0]
     private let columns = [ GridItem(.adaptive(minimum: 100)) ]
     
     @State private var usingRoles: [Role] = [Role.defaultRoles[0], Role.defaultRoles[1],Role.defaultRoles[2],Role.defaultRoles[3],Role.defaultRoles[4],Role.defaultRoles[5]]
-    @State var isTapped: Bool = false
-
+    @State var isTapped: [Bool] = [false, false, false, false, false, false]
+    @State var userIndex: Int = 0
     var body: some View {
         VStack {
 
@@ -62,9 +62,9 @@ struct PickRoleView: View {
             LazyVGrid(columns: columns, spacing: 13) {
                 ForEach(usingRoles.indices, id: \.self) { index in
                     Button {
-                        print("Role called")
+//                        print("Role called")
                         self.selectedRole = usingRoles[index]
-                        print(selectedRole)
+//                        print(selectedRole)
 
                         for idx in 0..<usingRoles.count {
                             if idx != index {
@@ -73,7 +73,16 @@ struct PickRoleView: View {
                         }
                         usingRoles[index].isChecked.toggle()
                     } label: {
-                        RoleGridView(role: $usingRoles[index])
+                        ZStack{
+                            RoleGridView(role: $usingRoles[index])
+                                RoundedRectangle(cornerRadius: 10)
+                                    .fill(Color.black)
+                                    .frame(width: 110, height: 110)
+                                    .opacity(0.3)
+                                    .overlay{
+                                        Text("\(travelData.travel.users[userIndex].name)")
+                            }
+                        }
                     }
                 }
             }
@@ -81,24 +90,11 @@ struct PickRoleView: View {
             Spacer()
 
 
-            NavigationLink(isActive: Binding<Bool>(get: {
-                isTapped
-            }, set: { isTapped = $0; print("asd")
-            })) {
-                EmptyView()
-            } label: {
-                Text("확인")
-                    .font(.custom("Happiness-Sans-Bold", size: 12))
-                    .foregroundColor(.white)
-                    .frame(width: 354, height: 54)
-                    .background(Color("TrolGreen"))
-                    .cornerRadius(10)
-            }
-
-
-//            Button {
-//                travelData.temp.users[1].myRole = selectedRole
-//                print(travelData.temp.users[1])
+//            NavigationLink(isActive: Binding<Bool>(get: {
+//                isTapped
+//            }, set: { isTapped = $0; print("asd")
+//            })) {
+//                EmptyView()
 //            } label: {
 //                Text("확인")
 //                    .font(.custom("Happiness-Sans-Bold", size: 12))
@@ -107,6 +103,22 @@ struct PickRoleView: View {
 //                    .background(Color("TrolGreen"))
 //                    .cornerRadius(10)
 //            }
+
+
+            Button(action: {
+                isTapped[userIndex] = true
+                travelData.travel.users[userIndex].myRole = selectedRole
+                if(userIndex < (travelData.travel.users.count - 1)){
+                    userIndex += 1
+                }
+            }, label: {
+                Text("확인")
+                    .font(.custom("Happiness-Sans-Bold", size: 12))
+                    .foregroundColor(.white)
+                    .frame(width: 354, height: 54)
+                    .background(Color("TrolGreen"))
+                    .cornerRadius(10)
+            })
         }
         .padding()
         .navigationBarHidden(true)

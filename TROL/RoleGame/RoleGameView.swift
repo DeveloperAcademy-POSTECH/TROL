@@ -15,7 +15,7 @@ struct RoleGameView: View {
     let columns = [GridItem(.flexible()),
                             GridItem(.flexible())]
     var body: some View {
-        if !travelData.travel.isExist {
+        if travelData.travel.isExist {
             NavigationView{
             VStack{
                 Image("LogoBig")
@@ -37,44 +37,6 @@ struct RoleGameView: View {
                     }
                 }
                 Spacer()
-//                VStack{
-//                    HStack{
-//
-//                        Button("사다리타기"){
-//                            /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
-//                        }.frame(width: 170, height: 150)
-//                            .background(RoundedRectangle(cornerRadius: 10).fill(Color.yellow))
-//                        Button("젓가락 뽑기"){
-//                            /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
-//                        }.frame(width: 170, height: 150)
-//                            .background(RoundedRectangle(cornerRadius: 10).fill(Color.yellow))
-//                    }
-//
-//                    HStack{
-//                        Button("반사속도"){
-//                            /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
-//                        }.frame(width: 170, height: 150)
-//                            .background(RoundedRectangle(cornerRadius: 10).fill(Color.yellow))
-//                        Button("무한탭"){
-//                            /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
-//                        }.frame(width: 170, height: 150)
-//                            .background(RoundedRectangle(cornerRadius: 10).fill(Color.yellow))
-//                    }
-//
-//                    HStack{
-//                        Button("업다운"){
-//                            /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
-//                        }.frame(width: 170, height: 150)
-//                            .background(RoundedRectangle(cornerRadius: 10).fill(Color.yellow))
-//                        Button("키워드"){
-//                            /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
-//                        }.frame(width: 170, height: 150)
-//                            .background(RoundedRectangle(cornerRadius: 10).fill(Color.yellow))
-//                    }
-//                }
-//                GameTap()
-//                Spacer()
-
             }
             .navigationBarHidden(true)
             }
