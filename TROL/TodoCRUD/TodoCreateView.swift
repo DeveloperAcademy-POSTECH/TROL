@@ -27,6 +27,7 @@ struct TodoCreateView: View {
             }
             HStack{
                 Spacer()
+                
                 Button() {
                     presentation.wrappedValue.dismiss()
                 } label: {
@@ -37,17 +38,20 @@ struct TodoCreateView: View {
                         .foregroundColor(.black)
                 }
             }
-            
+             
             Text("할 일 추가하기").font(.system(size: 28)).foregroundColor(Color.black).bold().padding(.leading, 17.5).padding(.top, 16)
             
             TextField(
                 "내용을 적어 주세요!",
                 text: $newTodo
-            ).modifier(ClearButton(text: $newTodo))
+            )
+            .offset(x: -100)
+            .modifier(ClearButton(text: $newTodo))
                 .disableAutocorrection(true)
                 .padding(.leading, 18)
                 .padding(.top, 8)
                 .font(.system(size: 17))
+//                .offset(x: -100)
        
             Divider()
                 .frame(height: 1)

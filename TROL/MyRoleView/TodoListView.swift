@@ -16,12 +16,15 @@ struct TodoListView: View {
     @State private var showTodoUpdate = false
     @State private var checked = false
     
+    @State var index: Int
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 0){
             HStack(){
                 Text("내가 할 일").bold().font(.system(size: 28))
                     .padding([.leading], 18.5)
             }
+            
             Button(action: {
                 self.showTodoCreate = true
             }) {
@@ -40,16 +43,18 @@ struct TodoListView: View {
                             .strokeBorder(Color.gray, lineWidth: 1)
                             .frame(width: 354, height: 50)
                     )
-                
+
             }
-            ForEach(travelData.travel.users[0].toDoList!) { item in
-                CheckView(isChecked: item.isChecked, title: item.title)
+            ForEach(0..<travelData.travel.users[0].toDoList!.count) { i in
+                
+                CheckView(isChecked: travelData.travel.users[0].toDoList![i].isChecked, title: travelData.travel.users[0].toDoList![i].title)
                     .onTapGesture {
                         showTodoUpdate.toggle()
+                        index = i
                     }
                     .sheet(isPresented: self.$showTodoUpdate){
-                        TodoUpdateView()
-//                        TodoUpdateView(todoId: self.$travelData.travel.users[0].toDoList.)
+//                        TodoUpdateView()
+                        TodoUpdateView(todoId: index)
                     }
             }
             Divider()
@@ -57,13 +62,13 @@ struct TodoListView: View {
     }
 }
 
-struct TodoList_Previews: PreviewProvider {
-    static var previews: some View {
-        TodoListView()
-            .environmentObject(TravelData())
-            .environmentObject(RoleData())
-    }
-}
+//struct TodoList_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TodoListView()
+//            .environmentObject(TravelData())
+//            .environmentObject(RoleData())
+//    }
+//}
 
 struct CheckView: View {
     @State var isChecked:Bool = false

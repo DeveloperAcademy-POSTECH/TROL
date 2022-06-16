@@ -36,7 +36,7 @@ struct MyRoleView: View {
                     TicketInfoView()
                     }.padding(.leading,18)
                     Spacer().frame(height: 21)
-                        TodoListView()
+                        TodoListView(index: 0)
                     
                 }
             } else { //역할X

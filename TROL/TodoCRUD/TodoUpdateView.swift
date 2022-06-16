@@ -14,6 +14,8 @@ struct TodoUpdateView: View {
     @State private var updateTodo: String = ""
 
     @Environment(\.presentationMode) var presentation
+    var todoId: Int
+    
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0){
@@ -42,7 +44,7 @@ struct TodoUpdateView: View {
             
             TextField(
                 //"\()",
-                "gjk",
+                "\(travelData.travel.users[0].toDoList![todoId].title)",
                 text: $updateTodo
             )
                 .disableAutocorrection(true)
@@ -80,8 +82,8 @@ struct TodoUpdateView: View {
     }
 }
 
-struct TodoUpdateView_Previews: PreviewProvider {
-    static var previews: some View {
-        TodoUpdateView()
-    }
-}
+//struct TodoUpdateView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TodoUpdateView()
+//    }
+//}
