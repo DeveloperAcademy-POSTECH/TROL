@@ -22,15 +22,6 @@ struct GameCollectionView: View {
         case "젓가락 뽑기":
             ChopsticksView(isGameStarted: $isGameStarted, isGameEnded: $isGameEnded, isGameResult: $isGameResult)
                 .disabled(isGameStarted)
-        case "랜덤 다이스":
-            EmptyView()
-        case "탭탭 무한탭":
-            TapTap()
-        case "업 앤 다운":
-            EmptyView()
-        default:
-            EmptyView()
-        }
             VStack{
                 Spacer().frame(height: screenHeight / 1.5)
             if(isGameStarted){
@@ -53,31 +44,45 @@ struct GameCollectionView: View {
                     GameButton()
                         .overlay{
                             Text("결과 보기")
-                                .foregroundColor(Color.white)
+                                .foregroundColor(Color("TrolGreen"))
                         }
                 })
             }
             else if(isGameResult){
                 Button(action: {
-                    isGameResult.toggle()
+                    NavigationLink(destination:{
+//                        PickRoleView()
+                    },label:{
+                        Text("")
+                    })
                 }, label: {
                     GameButton()
                         .overlay{
                             Text("역할 선정하러 가기")
-                                .foregroundColor(Color.white)
+                                .foregroundColor(Color("TrolGreen"))
                         }
                 })
             }
             }
+        case "랜덤 다이스":
+            EmptyView()
+        case "탭탭 무한탭":
+            BeforeTap()
+        case "업 앤 다운":
+            EmptyView()
+        default:
+            EmptyView()
         }
-        .navigationTitle(Text("\(gameName)"))
+            
+        }
+//        .navigationTitle(Text("\(gameName)"))
     }
     }
 }
 
 struct GameCollectionView_Previews: PreviewProvider {
     static var previews: some View {
-        GameCollectionView(gameName: "젓가락 뽑기")
+        GameCollectionView(gameName: "탭탭 무한탭")
             .environmentObject(TravelData())
     }
 }

@@ -36,7 +36,7 @@ struct BeforeTap: View{
                         .cornerRadius(7)
                 }
             }
-        }.navigationTitle("탭탭!")
+        }
     }
 }
 struct TapTap: View {
@@ -189,7 +189,7 @@ struct TapTap: View {
                 Spacer()
                 
                 //다음으로 가기
-                NavigationLink(destination: GameResult(),isActive: $confirmResult, label:{
+                NavigationLink(destination: PickRoleView(),isActive: $confirmResult, label:{
                     Text("")})
                 //선택하러 가기 버튼
                 Button(action: {
@@ -214,73 +214,74 @@ struct TapTap: View {
         }
     }
     //순위대로 역할 선택하기 //추후 버킬코드로 갈아 끼울 예정
-    struct GameResult: View{
-        @State private var tempRole = ["총무", "드라이버", "광대", "요리사"]
-        var columns: [GridItem] = [
-            GridItem(.flexible()),
-            GridItem(.flexible())
-        ]
-        var body: some View{
-            
-            ScrollView{
-                VStack{
-                    HStack(alignment: .center, spacing: 200) {
-                        Text("역할 선택하기")
-                            .font(.custom("Happiness-Sans-Bold", size: 22))
-                        
-                        
-                        Button {
-                            print("add this area later")
-                        } label: {
-                            Image(systemName: "info.circle")
-                                .foregroundColor(Color("TrolGreen"))
-                        }
-                        
-                    }
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text("각 역할들의 디테일이 궁금할 땐?")
-                                .font(.custom("Happiness-Sans-Bold", size: 12))
-                            
-                            HStack {
-                                Image(systemName: "info.circle")
-                                    .font(Font.subheadline.weight(.light))
-                                
-                                Text("를 클릭하면 역할 도감을 볼 수 있어요!")
-                                    .font(.custom("Happiness-Sans-Regular", size: 12))
-                                    .offset(x: -8)
-                            }
-                        }
-                        
-                        Spacer()
-                        
-                        Text("👀")
-                    }
-                    .padding()
-                    .background(Color("TrolIvory"))
-                    .cornerRadius(10)
-                    
-                    
-                    LazyVGrid(columns: columns, alignment: .center, spacing: 20){
-                        ForEach(tempRole, id:\.self){i in
-                            Button(action: {
-                                
-                            }, label: {
-                                ZStack(alignment:.bottomLeading){
-                                    Image("HiBear").resizable()
-                                        .frame(width: 150)
-                                    
-                                    Text(i)
-                                        .padding()
-                                        .foregroundColor(.black)
-                                }
-                            })
-                        }
-                    }
-                }
-            }.navigationBarHidden(true)
-        }
-    }
+//    struct GameResult: View{
+//
+//        var columns: [GridItem] = [
+//            GridItem(.flexible()),
+//            GridItem(.flexible())
+//        ]
+//        var body: some View{
+//
+//            ScrollView{
+//                VStack{
+//                    HStack(alignment: .center, spacing: 200) {
+//                        Text("역할 선택하기")
+//                            .font(.custom("Happiness-Sans-Bold", size: 22))
+//
+//
+//                        Button {
+//                            print("add this area later")
+//                        } label: {
+//                            Image(systemName: "info.circle")
+//                                .foregroundColor(Color("TrolGreen"))
+//                        }
+//
+//                    }
+//                    HStack {
+//                        VStack(alignment: .leading) {
+//                            Text("각 역할들의 디테일이 궁금할 땐?")
+//                                .font(.custom("Happiness-Sans-Bold", size: 12))
+//
+//                            HStack {
+//                                Image(systemName: "info.circle")
+//                                    .font(Font.subheadline.weight(.light))
+//
+//                                Text("를 클릭하면 역할 도감을 볼 수 있어요!")
+//                                    .font(.custom("Happiness-Sans-Regular", size: 12))
+//                                    .offset(x: -8)
+//                            }
+//                        }
+//
+//                        Spacer()
+//
+//                        Text("👀")
+//                    }
+//                    .padding()
+//                    .background(Color("TrolIvory"))
+//                    .cornerRadius(10)
+//
+//
+//                    LazyVGrid(columns: columns, alignment: .center, spacing: 20){
+//                        ForEach(tempRole, id:\.self){i in
+//                            Button(action: {
+//
+//                            }, label: {
+//                                ZStack(alignment:.bottomLeading){
+//                                    Image("HiBear").resizable()
+//                                        .frame(width: 150)
+//
+//                                    Text(i)
+//                                        .padding()
+//                                        .foregroundColor(.black)
+//                                }
+//                            })
+//                        }
+//                    }
+//                }
+//            }.navigationBarHidden(true)
+//        }
+//
+//    }
     
     struct TapTap_Previews: PreviewProvider {
         static var previews: some View {

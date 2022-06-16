@@ -63,102 +63,85 @@ struct PlayingUser{
 struct ChopsticksView: View {
     @EnvironmentObject var travelData: TravelData
     @EnvironmentObject var roleData: RoleData
-
+    
     @Binding var isGameStarted: Bool
     @Binding var isGameEnded: Bool
     @Binding var isGameResult: Bool
-
+    
     @State private var isTapped: [Bool] = [false,false,false,false,false,false]
     @State private var isMyTurn: [Bool] = [true,false,false,false,false,false, false]
-//    var chopstickUsers: ChopstickGame {
-//        return ChopstickGame(travelData: travelData)
-//    }
-//    @State var ChopstickUsers: [User] = [User(name: "오션"), User(name: "버킬"), User(name: "밀키"),User(name: "데일"),User(name: "린다"),User(name: "준")]
+    @State private var order: Int = 0
+    
     @State var playingUsers: [PlayingUser] = [PlayingUser(name: "버킬"), PlayingUser(name: "오션"), PlayingUser(name: "밀키"), PlayingUser(name: "데일"), PlayingUser(name: "린다"), PlayingUser(name: "준")]
     
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
     
     var randomAngle: [Double] {return [-0.3,-0.2, -0.1, 0, 0.1, 0.2, 0.3].shuffled()}
-    var randomHeight: [Double] {return [350.0, 330.0, 300.0, 400.0, 370.0, 360.0, 410.0, 280.0].shuffled()}
+    var randomHeight: [Double] {return [400.0, 430.0, 470.0, 450.0, 500.0, 480.0, 410.0, 530.0].shuffled()}
     
     @State var winner: String = ""
     @State var winnerHeight: Double = 0
-    @State var userIndex: Int = 0
+    @State var winnerIndex: Bool = false
     var body: some View {
-//        ZStack{
-//            VStack{
-//                Spacer().frame(height: screenHeight/5)
-//                HStack(spacing: 40){
-//                    ForEach(0..<chopstickUsers.users.count){ index in
-//                        VStack{
-//                            if(isGameResult){
-//                                Text("\(chopstickUsers.heights[index], specifier: "%.0lf")")
-//                                    .foregroundColor(Color("TrolGreen"))
-//                            }
-//
-//                                RoundedRectangle(cornerRadius: 10)
-//                                    .foregroundColor(Color("TrolYellow"))
-//                                    .frame(width: 40, height: CGFloat(chopstickUsers.heights[index]), alignment: .leading)
-//                                    .border(isTapped[index] ? Color("TrolGreen") : Color("TrolIvory") ,width:3)
-//                                    .cornerRadius(9)
-//                                    .rotationEffect(Angle.radians(randomAngle[index]))
-//                                    .scaleEffect(isTapped[index] ? 1.2 : 1.0)
-//                                    .animation(.default)
-//                                    .onTapGesture {
-//                                        isTapped[index] = true
-//                                    }
-//
-//
-//                            //                            Spacer().frame(height: 50)
-//                        }
-//                    }
-//                }
-//            }
-//            VStack{
-//                Spacer()
-//            if(isTapped.contains(false)){
-//                container()
-//                    .frame(width: screenWidth, height: screenHeight/3, alignment: .bottom)
-//                    .transition(.move(edge: .bottom))
-//                    .animation(.spring())
-//            }
-//            }
-//            .ignoresSafeArea()
-//        }
         ZStack{
+            Section{
             VStack{
-                Spacer().frame(height: screenHeight/5)
-                Text("지금 순서는?")
-                    .font(.custom("Happiness-Sans-Regular", size: 17))
-                    .foregroundColor(Color("TrolGreen"))
-                if(isMyTurn[userIndex]){
-                    Text("\(playingUsers[userIndex].name)")
+                VStack{
+                Image("LogoBig")
+                    .resizable()
+                    .frame(width: 261, height: 90)
+                Spacer().frame(height: screenHeight/115)
+                if(!isGameResult){
+                    Text("정해진 순서에 젓가락을 뽑아주세요")
+                        .font(.custom("Happiness-Sans-Bold", size: 17))
+                        .foregroundColor(Color.gray)
+                        .padding()
+                    Text("지금 순서는?")
+                        .font(.custom("Happiness-Sans-Bold", size: 17))
+                        .foregroundColor(Color("TrolGreen"))
+                    Text("\(playingUsers[order].name)")
                         .font(.custom("Happiness-Sans-Bold", size: 50))
                         .foregroundColor(Color("TrolGreen"))
                 }
+                else{
+                    Text("가장 긴 젓가락은")
+                        .font(.custom("Happiness-Sans-Bold", size: 17))
+                        .foregroundColor(Color.gray)
+                    Text("'밀키'의 젓가락입니다!")
+                        .font(.custom("Happiness-Sans-Bold", size: 17))
+                        .foregroundColor(Color.gray)
+                        .frame(width: screenWidth)
+//                        .padding()
+                    Spacer().frame(height: screenHeight/15)
+                }
+                }
+            }.position(x: screenWidth/2, y: screenHeight/15)
                 HStack(spacing: 20){
                     ForEach(0..<playingUsers.count){ index in
                         VStack{
-                            if(isGameResult){
-                                Text("\(playingUsers[index].height, specifier: "%.0lf")")
-                                    .foregroundColor(Color("TrolGreen"))
-                            }
-                            
-                                RoundedRectangle(cornerRadius: 10)
-                                    .foregroundColor(Color("TrolYellow"))
-                                    .frame(width: 40, height: CGFloat(playingUsers[index].height), alignment: .leading)
-                                    .border(isTapped[index] ? Color("TrolGreen") : Color("TrolIvory") ,width:3)
-                                    .cornerRadius(9)
-                                    .rotationEffect(Angle.radians(randomAngle[index]))
-                                    .scaleEffect(isTapped[index] ? 1.2 : 1.0)
-                                    .animation(.default)
-                                    .onTapGesture {
-                                        isTapped[index] = true
-                                        isMyTurn[index].toggle()
-                                        isMyTurn[index + 1].toggle()
-                                        userIndex += 1
+                            RoundedRectangle(cornerRadius: 17, style: .continuous)
+                                .fill(Color("TrolYellow"))
+                                .frame(width: 40, height: CGFloat(playingUsers[index].height), alignment: .leading)
+                                .border(winnerIndex ? Color("TrolGreen") : Color.clear , width:6)
+//                                .cornerRadius(17)
+                                .opacity(!(order == 3) && isTapped[index] ? 0.3 : 1)
+                                .rotationEffect(Angle.radians(randomAngle[index]))
+                                .scaleEffect(isTapped[index] ? 1.2 : 1.0)
+                                .animation(.default)
+                                .onTapGesture {
+                                    isTapped[index] = true
+                                    isMyTurn[index] = false
+                                    isMyTurn[index + 1] = true
+//                                    if(order == 2){
+//                                        winnerIndex = true
+//                                    }
+                                    if(order < playingUsers.count - 1){
+                                        order += 1
                                     }
+                                    
+                                }
+                                .disabled(isTapped[index])
                         }
                         .onAppear{
                             playingUsers[index].changeHeight(randomHeight[index])
@@ -170,16 +153,18 @@ struct ChopsticksView: View {
                             }
                         }
                     }
-                }
+                }.position(x: screenWidth/2, y: screenHeight/2)
             }
             VStack{
                 Spacer()
-            if(isTapped.contains(false)){
-                container()
-                    .frame(width: screenWidth, height: screenHeight/3, alignment: .bottom)
-                    .transition(.move(edge: .bottom))
-                    .animation(.spring())
-            }
+                if(isTapped.contains(false)){
+                    container()
+                        .frame(width: screenWidth, height: screenHeight/2, alignment: .bottom)
+                        .transition(.move(edge: .bottom))
+                        .animation(.spring())
+                }
+                else{
+                }
             }
             .ignoresSafeArea()
         }
