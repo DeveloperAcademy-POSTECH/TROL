@@ -12,7 +12,7 @@ struct TodoUpdateView: View {
     @EnvironmentObject var roleData: RoleData
     
     @State private var updateTodo: String = ""
-
+    
     @Environment(\.presentationMode) var presentation
     var todoId: Int
     
@@ -30,6 +30,7 @@ struct TodoUpdateView: View {
             HStack{
                 Spacer()
                 Button() {
+                    travelData.travel.users[0].toDoList?.remove(at: todoId)
                     presentation.wrappedValue.dismiss()
                 } label: {
                     Text("삭제하기")
@@ -43,7 +44,6 @@ struct TodoUpdateView: View {
             Text("할 일 수정하기").font(.system(size: 28)).foregroundColor(Color.black).bold().padding(.leading, 17.5).padding(.top, 16)
             
             TextField(
-                //"\()",
                 "\(travelData.travel.users[0].toDoList![todoId].title)",
                 text: $updateTodo
             )
@@ -64,7 +64,7 @@ struct TodoUpdateView: View {
             Spacer().frame(height: 291.5)
             
             Button(action: {
-                travelData.travel.users[0].toDoList?.append(ToDoList(id: 10, title: updateTodo, isChecked: false))
+                travelData.travel.users[0].toDoList![todoId].title = updateTodo
                 presentation.wrappedValue.dismiss()
             }) {
                 RoundedRectangle(cornerRadius: 10)
