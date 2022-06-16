@@ -33,6 +33,7 @@
 		835443EB284F4CE400AF2F1F /* ProgressingMyTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835443EA284F4CE400AF2F1F /* ProgressingMyTravelView.swift */; };
 		838273A82851D81B00FC6301 /* LadderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838273A72851D81B00FC6301 /* LadderView.swift */; };
 		BFA9F3762854870B0026D60D /* TapTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA9F3752854870B0026D60D /* TapTap.swift */; };
+		E14989592858E395001F9D08 /* TodoUpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14989582858E395001F9D08 /* TodoUpdateView.swift */; };
 		E15840B12851C25900F39095 /* Happiness-Sans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E15840AE2851C25900F39095 /* Happiness-Sans-Bold.ttf */; };
 		E15840B22851C25900F39095 /* Happiness-Sans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E15840AF2851C25900F39095 /* Happiness-Sans-Regular.ttf */; };
 		E15840B32851C25900F39095 /* Happiness-Sans-Title.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E15840B02851C25900F39095 /* Happiness-Sans-Title.ttf */; };
@@ -91,6 +92,7 @@
 		835443EA284F4CE400AF2F1F /* ProgressingMyTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressingMyTravelView.swift; sourceTree = "<group>"; };
 		838273A72851D81B00FC6301 /* LadderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LadderView.swift; sourceTree = "<group>"; };
 		BFA9F3752854870B0026D60D /* TapTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapTap.swift; sourceTree = "<group>"; };
+		E14989582858E395001F9D08 /* TodoUpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoUpdateView.swift; sourceTree = "<group>"; };
 		E15840AE2851C25900F39095 /* Happiness-Sans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Happiness-Sans-Bold.ttf"; sourceTree = "<group>"; };
 		E15840AF2851C25900F39095 /* Happiness-Sans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Happiness-Sans-Regular.ttf"; sourceTree = "<group>"; };
 		E15840B02851C25900F39095 /* Happiness-Sans-Title.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Happiness-Sans-Title.ttf"; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				E1B2089728531BD400C3B521 /* TodoCreateView.swift */,
+				E14989582858E395001F9D08 /* TodoUpdateView.swift */,
 			);
 			path = TodoCRUD;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				36477E86284F79C00067B480 /* FriendRoleView.swift in Sources */,
 				835443B8284F4C7200AF2F1F /* ContentView.swift in Sources */,
 				E15840B82851CAA500F39095 /* TicketInfoView.swift in Sources */,
+				E14989592858E395001F9D08 /* TodoUpdateView.swift in Sources */,
 				36D96F4F28503F560076BFE5 /* GridView.swift in Sources */,
 				835443E9284F4CD400AF2F1F /* RoleGameView.swift in Sources */,
 				3609BC4728571D6000B550B3 /* DefaultRoles.swift in Sources */,
