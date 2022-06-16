@@ -70,14 +70,17 @@ struct TapTap: View {
                 //남은시간
                 VStack(spacing: 11){
                     //아무데나 탭하세요
-                    Text("아무데나 탭하세요")
+                    Text(startTime >= 1 ? "\(startTime)초 뒤에 게임이 시작해요" : "아무데나 탭하세요")
                         .foregroundColor(.black)
-                    Text("남은 시간 ")
+                        .onReceive(timer){_ in
+                            startTime -= 1
+                        }
+                    Text(startTime >= 1 ? "" : "남은 시간 ")
                         .font(.custom("Happiness-Sans-Bold", size: 17))
                     
                     ZStack(alignment:.center){
                         Image("ClockFrame")
-                        Text("\(timeRemaining)")
+                        Text(startTime >= 1 ? "\(startTime)" : "\(timeRemaining)")
                             .font(.system(size: 50))
                             .onReceive(timer){_ in
                                 if isGameStart{
@@ -89,12 +92,6 @@ struct TapTap: View {
                             }
                     }
                 }.foregroundColor(Color("TrolGreen"))
-                
-                //            //게임 시작 시간 표시
-                //            Text(startTime >= 1 ? "\(startTime)초 후 시작합니다!" : "탭하세요!")
-                //                .onReceive(timer){_ in
-                //                    startTime -= 1
-                //                }
                 Spacer()
                 //게임 탭 한 횟수 표시
                 VStack(alignment: .center){
@@ -121,6 +118,7 @@ struct TapTap: View {
                     print("Start~")
                     isGameStart = true                }
             })
+            .contentShape(Rectangle()).ignoresSafeArea(.all) //전체 화면 터치
             .onTapGesture {
                 if isGameStart{
                     CountTap += 1   //화면 터치시 CountTap +1
@@ -286,8 +284,8 @@ struct TapTap: View {
     
     struct TapTap_Previews: PreviewProvider {
         static var previews: some View {
-            //                        BeforeTap()
-            TapTap()
+                                    BeforeTap()
+//            TapTap()
             //        AfterGame(CountTap: 3)
             //        GameResult()
         }
