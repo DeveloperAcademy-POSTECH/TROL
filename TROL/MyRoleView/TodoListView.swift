@@ -45,7 +45,7 @@ struct TodoListView: View {
                     )
 
             }
-            ForEach(0..<travelData.travel.users[0].toDoList!.count) { i in
+            ForEach(0..<travelData.travel.users[0].toDoList!.count, id:\.self) { i in
                 
                 CheckView(isChecked: travelData.travel.users[0].toDoList![i].isChecked, title: travelData.travel.users[0].toDoList![i].title)
                     .onTapGesture {
