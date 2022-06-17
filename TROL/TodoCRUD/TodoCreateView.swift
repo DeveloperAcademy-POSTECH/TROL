@@ -11,7 +11,7 @@ struct TodoCreateView: View {
     
     @EnvironmentObject var travelData: TravelData
     @EnvironmentObject var roleData: RoleData
-    
+    @State var tempNum = 10
     @State private var newTodo: String = ""
     @Environment(\.presentationMode) var presentation
     
@@ -66,8 +66,10 @@ struct TodoCreateView: View {
             Spacer().frame(height: 217)
             
             Button(action: {
-                travelData.travel.users[0].toDoList?.append(ToDoList(id: 10, title: newTodo, isChecked: false))
+                travelData.travel.users[0].toDoList.append(ToDoList(id: tempNum , title: newTodo, isChecked: false))
+                tempNum += 1
                 presentation.wrappedValue.dismiss()
+                
             }) {
                 RoundedRectangle(cornerRadius: 10)
                     .fill(Color("TrolGreen"))

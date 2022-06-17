@@ -14,6 +14,7 @@ struct EmptyMyTravelView: View {
     var body: some View {
         
         // 진행중인 여행이 없을때 띄울 뷰
+        NavigationView{
             VStack() {
                 HStack{
                 Text("진행중인 여행")
@@ -54,6 +55,8 @@ struct EmptyMyTravelView: View {
                 }
                 
             }
+            .navigationBarHidden(true)
+        }
     }
 }
 

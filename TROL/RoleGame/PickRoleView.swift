@@ -10,6 +10,7 @@ import SwiftUI
 struct PickRoleView: View {
     
     @EnvironmentObject var travelData: TravelData
+    @EnvironmentObject var roleData: RoleData
     @EnvironmentObject var tempUsers: TempUsers
     
     @State var selectedRole: Role = Role.defaultRoles[0]
@@ -22,7 +23,7 @@ struct PickRoleView: View {
     
     @State var tempIndex: Int = 0
     @State var order: Int = 0
-    
+    @Binding var isSheetShowing: Bool
     var body: some View {
         VStack {
             
@@ -91,6 +92,8 @@ struct PickRoleView: View {
                         
                         tempIndex = index
                         
+                        travelData.travel.users[0].myRole = selectedRole
+                        
                     } label: {
                         ZStack{
                             RoleGridView(role: $usingRoles[index])
@@ -136,7 +139,8 @@ struct PickRoleView: View {
                 userIndex = tempIndex
                 isTapped[userIndex] = true
                 usingRoles[userIndex].isChecked.toggle()
-                
+                isSheetShowing = false
+//                travelData.travel.users[0].myRole = selectedRole
                 if order < travelData.travel.users.count - 1 { order += 1 }
                 
 //                if(userIndex < (travelData.travel.users.count - 1)){
@@ -152,13 +156,14 @@ struct PickRoleView: View {
                     .cornerRadius(10)
             })
         }
+        .navigationBarHidden(true)
         .padding()
     }
 }
 
-struct PickRoleView_Previews: PreviewProvider {
-    static var previews: some View {
-        PickRoleView(selectedRole: Role.defaultRoles[0])
-            .environmentObject(TravelData())
-    }
-}
+//struct PickRoleView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PickRoleView(selectedRole: Role.defaultRoles[0])
+//            .environmentObject(TravelData())
+//    }
+//}

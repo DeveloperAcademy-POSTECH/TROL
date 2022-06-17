@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "트롤.png",
+      "filename" : "Trol.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "트롤-1.png",
+      "filename" : "Trol-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "트롤-2.png",
+      "filename" : "Trol-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
