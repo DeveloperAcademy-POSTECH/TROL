@@ -21,7 +21,7 @@ struct ProgressingMyTravelView: View {
     @State private var myCode : String = "3BF5GKS"  //나의 코드
     @State private var FriendCode = ""
     
-    @State var tempAddUser: [String] = ["밀키", "린다", "데일", "버킬", "준"]
+    @State var tempAddUser: [String] = ["오션", "린다", "데일", "버킬", "준"]
     @State var selectedFriend: User = User.myself
     
     var pasteBoard = UIPasteboard.general //나의 코드 누르면 복사
