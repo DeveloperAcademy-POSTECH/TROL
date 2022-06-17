@@ -76,18 +76,18 @@ struct PickRoleView: View {
             
             
             LazyVGrid(columns: columns, spacing: 13) {
-                ForEach(usingRoles.indices, id: \.self) { index in
+                ForEach(travelData.travel.usingRoles.indices, id: \.self) { index in
                     Button {
                         
-                        self.selectedRole = usingRoles[index]
+                        self.selectedRole = travelData.travel.usingRoles[index]
                         
-                        for idx in 0..<usingRoles.count {
+                        for idx in 0..<travelData.travel.usingRoles.count {
                             if idx != index {
-                                usingRoles[idx].isChecked = false
+                                travelData.travel.usingRoles[idx].isChecked = false
                             }
                         }
                         
-                        usingRoles[index].isChecked.toggle()
+                        travelData.travel.usingRoles[index].isChecked.toggle()
                         
                         tempIndex = index
                         
@@ -95,7 +95,7 @@ struct PickRoleView: View {
                         
                     } label: {
                         ZStack{
-                            RoleGridView(role: $usingRoles[index])
+                            RoleGridView(role: $travelData.travel.usingRoles[index])
                             if isTapped[index] {
                                 RoundedRectangle(cornerRadius: 10)
                                     .fill(Color.black)
@@ -133,15 +133,33 @@ struct PickRoleView: View {
             Button(action: {
                 travelData.travel.users[order].myRole = selectedRole
                 
-                print(travelData.travel.users[order].name, travelData.travel.users[order].myRole!.name)
+//                print(travelData.travel.users[order].name, travelData.travel.users[order].myRole!.name)
                 
                 userIndex = tempIndex
                 isTapped[userIndex] = true
-                usingRoles[userIndex].isChecked.toggle()
+//                travelData.travel.usingRoles[userIndex].isChecked.toggle()
                 isSheetShowing = false
-//                travelData.travel.users[0].myRole = selectedRole
+                var tempRole: Role = Role.defaultRoles[0]
                 if order < travelData.travel.users.count - 1 { order += 1 }
-                
+                for index in 0..<travelData.travel.users.count{
+                    if(travelData.travel.usingRoles[index].isChecked){
+                        travelData.travel.users[0].myRole = selectedRole
+                        
+                    }
+                    else{
+                        if(index == 0){
+                            tempRole = travelData.travel.usingRoles[0]
+                        }
+                        else{
+                            travelData.travel.users[index].myRole = travelData.travel.usingRoles[index]
+                        }
+                    }
+                }
+                for index in 0..<travelData.travel.users.count{
+                    if let _ = travelData.travel.users[index].myRole{} else{
+                        travelData.travel.users[index].myRole = tempRole
+                    }
+                }
 //                if(userIndex < (travelData.travel.users.count - 1)){
 //                    userIndex += 1
 //                }
