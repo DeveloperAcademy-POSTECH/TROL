@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TabBarView: View {
+    @State var ShowOnBoarding: Bool = true
     @State private var selection = 0
     
     var body: some View {
@@ -30,6 +31,9 @@ struct TabBarView: View {
             
         }
         .accentColor(Color("TrolGreen"))
+        .fullScreenCover(isPresented: $ShowOnBoarding, content: {
+            OnboardingView(ShowOnBoarding: $ShowOnBoarding)
+        })
     }
 }
 
