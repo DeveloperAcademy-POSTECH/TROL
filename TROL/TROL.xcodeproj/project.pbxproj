@@ -33,6 +33,8 @@
 		835443EB284F4CE400AF2F1F /* ProgressingMyTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835443EA284F4CE400AF2F1F /* ProgressingMyTravelView.swift */; };
 		838273A82851D81B00FC6301 /* LadderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838273A72851D81B00FC6301 /* LadderView.swift */; };
 		BFA9F3762854870B0026D60D /* TapTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA9F3752854870B0026D60D /* TapTap.swift */; };
+		BFDEAF32285C0DE600702FA7 /* confetti.gif in Resources */ = {isa = PBXBuildFile; fileRef = BFDEAF31285C0DE600702FA7 /* confetti.gif */; };
+		BFDEAF34285C0DFF00702FA7 /* GifImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDEAF33285C0DFF00702FA7 /* GifImage.swift */; };
 		BFE12828285B0BBC00335C5D /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE12827285B0BBC00335C5D /* OnboardingView.swift */; };
 		E15840B12851C25900F39095 /* Happiness-Sans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E15840AE2851C25900F39095 /* Happiness-Sans-Bold.ttf */; };
 		E15840B22851C25900F39095 /* Happiness-Sans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E15840AF2851C25900F39095 /* Happiness-Sans-Regular.ttf */; };
@@ -92,6 +94,8 @@
 		835443EA284F4CE400AF2F1F /* ProgressingMyTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressingMyTravelView.swift; sourceTree = "<group>"; };
 		838273A72851D81B00FC6301 /* LadderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LadderView.swift; sourceTree = "<group>"; };
 		BFA9F3752854870B0026D60D /* TapTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapTap.swift; sourceTree = "<group>"; };
+		BFDEAF31285C0DE600702FA7 /* confetti.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = confetti.gif; sourceTree = "<group>"; };
+		BFDEAF33285C0DFF00702FA7 /* GifImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifImage.swift; sourceTree = "<group>"; };
 		BFE12827285B0BBC00335C5D /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		E15840AE2851C25900F39095 /* Happiness-Sans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Happiness-Sans-Bold.ttf"; sourceTree = "<group>"; };
 		E15840AF2851C25900F39095 /* Happiness-Sans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Happiness-Sans-Regular.ttf"; sourceTree = "<group>"; };
@@ -175,6 +179,7 @@
 		835443A9284F4C7200AF2F1F = {
 			isa = PBXGroup;
 			children = (
+				BFDEAF30285C0DD000702FA7 /* gif */,
 				BFE12826285B0B6800335C5D /* OnboardingView */,
 				838273A62851D80C00FC6301 /* RoleGame */,
 				838273A32851D4A400FC6301 /* TabBar */,
@@ -256,6 +261,15 @@
 				BFA9F3752854870B0026D60D /* TapTap.swift */,
 			);
 			path = RoleGame;
+			sourceTree = "<group>";
+		};
+		BFDEAF30285C0DD000702FA7 /* gif */ = {
+			isa = PBXGroup;
+			children = (
+				BFDEAF31285C0DE600702FA7 /* confetti.gif */,
+				BFDEAF33285C0DFF00702FA7 /* GifImage.swift */,
+			);
+			path = gif;
 			sourceTree = "<group>";
 		};
 		BFE12826285B0B6800335C5D /* OnboardingView */ = {
@@ -393,6 +407,7 @@
 				E15840B32851C25900F39095 /* Happiness-Sans-Title.ttf in Resources */,
 				E15840B12851C25900F39095 /* Happiness-Sans-Bold.ttf in Resources */,
 				E15840B22851C25900F39095 /* Happiness-Sans-Regular.ttf in Resources */,
+				BFDEAF32285C0DE600702FA7 /* confetti.gif in Resources */,
 				835443BA284F4C7500AF2F1F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -428,6 +443,7 @@
 				E15840B82851CAA500F39095 /* TicketInfoView.swift in Sources */,
 				36D96F4F28503F560076BFE5 /* GridView.swift in Sources */,
 				835443E9284F4CD400AF2F1F /* RoleGameView.swift in Sources */,
+				BFDEAF34285C0DFF00702FA7 /* GifImage.swift in Sources */,
 				3609BC4728571D6000B550B3 /* DefaultRoles.swift in Sources */,
 				36094D0F2851026200132DE5 /* CustomGridView.swift in Sources */,
 				BFE12828285B0BBC00335C5D /* OnboardingView.swift in Sources */,

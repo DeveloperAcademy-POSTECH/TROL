@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-
 struct OnboardingView: View {
     
     @Binding var ShowOnBoarding : Bool
@@ -16,13 +15,17 @@ struct OnboardingView: View {
         TabView(selection: $pageIndex){
             OnboardingPage1View(pageIndex: $pageIndex).tag(0)
             OnboardingPage2View(ShowOnBoarding: $ShowOnBoarding).tag(1)
-            
-        }
+                
+        }.tabViewStyle(.page(indexDisplayMode: .never))
     }
 }
 struct OnboardingPage1View: View{
     @Binding var pageIndex : Int
     var body: some View{
+        ZStack{
+            GifImage("confetti")
+                .frame(width:.infinity, height: .infinity)
+                
         VStack{
         //로고
         Image("LogoBig")
@@ -47,6 +50,9 @@ struct OnboardingPage1View: View{
                 )
         }
     }//vstack
+            
+        }//zstack
+        .ignoresSafeArea(.all)
     }
 }
 struct OnboardingPage2View:View {
@@ -118,9 +124,9 @@ struct OnboardingPage2View:View {
         }.padding()
     }
 }
-//struct OnboardingView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        OnboardingView(ShowOnBoarding: $ShowOnBoarding)
-////        OnboardingPageView(ShowOnBoarding: .constant(true))
-//    }
-//}
+struct OnboardingView_Previews: PreviewProvider {
+    static var previews: some View {
+        OnboardingView(ShowOnBoarding: .constant(true))
+//        OnboardingPageView(ShowOnBoarding: .constant(true))
+    }
+}
