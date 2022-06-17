@@ -80,7 +80,7 @@ struct TodoCreateView: View {
                             .bold()
                     )
             }.padding([.leading], 18.5)
-            
+            Spacer()
             
         }
     }
