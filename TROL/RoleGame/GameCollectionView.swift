@@ -18,13 +18,14 @@ struct GameCollectionView: View {
     @State private var isTimeEnded: Bool = false
     @Binding var isSheetShowing: Bool
     var body: some View {
+        NavigationView{
         ZStack{
         switch gameName{
         case "젓가락 뽑기":
-            ChopsticksView(isGameStarted: $isGameStarted, isGameEnded: $isGameEnded, isGameResult: $isGameResult)
+            ChopsticksView(isGameStarted: $isGameStarted, isGameEnded: $isGameEnded, isGameResult: $isGameResult, isSheetShowing: $isSheetShowing)
                 .disabled(isGameStarted)
             VStack{
-                Spacer().frame(height: screenHeight / 1.5)
+                Spacer().frame(height: screenHeight / 1.2)
             if(isGameStarted){
             Button(action: {
                 isGameStarted.toggle()
@@ -36,14 +37,14 @@ struct GameCollectionView: View {
                     }
             })
             }
-            else if(isGameEnded){
-                Text("")
-                    .frame(width: 0, height: 0)
-                    .task(delayTime)
-            }
-            else if(isGameResult){
-                NavigationLink(destination: PickRoleView(isSheetShowing: $isSheetShowing), isActive: $isGameResult, label: {Text("")})
-            }
+//            if(isGameEnded){
+//                Text("")
+//                    .frame(width: 0, height: 0)
+//                    .task(delayTime)
+//            }
+//            if(isGameResult){
+//                NavigationLink(destination: ChopsticksResultView(Height: winne, isSheetShowing: <#T##Binding<Bool>#>), isActive: $isGameResult, label: {Text("")})
+//            }
             }
         case "랜덤 다이스":
             EmptyView()
@@ -56,14 +57,15 @@ struct GameCollectionView: View {
         }
             
         }
+        .navigationBarHidden(true)
+        }
 //        .navigationTitle(Text("\(gameName)"))
     }
-    private func delayTime() async {
-        try? await Task.sleep(nanoseconds: 2_500_000_000)
-                isTimeEnded = true
-        isGameEnded.toggle()
-        isGameResult.toggle()
-    }
+//    func delayTime() async {
+//        try? await Task.sleep(nanoseconds: 2_500_000_000)
+//                isTimeEnded = true
+//        isGameResult.toggle()
+//    }
 }
 
 //struct GameCollectionView_Previews: PreviewProvider {
