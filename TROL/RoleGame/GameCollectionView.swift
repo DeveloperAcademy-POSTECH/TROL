@@ -15,6 +15,7 @@ struct GameCollectionView: View {
     @State var isGameStarted: Bool = true
     @State var isGameEnded: Bool = false
     @State var isGameResult: Bool = false
+    @State private var isTimeEnded: Bool = false
     var body: some View {
         NavigationView{
         ZStack{
@@ -26,7 +27,6 @@ struct GameCollectionView: View {
                 Spacer().frame(height: screenHeight / 1.5)
             if(isGameStarted){
             Button(action: {
-                isGameEnded.toggle()
                 isGameStarted.toggle()
             }, label: {
                 GameButton()
@@ -37,31 +37,12 @@ struct GameCollectionView: View {
             })
             }
             else if(isGameEnded){
-                Button(action: {
-                    isGameEnded.toggle()
-                    isGameResult.toggle()
-                }, label: {
-                    GameButton()
-                        .overlay{
-                            Text("결과 보기")
-                                .foregroundColor(Color("TrolGreen"))
-                        }
-                })
+                Text("")
+                    .frame(width: 0, height: 0)
+                    .task(delayTime)
             }
             else if(isGameResult){
-                Button(action: {
-                    NavigationLink(destination:{
-//                        PickRoleView()
-                    },label:{
-                        Text("")
-                    })
-                }, label: {
-                    GameButton()
-                        .overlay{
-                            Text("역할 선정하러 가기")
-                                .foregroundColor(Color("TrolGreen"))
-                        }
-                })
+                NavigationLink(destination: PickRoleView(), isActive: $isGameResult, label: {Text("")}).navigationBarHidden(true)
             }
             }
         case "랜덤 다이스":
@@ -78,11 +59,17 @@ struct GameCollectionView: View {
 //        .navigationTitle(Text("\(gameName)"))
     }
     }
+    private func delayTime() async {
+        try? await Task.sleep(nanoseconds: 2_500_000_000)
+                isTimeEnded = true
+        isGameEnded.toggle()
+        isGameResult.toggle()
+    }
 }
 
 struct GameCollectionView_Previews: PreviewProvider {
     static var previews: some View {
-        GameCollectionView(gameName: "탭탭 무한탭")
+        GameCollectionView(gameName: "젓가락 뽑기")
             .environmentObject(TravelData())
     }
 }
