@@ -12,9 +12,9 @@ struct TodoUpdateView: View {
     @EnvironmentObject var roleData: RoleData
     
     @State private var updateTodo: String = ""
-    
+    @State private var tempText: String = ""
     @Environment(\.presentationMode) var presentation
-    var todoId: Int
+    @Binding var todoId: Int
     
     
     var body: some View {
@@ -30,7 +30,9 @@ struct TodoUpdateView: View {
             HStack{
                 Spacer()
                 Button() {
-                    travelData.travel.users[0].toDoList?.remove(at: todoId)
+                    travelData.travel.users[0].toDoList.remove(at: todoId)
+                    todoId -= 1
+                    print(todoId)
                     presentation.wrappedValue.dismiss()
                 } label: {
                     Text("삭제하기")
@@ -42,16 +44,25 @@ struct TodoUpdateView: View {
             }
             
             Text("할 일 수정하기").font(.system(size: 28)).foregroundColor(Color.black).bold().padding(.leading, 17.5).padding(.top, 16)
-            
             TextField(
-                "\(travelData.travel.users[0].toDoList![todoId].title)",
+                "\(tempText)",
                 text: $updateTodo
             )
                 .disableAutocorrection(true)
                 .padding(.leading, 18)
                 .padding(.top, 8)
                 .font(.system(size: 17))
-       
+                .task{
+                    tempText = travelData.travel.users[0].toDoList[todoId].title
+                }
+//            TextField(
+//                "\(travelData.travel.users[0].toDoList[todoId].title)",
+//                text: $updateTodo
+//            )
+//                .disableAutocorrection(true)
+//                .padding(.leading, 18)
+//                .padding(.top, 8)
+//                .font(.system(size: 17))
             Divider()
                 .frame(height: 1)
                 .frame(width: .infinity)
@@ -64,7 +75,7 @@ struct TodoUpdateView: View {
             Spacer().frame(height: 291.5)
             
             Button(action: {
-                travelData.travel.users[0].toDoList![todoId].title = updateTodo
+                travelData.travel.users[0].toDoList[todoId].title = updateTodo
                 presentation.wrappedValue.dismiss()
             }) {
                 RoundedRectangle(cornerRadius: 10)

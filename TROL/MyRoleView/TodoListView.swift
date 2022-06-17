@@ -45,16 +45,16 @@ struct TodoListView: View {
                     )
 
             }
-            ForEach(0..<travelData.travel.users[0].toDoList!.count, id:\.self) { i in
+            ForEach(0..<travelData.travel.users[0].toDoList.count, id:\.self) { i in
                 
-                CheckView(isChecked: travelData.travel.users[0].toDoList![i].isChecked, title: travelData.travel.users[0].toDoList![i].title)
+                CheckView(isChecked: travelData.travel.users[0].toDoList[i].isChecked, title: travelData.travel.users[0].toDoList[i].title)
                     .onTapGesture {
                         showTodoUpdate.toggle()
                         index = i
                     }
                     .sheet(isPresented: self.$showTodoUpdate){
 //                        TodoUpdateView()
-                        TodoUpdateView(todoId: index)
+                        TodoUpdateView(todoId: $index)
                     }
             }
             Divider()

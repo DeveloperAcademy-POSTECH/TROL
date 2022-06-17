@@ -11,11 +11,12 @@ import UIKit
 struct GameCollectionView: View {
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
-    let gameName: String
+    @Binding var gameName: String
     @State var isGameStarted: Bool = true
     @State var isGameEnded: Bool = false
     @State var isGameResult: Bool = false
     @State private var isTimeEnded: Bool = false
+    @Binding var isSheetShowing: Bool
     var body: some View {
         ZStack{
         switch gameName{
@@ -41,13 +42,13 @@ struct GameCollectionView: View {
                     .task(delayTime)
             }
             else if(isGameResult){
-                NavigationLink(destination: PickRoleView(), isActive: $isGameResult, label: {Text("")})
+                NavigationLink(destination: PickRoleView(isSheetShowing: $isSheetShowing), isActive: $isGameResult, label: {Text("")})
             }
             }
         case "랜덤 다이스":
             EmptyView()
         case "탭탭 무한탭":
-            BeforeTap()
+            BeforeTap(isSheetShowing: $isSheetShowing)
         case "업 앤 다운":
             EmptyView()
         default:
@@ -65,12 +66,12 @@ struct GameCollectionView: View {
     }
 }
 
-struct GameCollectionView_Previews: PreviewProvider {
-    static var previews: some View {
-        GameCollectionView(gameName: "젓가락 뽑기")
-            .environmentObject(TravelData())
-    }
-}
+//struct GameCollectionView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        GameCollectionView(gameName: "젓가락 뽑기")
+//            .environmentObject(TravelData())
+//    }
+//}
 
 struct GameButton: View {
     var body: some View {

@@ -39,11 +39,13 @@ struct Travel {
 struct User {
     var name: String
     var myRole: Role?
-    var toDoList: [ToDoList]?
+    var toDoList: [ToDoList] = []
+    
+    
 }
 
 extension User {
-    static var myself = User(name: "오션", myRole: nil, toDoList: nil)
+    static var myself = User(name: "오션", myRole: nil, toDoList: [])
 }
 
 struct Role {

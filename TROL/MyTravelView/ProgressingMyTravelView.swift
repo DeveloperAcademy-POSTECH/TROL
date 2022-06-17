@@ -123,7 +123,7 @@ struct ProgressingMyTravelView: View {
                             .padding(.bottom)
                             .onSubmit {
                                 FriendCode = ""
-                                travelData.travel.users.append(User(name: tempAddUser[0], myRole: nil, toDoList: nil))
+                                travelData.travel.users.append(User(name: tempAddUser[0], myRole: nil, toDoList: []))
                                 tempAddUser.removeFirst()
                             }
                         
