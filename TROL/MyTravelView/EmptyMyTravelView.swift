@@ -14,21 +14,24 @@ struct EmptyMyTravelView: View {
     var body: some View {
         
         // 진행중인 여행이 없을때 띄울 뷰
-        NavigationView {
             VStack() {
+                HStack{
                 Text("진행중인 여행")
                     .font(.system(size: 28))
                     .bold()
-                    .frame(width: 354, height: 34, alignment: .leading)
+                    .padding()
+                    Spacer()
+                }
                 
                 Spacer()
                 
                 Text("휑")
-                    .font(.custom("Happiness-Sans-Title.", size: 270))
-                    .bold()
+                    .font(.custom("Happiness-Sans-Bold", size: 270))
                     .foregroundColor(Color("TrolDimGray"))
-                    .overlay(Image("LyingBear")
-                        .offset(y: 120)
+                    .overlay(Image("lyingTROL").resizable()
+                        .scaledToFit()
+                        .frame(width: 350, height:300)
+                        .offset(y: 50)
                     )
                     .padding()
                 
@@ -47,10 +50,10 @@ struct EmptyMyTravelView: View {
                         .frame(width: 354, height: 54)
                         .background(Color("TrolGreen"))
                         .cornerRadius(10)
+                        .padding(.bottom)
                 }
-
+                
             }
-        }
     }
 }
 

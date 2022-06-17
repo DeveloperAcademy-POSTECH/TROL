@@ -16,19 +16,23 @@ struct RoleGridView: View {
             if role.isChecked {
                 RoundedRectangle(cornerRadius: 10)
                     .stroke(Color("TrolGreen"), lineWidth: 3)
+                    .background(Color("TrolYellow"))
                     .frame(width: 110, height: 110)
             } else {
             RoundedRectangle(cornerRadius: 10)
-                    .fill(Color("TrolDimGray"))
+                    .fill(Color("TrolYellow"))
                     .frame(width: 110, height: 110)
             }
             
-            Image("HiBear")
+            Image("\(role.trolImage)")
                 .resizable()
                 .scaledToFill()
-                .offset(x: 15, y: 30)
-                .frame(width: 110, height: 110)
-                .clipped()
+                .offset(x: 10, y: 20)
+                .frame(width: 150, height: 150)
+                .mask(
+                    RoundedRectangle(cornerRadius: 10)
+                        .frame(width: 110, height: 110)
+                )
             
             
             switch role.name.count {

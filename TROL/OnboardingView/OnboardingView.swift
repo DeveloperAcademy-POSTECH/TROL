@@ -24,7 +24,8 @@ struct OnboardingPage1View: View{
     var body: some View{
         ZStack{
             GifImage("confetti")
-                .frame(width:.infinity, height: .infinity)
+                
+            
                 
         VStack{
         //로고
@@ -68,7 +69,7 @@ struct OnboardingPage2View:View {
                     .padding()
                 Spacer()
             }
-            Spacer()
+            Spacer().frame(height: 50)
             Image("normalTROL")
                 .resizable()
                 .scaledToFill()
@@ -78,7 +79,7 @@ struct OnboardingPage2View:View {
                 .background(.green)
                 .frame(width: 153, height: 153)
                 .clipShape(Circle())
-            
+                .padding(.bottom)
             //텍스트 필드
             TextField(
                 "닉네임을 적어 주세요",
@@ -101,7 +102,7 @@ struct OnboardingPage2View:View {
                 
                 Spacer()
                 
-                Text("🧩")
+                Text("🧩").font(.system(size: 30))
             }
             .padding()
             .background(Color("TrolIvory"))
@@ -116,7 +117,7 @@ struct OnboardingPage2View:View {
                     .fill(Color("TrolGreen"))
                     .frame(width: 354, height: 50)
                     .overlay(
-                        Text("역할 분배 시작하기")
+                        Text("새로운 여행 시작하기")
                             .foregroundColor(Color.white)
                             .bold()
                     )
@@ -127,6 +128,6 @@ struct OnboardingPage2View:View {
 struct OnboardingView_Previews: PreviewProvider {
     static var previews: some View {
         OnboardingView(ShowOnBoarding: .constant(true))
-//        OnboardingPageView(ShowOnBoarding: .constant(true))
+//        OnboardingPage2View(ShowOnBoarding: .constant(true))
     }
 }

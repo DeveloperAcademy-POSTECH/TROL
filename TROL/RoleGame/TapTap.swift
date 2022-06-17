@@ -10,12 +10,13 @@ import UIKit
 
 struct BeforeTap: View{
     var body: some View{
-        NavigationView{
             VStack{
                 //추후 추가될 이미지
-                Image("HiBear")
+                Image("taptapTROL")
                     .resizable()
                     .scaledToFit()
+                    .frame(width: 354)
+                    .clipShape(RoundedRectangle(cornerRadius: 7))
                 //설명란
                 VStack(alignment: .leading){
                     Text("시작하고 3초후 5초간 화면을 탭해주세요!")
@@ -36,7 +37,6 @@ struct BeforeTap: View{
                         .cornerRadius(7)
                 }
             }
-        }
     }
 }
 struct TapTap: View {
@@ -109,10 +109,9 @@ struct TapTap: View {
                 
                     .background(Color("TrolIvory"))
                     .padding(.bottom)
-                
+                    .navigationBarHidden(true)
                 
             }//vstack
-            .navigationBarHidden(true)
             .onAppear(perform: {
                 DispatchQueue.main.asyncAfter(deadline: .now()+3){
                     print("Start~")
@@ -204,10 +203,9 @@ struct TapTap: View {
                                 .bold()
                         )
                     
-                })
+                }).navigationBarHidden(true)
                 
             }//vstack
-            .navigationBarHidden(true)
             
             
             

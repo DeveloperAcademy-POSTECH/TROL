@@ -15,8 +15,8 @@ struct RoleGameView: View {
     let columns = [GridItem(.flexible()),
                             GridItem(.flexible())]
     var body: some View {
+        NavigationView{
         if travelData.travel.isExist {
-            NavigationView{
             VStack{
                 Image("LogoBig")
                     .resizable()
@@ -37,11 +37,11 @@ struct RoleGameView: View {
                     }
                 }
                 Spacer()
+
             }
-            .navigationBarHidden(true)
-            }
-        } else {
-            EmptyMyTravelView()
+            .navigationBarHidden(true)} else {
+            EmptyMyTravelView().navigationBarHidden(true)
+        }
         }
     }
 }

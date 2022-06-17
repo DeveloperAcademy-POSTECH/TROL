@@ -17,7 +17,8 @@ extension Role {
         ], guide: [
             "친구들의 여행 스타일을 조사해보세요!",
             "플랜 B를 꼭 준비하세요!"
-        ], introducingSentence: "돈 관리는 내가 한다!", isChecked: false),
+        ], introducingSentence: "돈 관리는 내가 한다!", isChecked: false
+            , trolImage: "managerTROL"),
         
         Role(name: "길라잡이", info: [
             "모두의 이동을 책임져줄 인간 내비게이터!",
@@ -28,7 +29,8 @@ extension Role {
             "국내는 카카오맵, 해외는 구글맵을 통해 길을 찾는 것을 추천해요!",
             "GPS를 킨 채로 나의 현재 위치를 보며 길을 찾으면 편리해요!",
             "우리가 갈 곳을 지도 앱에 찍어 모두에게 공유해보아요!"
-        ], introducingSentence: "길찾기는 내가 한다!", isChecked: false),
+        ], introducingSentence: "길찾기는 내가 한다!", isChecked: false
+            , trolImage: "guideTROL"),
         
         
         Role(name: "드라이버", info: [
@@ -40,7 +42,8 @@ extension Role {
             "네비게이션을 미리 업그레이드 해둬요",
             "음주 예정이라면 다른 이동수단을 선택할 수 있도록 여행원들에게 알려요",
             "주유 예정이라면 근처에 가장 저렴한 곳을 미리 체크해둬요"
-        ], introducingSentence: "운전은 내가 한다!", isChecked: false),
+        ], introducingSentence: "운전은 내가 한다!", isChecked: false
+             , trolImage: "driverTROL"),
         
         
         Role(name: "사진가", info: [
@@ -51,7 +54,8 @@ extension Role {
             "여행에 떠나기 전, 사진 핫플레이스를 미리 조사해보세요!",
             "단체포즈와 컨셉을 미리 기획해두면 더 즐거운 추억으로 남길 수 있어요!",
             "사진 어플을 여러개 준비해요!"
-        ], introducingSentence: "사진은 내가 찍는다!", isChecked: false),
+        ], introducingSentence: "사진은 내가 찍는다!", isChecked: false
+             , trolImage: "photoTROL"),
         
         
         Role(name: "계획자", info: [
@@ -62,7 +66,8 @@ extension Role {
             "여행원이 가고싶은 장소들을 미리 받아 계획을 하면 모두 만족하는 여행이 될 수 있어요",
             "관광지나 카페 등의 영업시간을 미리 체크해보아요",
             "플랜 B를 고려해서 예상치 못한 상황에도 자연스럽게 넘어갈 수 있도록 해요"
-        ], introducingSentence: "계획은 내가 한다!", isChecked: false),
+        ], introducingSentence: "계획은 내가 한다!", isChecked: false
+             , trolImage: "plannerTROL"),
         
         
         Role(name: "커뮤니케이터", info: [
@@ -73,7 +78,8 @@ extension Role {
             "여행을 떠나기 전, 인삿말과 같은 기본 회화는 연습해 보는게 좋아요!",
             "외국어를 몰라도 우리에겐 구글 번역과 파파고, 제스처가 있어요!",
             "실수해도 괜찮아요, 외국어니까요!"
-        ], introducingSentence: "외국어는 내가 한다!", isChecked: false),
+        ], introducingSentence: "외국어는 내가 한다!", isChecked: false
+             , trolImage: "papagoTROL"),
         
         
         Role(name: "광대", info: [
@@ -83,7 +89,8 @@ extension Role {
         ], guide: [
             "재미있는 우리들의 추억들을 꺼내주세요!",
             "MZ처럼 재미있는 유행어를 만들고 활용해요!"
-        ], introducingSentence: "나도 이젠 모르겠다!", isChecked: false),
+        ], introducingSentence: "나도 이젠 모르겠다!", isChecked: false
+             , trolImage: "clownTROL"),
         
         
         Role(name: "DJ", info: [
@@ -94,7 +101,8 @@ extension Role {
             "친구들의 노래 스타일을 조사해보세요!",
             "여행에 떠나기 전, 미리 플레이리스트를 만들어요",
             "효과음도 준비해두면 매 순간이 예능이 될 수 있어요"
-        ], introducingSentence: "음악은 내가 튼다!", isChecked: false),
+        ], introducingSentence: "음악은 내가 튼다!", isChecked: false
+             , trolImage: "djTROL"),
         
         
         Role(name: "요리사", info: [
@@ -105,7 +113,8 @@ extension Role {
             "내가 할 수 있는 요리가 무엇인지 친구들에게 미리 알려줘요",
             "설거지는 쉐프의 담당이 아니라는 점 잊지 말아요",
             "혼자서 여러 명의 요리를 담당하기 힘들 땐 도움을 요청해요"
-        ], introducingSentence: "요리는 내가 한다!", isChecked: false),
+        ], introducingSentence: "요리는 내가 한다!", isChecked: false
+             , trolImage: "chefTROL"),
         
         
         Role(name: "인간공유기", info: [
@@ -115,7 +124,8 @@ extension Role {
             "설거지가 필요한 것부터 걷어낸 후, 자리를 정리하면 편해요",
             "설거지는 기름기 있는 걸 나중에! 기름기 있는 건 뜨거운 물로!",
             "카페에 갔다면 냅킨과 물티슈를 꼭 챙겨요"
-        ], introducingSentence: "뒷정리는 내가 한다!", isChecked: false),
+        ], introducingSentence: "뒷정리는 내가 한다!", isChecked: false
+             , trolImage: "wifiTROL"),
         
         
         Role(name: "짐꾼", info: [
@@ -126,7 +136,8 @@ extension Role {
             "짐을 들더라도 내가 무리할 정도의 무게라면 친구와 같이 들어요",
             "들고있는 가방에 들어갈 정도인지 가늠하고 물건을 받아요",
             "들고 있던 짐은 짐꾼이 나눠주지 말고 친구들이 직접 찾아가도록 한 곳에 모아둬요"
-        ], introducingSentence: "짐은 내가 든다!", isChecked: false),
+        ], introducingSentence: "짐은 내가 든다!", isChecked: false
+             , trolImage: "porterTROL"),
 
 
         Role(name: "메이드", info: [
@@ -136,6 +147,7 @@ extension Role {
             "설거지가 필요한 것부터 걷어낸 후, 자리를 정리하면 편해요",
             "설거지는 기름기 있는 걸 나중에! 기름기 있는 건 뜨거운 물로!",
             "카페에 갔다면 냅킨과 물티슈를 꼭 챙겨요"
-        ], introducingSentence: "뒷정리는 내가 한다!", isChecked: false),
+        ], introducingSentence: "뒷정리는 내가 한다!", isChecked: false
+             , trolImage: "maidTROL"),
     ]
 }

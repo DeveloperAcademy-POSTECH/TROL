@@ -153,7 +153,6 @@ struct PickRoleView: View {
             })
         }
         .padding()
-        .navigationBarHidden(true)
     }
 }
 
