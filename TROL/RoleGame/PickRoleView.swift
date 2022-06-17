@@ -32,13 +32,12 @@ struct PickRoleView: View {
                     .font(.custom("Happiness-Sans-Bold", size: 22))
                 
                 Spacer()
-                
-                Button {
-                    print("add this area later")
-                } label: {
+                NavigationLink(destination: {
+                    RoleDictionaryView()
+                }, label: {
                     Image(systemName: "info.circle")
                         .foregroundColor(Color("TrolGreen"))
-                }
+                })
             }
             .padding()
             

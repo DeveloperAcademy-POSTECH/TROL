@@ -127,11 +127,11 @@ struct TapTap: View {
                 }
             }
         }//zstack
-                
+        
         
     }
 }
-    //게임이 끝나고 결과 확인
+//게임이 끝나고 결과 확인
 struct AfterGame:View{
     //임시 유저
     @StateObject var tempUsers = TempUsers()
@@ -190,7 +190,7 @@ struct AfterGame:View{
                 }
             }
             Spacer()
-                
+            
             //다음으로 가기
             NavigationLink(destination: PickRoleView(isSheetShowing: $isSheetShowing),isActive: $confirmResult, label:{
                 Text("")})
@@ -209,13 +209,13 @@ struct AfterGame:View{
                 
             }).navigationBarHidden(true)
             
-            }//vstack
+        }//vstack
         
         
         
     }
 }
-    //순위대로 역할 선택하기 //추후 버킬코드로 갈아 끼울 예정
+//순위대로 역할 선택하기 //추후 버킬코드로 갈아 끼울 예정
 //    struct GameResult: View{
 //
 //        var columns: [GridItem] = [
@@ -284,7 +284,7 @@ struct AfterGame:View{
 //        }
 //
 //    }
-    
+
 //    struct TapTap_Previews: PreviewProvider {
 //        static var previews: some View {
 ////                                    BeforeTap()
@@ -293,32 +293,32 @@ struct AfterGame:View{
 //            //        GameResult()
 //        }
 //    }
-    
-    
-    //임시 데이터 모델
-    
-    //임시 유저, 이름과 탭한 횟수를 받아옴
-    struct TempUserRank {
-        var name: String
-        var countTap: Int
-    }
-    //임시 사람들
-    class TempUsers: ObservableObject{
-        @Published var tempRank = [
-            TempUserRank(name: "밀키", countTap: 34),
-            TempUserRank(name: "준", countTap: 22),
-            TempUserRank(name: "버킬", countTap: 28),
-            TempUserRank(name: "오션", countTap: 32),
-            TempUserRank(name: "린다", countTap: 11),
-            TempUserRank(name: "데일", countTap: 18)
-        ]
-        //countTap에 따라 순위를 다시 재설정함
-        var sortedRank: [TempUserRank] {
-            get {
-                tempRank.sorted(by: { $0.countTap > $1.countTap })
-            }
-            set {
-                tempRank = newValue
-            }
+
+
+//임시 데이터 모델
+
+//임시 유저, 이름과 탭한 횟수를 받아옴
+struct TempUserRank {
+    var name: String
+    var countTap: Int
+}
+//임시 사람들
+class TempUsers: ObservableObject{
+    @Published var tempRank = [
+        TempUserRank(name: "밀키", countTap: 34),
+        TempUserRank(name: "준", countTap: 22),
+        TempUserRank(name: "버킬", countTap: 28),
+        TempUserRank(name: "오션", countTap: 32),
+        TempUserRank(name: "린다", countTap: 11),
+        TempUserRank(name: "데일", countTap: 18)
+    ]
+    //countTap에 따라 순위를 다시 재설정함
+    var sortedRank: [TempUserRank] {
+        get {
+            tempRank.sorted(by: { $0.countTap > $1.countTap })
+        }
+        set {
+            tempRank = newValue
         }
     }
+}
