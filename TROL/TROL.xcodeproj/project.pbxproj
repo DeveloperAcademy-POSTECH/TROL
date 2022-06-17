@@ -32,6 +32,9 @@
 		835443E9284F4CD400AF2F1F /* RoleGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835443E8284F4CD400AF2F1F /* RoleGameView.swift */; };
 		835443EB284F4CE400AF2F1F /* ProgressingMyTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835443EA284F4CE400AF2F1F /* ProgressingMyTravelView.swift */; };
 		838273A82851D81B00FC6301 /* LadderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838273A72851D81B00FC6301 /* LadderView.swift */; };
+		83B930A6285B4624003AE3C2 /* PickRoleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B930A5285B4624003AE3C2 /* PickRoleView.swift */; };
+		83F59FC52858B41200D3751E /* ChopsticksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F59FC42858B41200D3751E /* ChopsticksView.swift */; };
+		83F59FCB2859F67400D3751E /* GameCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F59FCA2859F67400D3751E /* GameCollectionView.swift */; };
 		BFA9F3762854870B0026D60D /* TapTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA9F3752854870B0026D60D /* TapTap.swift */; };
 		BFDEAF32285C0DE600702FA7 /* confetti.gif in Resources */ = {isa = PBXBuildFile; fileRef = BFDEAF31285C0DE600702FA7 /* confetti.gif */; };
 		BFDEAF34285C0DFF00702FA7 /* GifImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDEAF33285C0DFF00702FA7 /* GifImage.swift */; };
@@ -93,6 +96,9 @@
 		835443E8284F4CD400AF2F1F /* RoleGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleGameView.swift; sourceTree = "<group>"; };
 		835443EA284F4CE400AF2F1F /* ProgressingMyTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressingMyTravelView.swift; sourceTree = "<group>"; };
 		838273A72851D81B00FC6301 /* LadderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LadderView.swift; sourceTree = "<group>"; };
+		83B930A5285B4624003AE3C2 /* PickRoleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickRoleView.swift; sourceTree = "<group>"; };
+		83F59FC42858B41200D3751E /* ChopsticksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChopsticksView.swift; sourceTree = "<group>"; };
+		83F59FCA2859F67400D3751E /* GameCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCollectionView.swift; sourceTree = "<group>"; };
 		BFA9F3752854870B0026D60D /* TapTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapTap.swift; sourceTree = "<group>"; };
 		BFDEAF31285C0DE600702FA7 /* confetti.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = confetti.gif; sourceTree = "<group>"; };
 		BFDEAF33285C0DFF00702FA7 /* GifImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifImage.swift; sourceTree = "<group>"; };
@@ -216,8 +222,6 @@
 				835443BE284F4C7500AF2F1F /* Persistence.swift */,
 				835443C0284F4C7500AF2F1F /* TROL.xcdatamodeld */,
 				835443BB284F4C7500AF2F1F /* Preview Content */,
-				835443E4284F4CA100AF2F1F /* TabBarView.swift */,
-				835443E8284F4CD400AF2F1F /* RoleGameView.swift */,
 			);
 			path = TROL;
 			sourceTree = "<group>";
@@ -250,6 +254,7 @@
 		838273A32851D4A400FC6301 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
+				835443E4284F4CA100AF2F1F /* TabBarView.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -257,8 +262,12 @@
 		838273A62851D80C00FC6301 /* RoleGame */ = {
 			isa = PBXGroup;
 			children = (
+				835443E8284F4CD400AF2F1F /* RoleGameView.swift */,
 				838273A72851D81B00FC6301 /* LadderView.swift */,
 				BFA9F3752854870B0026D60D /* TapTap.swift */,
+				83F59FCA2859F67400D3751E /* GameCollectionView.swift */,
+				83F59FC42858B41200D3751E /* ChopsticksView.swift */,
+				83B930A5285B4624003AE3C2 /* PickRoleView.swift */,
 			);
 			path = RoleGame;
 			sourceTree = "<group>";
@@ -440,16 +449,19 @@
 				E15840B62851CA7600F39095 /* MyRoleView.swift in Sources */,
 				36477E86284F79C00067B480 /* FriendRoleView.swift in Sources */,
 				835443B8284F4C7200AF2F1F /* ContentView.swift in Sources */,
+				83B930A6285B4624003AE3C2 /* PickRoleView.swift in Sources */,
 				E15840B82851CAA500F39095 /* TicketInfoView.swift in Sources */,
 				36D96F4F28503F560076BFE5 /* GridView.swift in Sources */,
 				835443E9284F4CD400AF2F1F /* RoleGameView.swift in Sources */,
 				BFDEAF34285C0DFF00702FA7 /* GifImage.swift in Sources */,
 				3609BC4728571D6000B550B3 /* DefaultRoles.swift in Sources */,
+				83F59FC52858B41200D3751E /* ChopsticksView.swift in Sources */,
 				36094D0F2851026200132DE5 /* CustomGridView.swift in Sources */,
 				BFE12828285B0BBC00335C5D /* OnboardingView.swift in Sources */,
 				E15840BC2851CAB500F39095 /* TodoListView.swift in Sources */,
 				835443EB284F4CE400AF2F1F /* ProgressingMyTravelView.swift in Sources */,
 				BFA9F3762854870B0026D60D /* TapTap.swift in Sources */,
+				83F59FCB2859F67400D3751E /* GameCollectionView.swift in Sources */,
 				835443C2284F4C7500AF2F1F /* TROL.xcdatamodeld in Sources */,
 				835443E5284F4CA100AF2F1F /* TabBarView.swift in Sources */,
 				36F7E97B2857271C009EC456 /* MyTravelView.swift in Sources */,
