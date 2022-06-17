@@ -136,6 +136,10 @@ struct AddTravelView: View {
                         
                         print("\(travelData.travel)")
                         print("\(travelData.travel.isExist)")
+                        
+                        for i in 0..<travelData.travel.usingRoles.count {
+                            travelData.travel.usingRoles[i].isChecked = false
+                        }
                     } label: {
                         Text("새로운 여행 저장하기")
                             .foregroundColor(.white)
