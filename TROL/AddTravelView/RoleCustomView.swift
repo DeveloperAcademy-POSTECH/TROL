@@ -22,10 +22,21 @@ struct RoleCustomView: View {
             VStack(alignment: .leading) {
                 Text("역할명")
                     .font(.custom("Happiness-Sans-Bold", size: 22))
-                
-                TextField("6자 이내의 역할명을 입력해주세요", text: $roleName)
+                    
+                VStack {
+                    TextField(
+                        "6자 이내의 역할명을 입력해주세요",
+                        text: $roleName
+                    ).modifier(ClearButton(text: $roleName))
+                    .disableAutocorrection(true)
+                    .padding(.trailing, -12)
+                    
+                    Rectangle()
+                        .frame(width: 354, height: 1)
+                        .offset(y: 5)
+                }
+                .padding(.vertical)
             }
-            .padding()
             
             VStack(alignment: .leading) {
                 Text("역할 소개")
@@ -37,7 +48,7 @@ struct RoleCustomView: View {
                         HStack(alignment: .firstTextBaseline) {
                             if roleInfo[i].isEmpty {
                                 Image(systemName: "checkmark")
-                                    .foregroundColor(Color("TrolDimGray"))
+//                                    .foregroundColor(Color("DeepGray"))
                                     .font(Font.body.weight(.bold))
                             } else {
                                 Image(systemName: "checkmark")
@@ -57,7 +68,7 @@ struct RoleCustomView: View {
                     }
                 }
             }
-            .padding()
+//            .padding(.bottom)
             
             VStack(alignment: .leading) {
                 Text("역할 가이드")
@@ -69,7 +80,7 @@ struct RoleCustomView: View {
                         HStack(alignment: .firstTextBaseline) {
                             if roleGuide[i].isEmpty {
                                 Image(systemName: "quote.opening")
-                                    .foregroundColor(Color("TrolDimGray"))
+//                                    .foregroundColor(Color("DeepGray"))
                                     .font(Font.body.weight(.bold))
                             } else {
                                 Image(systemName: "quote.opening")
@@ -89,7 +100,8 @@ struct RoleCustomView: View {
                     }
                 }
             }
-            .padding()
+            
+            Spacer()
             
             Button {
                 roleData.roles.append(Role(name: roleName, info: roleInfo, guide: roleGuide, introducingSentence: "", isChecked: false))
@@ -104,6 +116,7 @@ struct RoleCustomView: View {
                     .cornerRadius(10)
             }
         }
+        .padding()
         .navigationTitle("역할 커스텀하기")
     }
 }
