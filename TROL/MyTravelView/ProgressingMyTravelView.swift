@@ -151,18 +151,18 @@ struct ProgressingMyTravelView: View {
                         ForEach(travelData.travel.users.indices, id: \.self) { i in
                             
                             Button {
-                                print("\(travelData.travel.users[i].name) called")
+//                                print("\(travelData.travel.users[i].name) called")
                                 
                                 // 역할 배정이 됐는가? 검사
                                 if let _ = travelData.travel.users[i].myRole {
                                     self.isShowModal = true
                                 }
                                 
-                                print("\(travelData.travel.users[i])")
-                                print("\(travelData.travel.users)")
-                                print("\(travelData.travel.usingRoles)")
+//                                print("\(travelData.travel.users[i])")
+//                                print("\(travelData.travel.users)")
+//                                print("\(travelData.travel.usingRoles)")
                                 
-                                travelData.travel.users[0].myRole = travelData.travel.usingRoles[0]
+//                                travelData.travel.users[0].myRole = travelData.travel.usingRoles[0]
                                 
                                 
                                 self.selectedFriend = self.travelData.travel.users[i]
