@@ -24,80 +24,77 @@ struct FriendRoleView: View {
                     .resizable()
                     .frame(width: 50, height: 5)
                     .foregroundColor(.black)
+                    .padding(.top, 10)
                 Spacer()
             }
             HStack{
                 Spacer()
                 Button() {
-//                    self.presentationMode.wrappedValue.dismiss()
+                    self.presentationMode.wrappedValue.dismiss()
                 } label: {
                     Text("닫기")
                         .font(.system(size: 17))
                         .padding(.horizontal)
                         .foregroundColor(.black)
                 }
-                
-                
-                
             }
             
-            
-            
-            // 역할 이름 & 이미지
-            RoleRectangleView(testFriend: $testFriend)
-            
-            // 역할 소개
-            VStack(alignment: .leading) {
-                Text("역할 소개")
-                    .font(.system(size: 20))
-                    .bold()
-                    .padding(.vertical, 5)
-                    .foregroundColor(.black)
+            VStack{
+                // 역할 이름 & 이미지
+                RoleRectangleView(testFriend: $testFriend)
                 
-                ForEach(testFriend.myRole!.info.indices, id: \.self) { i in
-                    VStack(alignment: .leading) {
-                        HStack(alignment: .firstTextBaseline) {
-                            Image(systemName: "checkmark")
-                                .foregroundColor(Color("TrolGreen"))
-                                .font(Font.body.weight(.bold))
-                            
-                            Text("\(testFriend.myRole!.info[i])")
-                                .frame(width: 300, alignment: .leading)
-                                .font(.system(size: 17))
-                                .foregroundColor(.black)
-                                .multilineTextAlignment(.leading)
+                // 역할 소개
+                VStack(alignment: .leading) {
+                    Text("역할 소개")
+                        .font(.system(size: 20))
+                        .bold()
+                        .padding(.vertical, 5)
+                        .foregroundColor(.black)
+                    
+                    ForEach(testFriend.myRole!.info.indices, id: \.self) { i in
+                        VStack(alignment: .leading) {
+                            HStack(alignment: .firstTextBaseline) {
+                                Image(systemName: "checkmark")
+                                    .foregroundColor(Color("TrolGreen"))
+                                    .font(Font.body.weight(.bold))
+                                
+                                Text("\(testFriend.myRole!.info[i])")
+                                    .frame(width: 300, alignment: .leading)
+                                    .font(.system(size: 17))
+                                    .foregroundColor(.black)
+                                    .multilineTextAlignment(.leading)
+                            }
+                            .padding(.bottom, 14)
                         }
-                        .padding(.bottom, 14)
                     }
                 }
-            }
-            
-            
-            // 역할 가이드
-            VStack(alignment: .leading) {
-                Text("역할 가이드")
-                    .font(.system(size: 20))
-                    .bold()
-                    .padding(.bottom, 5)
-                    .foregroundColor(.black)
                 
-                ForEach(testFriend.myRole!.guide.indices, id: \.self) { i in
-                    VStack(alignment: .leading) {
-                        HStack(alignment: .firstTextBaseline) {
-                            Image(systemName: "quote.opening")
-                                .foregroundColor(Color("TrolGreen"))
-                            
-                            Text("\(testFriend.myRole!.guide[i])")
-                                .frame(width: 300, alignment: .leading)
-                                .font(.system(size: 17))
-                                .foregroundColor(.black)
-                                .multilineTextAlignment(.leading)
+                // 역할 가이드
+                VStack(alignment: .leading) {
+                    Text("역할 가이드")
+                        .font(.system(size: 20))
+                        .bold()
+                        .padding(.bottom, 5)
+                        .foregroundColor(.black)
+                    
+                    ForEach(testFriend.myRole!.guide.indices, id: \.self) { i in
+                        VStack(alignment: .leading) {
+                            HStack(alignment: .firstTextBaseline) {
+                                Image(systemName: "quote.opening")
+                                    .foregroundColor(Color("TrolGreen"))
+                                
+                                Text("\(testFriend.myRole!.guide[i])")
+                                    .frame(width: 300, alignment: .leading)
+                                    .font(.system(size: 17))
+                                    .foregroundColor(.black)
+                                    .multilineTextAlignment(.leading)
+                            }
+                            .padding(.bottom, 14)
                         }
-                        .padding(.bottom, 14)
                     }
                 }
-            }
-            Spacer()
+                Spacer()
+            }.offset(y:-20)
         }
         
     }

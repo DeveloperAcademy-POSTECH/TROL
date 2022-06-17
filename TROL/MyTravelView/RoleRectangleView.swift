@@ -20,10 +20,10 @@ struct RoleRectangleView: View {
                 .foregroundColor(Color("TrolYellow"))
                 .padding(.horizontal)
             
-            Image("normalTROL")
+            Image(testFriend.myRole?.trolImage ?? "normalTROL")
                 .resizable()
                 .scaledToFill()
-                .frame(width: 150, height: 160)
+                .frame(width: 230, height: 230)
                 .offset(x: 80, y: 30)
                 .mask {
                     VStack {
