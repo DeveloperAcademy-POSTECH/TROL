@@ -177,14 +177,14 @@ struct AfterGame:View{
                             Spacer()
                             Text("\(tempUsers.sortedRank[index].countTap)")
                         }
-                        .foregroundColor(tempUsers.sortedRank[index].name == "오션" ? Color("TrolGreen") : Color.black)
+                        .foregroundColor(tempUsers.sortedRank[index].name == "밀키" ? Color("TrolGreen") : Color.black)
                     }.font(.custom("Happiness-Sans-Regular", size: 17))
                     
                 }.listStyle(.inset)
                 
             }.onAppear(){
                 for index in tempUsers.tempRank.indices{
-                    if tempUsers.tempRank[index].name == "오션" {
+                    if tempUsers.tempRank[index].name == "밀키" {
                         tempUsers.tempRank[index].countTap = CountTap
                     }
                 }
