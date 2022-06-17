@@ -14,8 +14,6 @@
 		36477E88284F79D00067B480 /* EmptyMyTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36477E87284F79D00067B480 /* EmptyMyTravelView.swift */; };
 		36553A642850EBE80095016B /* TravelRole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36553A632850EBE80095016B /* TravelRole.swift */; };
 		365CE5A82851E8B60000BC6A /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365CE5A72851E8B60000BC6A /* Model.swift */; };
-		366F433E285C0BD60010F9C2 /* GifImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366F433D285C0BD60010F9C2 /* GifImage.swift */; };
-		366F4340285C0C180010F9C2 /* confetti.gif in Resources */ = {isa = PBXBuildFile; fileRef = 366F433F285C0C180010F9C2 /* confetti.gif */; };
 		36D4C2A92850E18700A585E6 /* AddTravelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D4C2A82850E18700A585E6 /* AddTravelView.swift */; };
 		36D96F4F28503F560076BFE5 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D96F4E28503F560076BFE5 /* GridView.swift */; };
 		36D96F51285046460076BFE5 /* RoleRectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D96F50285046460076BFE5 /* RoleRectangleView.swift */; };
@@ -74,8 +72,6 @@
 		36477E87284F79D00067B480 /* EmptyMyTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyMyTravelView.swift; sourceTree = "<group>"; };
 		36553A632850EBE80095016B /* TravelRole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelRole.swift; sourceTree = "<group>"; };
 		365CE5A72851E8B60000BC6A /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		366F433D285C0BD60010F9C2 /* GifImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifImage.swift; sourceTree = "<group>"; };
-		366F433F285C0C180010F9C2 /* confetti.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = confetti.gif; sourceTree = "<group>"; };
 		36D4C2A82850E18700A585E6 /* AddTravelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTravelView.swift; sourceTree = "<group>"; };
 		36D96F4E28503F560076BFE5 /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
 		36D96F50285046460076BFE5 /* RoleRectangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleRectangleView.swift; sourceTree = "<group>"; };
@@ -168,15 +164,6 @@
 			path = DataModel;
 			sourceTree = "<group>";
 		};
-		366F433C285C0BCA0010F9C2 /* GIF */ = {
-			isa = PBXGroup;
-			children = (
-				366F433F285C0C180010F9C2 /* confetti.gif */,
-				366F433D285C0BD60010F9C2 /* GifImage.swift */,
-			);
-			path = GIF;
-			sourceTree = "<group>";
-		};
 		36D4C2A72850E15900A585E6 /* AddTravelView */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,7 +179,6 @@
 		835443A9284F4C7200AF2F1F = {
 			isa = PBXGroup;
 			children = (
-				366F433C285C0BCA0010F9C2 /* GIF */,
 				838273A62851D80C00FC6301 /* RoleGame */,
 				838273A32851D4A400FC6301 /* TabBar */,
 				835443B4284F4C7200AF2F1F /* TROL */,
@@ -405,7 +391,6 @@
 				E15840B32851C25900F39095 /* Happiness-Sans-Title.ttf in Resources */,
 				E15840B12851C25900F39095 /* Happiness-Sans-Bold.ttf in Resources */,
 				E15840B22851C25900F39095 /* Happiness-Sans-Regular.ttf in Resources */,
-				366F4340285C0C180010F9C2 /* confetti.gif in Resources */,
 				835443BA284F4C7500AF2F1F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -445,7 +430,6 @@
 				3609BC4728571D6000B550B3 /* DefaultRoles.swift in Sources */,
 				83F59FC52858B41200D3751E /* ChopsticksView.swift in Sources */,
 				36094D0F2851026200132DE5 /* CustomGridView.swift in Sources */,
-				366F433E285C0BD60010F9C2 /* GifImage.swift in Sources */,
 				E15840BC2851CAB500F39095 /* TodoListView.swift in Sources */,
 				835443EB284F4CE400AF2F1F /* ProgressingMyTravelView.swift in Sources */,
 				BFA9F3762854870B0026D60D /* TapTap.swift in Sources */,
