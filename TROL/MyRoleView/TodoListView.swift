@@ -13,22 +13,10 @@ struct TodoListView: View {
     @EnvironmentObject var roleData: RoleData
     
     @State private var showTodoCreate = false
-    
-    struct ToDo: Identifiable{
-        var id:Int
-        var title: String
-        var isChecked: Bool = false
-    }
-    
-    private var todo = [
-        ToDo(id: 0, title: "항공권 가격 비교하기", isChecked: true),
-        ToDo(id: 1, title: "항공권 예약하기", isChecked: false),
-        ToDo(id: 2, title: "숙소+항공권 가격 정산", isChecked: false),
-        ToDo(id: 3, title: "숙소 알아보기", isChecked: true),
-        ToDo(id: 4, title: "내 계좌 알려주기", isChecked: true)
-    ]
-    
+    @State private var showTodoUpdate = false
     @State private var checked = false
+    
+    @State var index: Int
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0){
@@ -52,37 +40,53 @@ struct TodoListView: View {
                     .padding()
                     .overlay(
                         RoundedRectangle(cornerRadius: 10)
-                            .strokeBorder(.gray, lineWidth: 1)
+                            .strokeBorder(Color.gray, lineWidth: 1)
                             .frame(width: 354, height: 50)
                     )
+
+            }
+            ForEach(0..<travelData.travel.users[0].toDoList!.count, id:\.self) { i in
                 
+                CheckView(isChecked: travelData.travel.users[0].toDoList![i].isChecked, title: travelData.travel.users[0].toDoList![i].title)
+                    .onTapGesture {
+                        showTodoUpdate.toggle()
+                        index = i
+                    }
+                    .sheet(isPresented: self.$showTodoUpdate){
+//                        TodoUpdateView()
+                        TodoUpdateView(todoId: index)
+                    }
             }
-            ForEach(travelData.travel.users[0].toDoList!) { item in
-                CheckView(isChecked: item.isChecked, title: item.title).padding(EdgeInsets(top: 5, leading: 15, bottom: 0, trailing: 0))
-            }
+            Divider()
         }
     }
 }
 
-struct TodoList_Previews: PreviewProvider {
-    static var previews: some View {
-        TodoListView()
-    }
-}
+//struct TodoList_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TodoListView()
+//            .environmentObject(TravelData())
+//            .environmentObject(RoleData())
+//    }
+//}
 
 struct CheckView: View {
     @State var isChecked:Bool = false
     var title:String
     func toggle(){isChecked = !isChecked}
     var body: some View {
-        VStack(alignment: .leading){
+        VStack(alignment: .leading, spacing: 0){
             Divider()
-            HStack(alignment: .top, spacing: 12) {
-                
+            HStack() {
+                Spacer().frame(width: 18)
                 Button(action: toggle) {
-                    Image(systemName: isChecked ? "square.fill" : "square")
+                    Image(systemName: isChecked ? "square.fill" : "square").font(.system(size: 20)).foregroundColor(Color("TrolGreen"))
                 }
-                isChecked ? Text(title).strikethrough().font(.system(size: 17)) : Text(title).font(.system(size: 17))
+                Spacer().frame(width: 12)
+                isChecked ? Text(title).strikethrough().font(.system(size: 17)).padding(.top, 15)
+                    .padding(.bottom, 15) : Text(title).font(.system(size: 17))
+                    .padding(.top, 15)
+                    .padding(.bottom, 15)
             }
         }
     }

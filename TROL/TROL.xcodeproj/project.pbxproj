@@ -38,6 +38,7 @@
 		83F59FC52858B41200D3751E /* ChopsticksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F59FC42858B41200D3751E /* ChopsticksView.swift */; };
 		83F59FCB2859F67400D3751E /* GameCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F59FCA2859F67400D3751E /* GameCollectionView.swift */; };
 		BFA9F3762854870B0026D60D /* TapTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA9F3752854870B0026D60D /* TapTap.swift */; };
+		E14989592858E395001F9D08 /* TodoUpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14989582858E395001F9D08 /* TodoUpdateView.swift */; };
 		BFDEAF32285C0DE600702FA7 /* confetti.gif in Resources */ = {isa = PBXBuildFile; fileRef = BFDEAF31285C0DE600702FA7 /* confetti.gif */; };
 		BFDEAF34285C0DFF00702FA7 /* GifImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDEAF33285C0DFF00702FA7 /* GifImage.swift */; };
 		BFE12828285B0BBC00335C5D /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE12827285B0BBC00335C5D /* OnboardingView.swift */; };
@@ -104,6 +105,7 @@
 		83F59FC42858B41200D3751E /* ChopsticksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChopsticksView.swift; sourceTree = "<group>"; };
 		83F59FCA2859F67400D3751E /* GameCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCollectionView.swift; sourceTree = "<group>"; };
 		BFA9F3752854870B0026D60D /* TapTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapTap.swift; sourceTree = "<group>"; };
+		E14989582858E395001F9D08 /* TodoUpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoUpdateView.swift; sourceTree = "<group>"; };
 		BFDEAF31285C0DE600702FA7 /* confetti.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = confetti.gif; sourceTree = "<group>"; };
 		BFDEAF33285C0DFF00702FA7 /* GifImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifImage.swift; sourceTree = "<group>"; };
 		BFE12827285B0BBC00335C5D /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
@@ -310,6 +312,7 @@
 			isa = PBXGroup;
 			children = (
 				E1B2089728531BD400C3B521 /* TodoCreateView.swift */,
+				E14989582858E395001F9D08 /* TodoUpdateView.swift */,
 			);
 			path = TodoCRUD;
 			sourceTree = "<group>";
@@ -458,6 +461,7 @@
 				835443B8284F4C7200AF2F1F /* ContentView.swift in Sources */,
 				83B930A6285B4624003AE3C2 /* PickRoleView.swift in Sources */,
 				E15840B82851CAA500F39095 /* TicketInfoView.swift in Sources */,
+				E14989592858E395001F9D08 /* TodoUpdateView.swift in Sources */,
 				36D96F4F28503F560076BFE5 /* GridView.swift in Sources */,
 				835443E9284F4CD400AF2F1F /* RoleGameView.swift in Sources */,
 				BFDEAF34285C0DFF00702FA7 /* GifImage.swift in Sources */,
