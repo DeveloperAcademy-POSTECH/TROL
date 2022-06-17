@@ -22,7 +22,13 @@ struct AddTravelView: View {
     var body: some View {
         ScrollView() {
             VStack(alignment: .leading, spacing: 18) {
-                
+                HStack{
+                Text("진행중인 여행")
+                    .font(.system(size: 28))
+                    .bold()
+                    .padding()
+                    Spacer()
+                }
                 // 여행명 & 여행명 입력
                 VStack(alignment: .leading) {
                     Text("여행명")
@@ -113,6 +119,7 @@ struct AddTravelView: View {
                                         selectedRoles.remove(at: index)
                                     }
                                 }
+                                .padding(.vertical, -20)
                         }
                         
                         NavigationLink {
@@ -142,8 +149,9 @@ struct AddTravelView: View {
                 }
             }
             .padding()
+            .navigationBarHidden(true)
+            
         }//scrollview
-        .navigationTitle("새로운 여행 추가하기")
     }
 }
 

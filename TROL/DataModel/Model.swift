@@ -52,6 +52,7 @@ struct Role {
     var guide: [String]
     var introducingSentence: String
     var isChecked: Bool
+    var trolImage: String
 }
 
 struct ToDoList: Identifiable {

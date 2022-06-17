@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "papagoTROL.png",
+      "filename" : "트롤.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "papagoTROL-1.png",
+      "filename" : "트롤-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "papagoTROL-2.png",
+      "filename" : "트롤-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

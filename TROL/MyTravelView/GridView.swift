@@ -17,12 +17,15 @@ struct GridView: View {
                 .fill(Color("TrolDimGray"))
                 .frame(width: 110, height: 110)
             
-            Image("HiBear")
+            Image("normalTROL")
                 .resizable()
                 .scaledToFill()
-                .offset(x: 15, y: 30)
-                .frame(width: 110, height: 110)
-                .clipped()
+                .offset(x: 10, y: 20)
+                .frame(width: 150, height: 150)
+                .mask(
+                    RoundedRectangle(cornerRadius: 10)
+                        .frame(width: 110, height: 110)
+                )
             
             Text(testFriend.name)
                 .foregroundColor(.black)

@@ -22,6 +22,7 @@ struct RoleDictionaryView: View {
                             RoleDictionaryDetailView(selection: i)
                         }, label: {
                             RoleGridView(role: $roleData.roles[i])
+                                .padding(.vertical, -20)
                         })
                     }
                     

@@ -20,7 +20,7 @@ struct RoleRectangleView: View {
                 .foregroundColor(Color("trolYellow"))
                 .padding(.horizontal)
             
-            Image("HiBear")
+            Image("normalTROL")
                 .resizable()
                 .scaledToFill()
                 .frame(width: 150, height: 160)

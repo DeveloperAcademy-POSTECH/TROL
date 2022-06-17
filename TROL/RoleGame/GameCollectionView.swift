@@ -17,7 +17,6 @@ struct GameCollectionView: View {
     @State var isGameResult: Bool = false
     @State private var isTimeEnded: Bool = false
     var body: some View {
-        NavigationView{
         ZStack{
         switch gameName{
         case "젓가락 뽑기":
@@ -42,7 +41,7 @@ struct GameCollectionView: View {
                     .task(delayTime)
             }
             else if(isGameResult){
-                NavigationLink(destination: PickRoleView(), isActive: $isGameResult, label: {Text("")}).navigationBarHidden(true)
+                NavigationLink(destination: PickRoleView(), isActive: $isGameResult, label: {Text("")})
             }
             }
         case "랜덤 다이스":
@@ -57,7 +56,6 @@ struct GameCollectionView: View {
             
         }
 //        .navigationTitle(Text("\(gameName)"))
-    }
     }
     private func delayTime() async {
         try? await Task.sleep(nanoseconds: 2_500_000_000)

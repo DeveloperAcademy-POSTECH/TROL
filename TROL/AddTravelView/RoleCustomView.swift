@@ -104,7 +104,7 @@ struct RoleCustomView: View {
             Spacer()
             
             Button {
-                roleData.roles.append(Role(name: roleName, info: roleInfo, guide: roleGuide, introducingSentence: "", isChecked: false))
+                roleData.roles.append(Role(name: roleName, info: roleInfo, guide: roleGuide, introducingSentence: "", isChecked: false, trolImage: "normalTROL"))
                 self.presentationMode.wrappedValue.dismiss()
             } label: {
                 Text("새로운 역할 저장하기")

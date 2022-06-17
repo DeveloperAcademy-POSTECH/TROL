@@ -25,7 +25,7 @@ struct GifImage: UIViewRepresentable { //Essential methods are makeUIView and up
         return webView
     }
     func updateUIView(_ uiView: UIViewType, context: Context) {
-        uiView.reload()
+//        uiView.reload()
     }
 }
 

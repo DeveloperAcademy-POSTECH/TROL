@@ -21,37 +21,53 @@ struct MyRoleView: View {
     @Binding var selection: Int
     
     var body: some View {
-        ScrollView {
-            
+        NavigationView{
             if let _ = travelData.travel.users[0].myRole{ //역할 O : 기존페이지
+                ScrollView{
                 VStack(alignment: .leading) {
                     VStack(alignment: .leading){
-                    Text("나의 여행티켓").bold().font(.system(size: 28))
+                        
+                        HStack{
+                        Text("나의 여행티켓")
+                            .font(.system(size: 28))
+                            .bold()
+                            .padding()
+                            Spacer()
+                        }
                         Spacer().frame(height: 13)
                     ZStack(alignment: .topLeading) {
                         TicketBackgroundView()
                         TicketContentView().padding(EdgeInsets(top: 21, leading: 18, bottom: 0, trailing: 0))
                     }
                         Spacer().frame(height: 14)
-                    TicketInfoView()
-                    }.padding(.leading,18)
-                    Spacer().frame(height: 21)
-                        TodoListView(index: 0)
-                    
+                        TicketInfoView()
+                    }
+                        .padding(.leading,18)
+                        Spacer().frame(height: 21)
+                            TodoListView(index: 0)
+                    }
+                
                 }
-            } else { //역할X
+                .navigationBarHidden(true)} else { //역할X
                 VStack(spacing: 0) {
-                    VStack(alignment: .leading){
-                        Text("나의 여행티켓").bold().font(.system(size: 28))
-                        Spacer().frame(height: 203)
+                    VStack(){
+                        HStack{
+                        Text("나의 여행티켓")
+                            .font(.system(size: 28))
+                            .bold()
+                            .padding()
+                            Spacer()
+                        }
+                        Spacer()//.frame(height: 203)
                         ZStack(alignment: .topLeading) {
                             TicketBackgroundView()
                             TicketContentView().padding(EdgeInsets(top: 21, leading: 18, bottom: 0, trailing: 0))
                         }
+                        Spacer()
                     }
-                    Spacer().frame(height: 149)
+                    Spacer()//.frame(height: 149)
                     VStack(alignment: .center){
-                        Text("아직 나의 역할이 분배되지 않았어요!").font(.system(size: 12))
+                        Text("아직 나의 역할이 분배되지 않았어요!")//.font(.system(size: 12))
                         //역할 분배하러가기 버튼(TabBar) RoleGameView
                         Button {
                             selection = 1
@@ -64,9 +80,11 @@ struct MyRoleView: View {
                                 .frame(width: 354, height: 54)
                                 .background(Color("TrolGreen"))
                                 .cornerRadius(10)
+                                .padding(.bottom)
                         }
                     }
-                }
+                    
+                }.navigationBarHidden(true)
             }
         }
     }
@@ -80,10 +98,10 @@ struct TicketBackgroundView: View{
                 .frame(width: 354, height: 174)
             
             
-            Image("HiBear")
+            Image("normalTROL")
                 .resizable()
                 .scaledToFill()
-                .frame(width: 150, height: 174)
+                .frame(width: 250, height: 200)
                 .offset(x: 110, y: 30)
                 .mask(
                     RoundedRectangle(cornerRadius: 10)
@@ -135,10 +153,10 @@ struct TicketContentView: View{
     }
 }
 
-//struct MyRoleView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MyRoleView()
-//            .environmentObject(TravelData())
-//            .environmentObject(RoleData())
-//    }
-//}
+struct MyRoleView_Previews: PreviewProvider {
+    static var previews: some View {
+        MyRoleView(selection: .constant(0))
+            .environmentObject(TravelData())
+            .environmentObject(RoleData())
+    }
+}
