@@ -8,7 +8,6 @@
 import SwiftUI
 import UIKit
 
-
 struct PlayingUser{
     let name: String
     var myRole: Role?
@@ -25,42 +24,6 @@ struct PlayingUser{
     }
 }
 
-//struct ChopstickGame {
-//    let travelData: TravelData
-//    var users: [User]
-//    var Role: [String] = []
-//    var isTransition: Bool
-//    var isHeightSet: [Bool] = []
-//    var heights: [Double] = []
-//    var usersIndex: Int = 0
-//
-//    private var randomHeight: [Double] = [350.0, 330.0, 300.0, 400.0, 370.0]
-//
-//    init(travelData: TravelData){
-//        self.travelData = travelData
-//        self.users = travelData.travel.users
-//        self.isTransition = false
-//        for _ in 0..<users.count{
-//            self.Role.append("")
-//            self.heights.append(randomHeight.randomElement() ?? 400)
-//            self.isHeightSet.append(false)
-//        }
-//    }
-//    mutating func changeHeight(_ randomNumber: Double) {
-//        self.heights[usersIndex] = randomNumber
-//        self.isHeightSet[usersIndex] = true
-//        self.usersIndex += 1
-//    }
-//    mutating func changeRole(_ role: String) {
-//        if (isHeightSet[usersIndex]){
-//            self.Role[self.usersIndex] = role
-//            self.usersIndex += 1
-//        }
-//    }
-//    mutating func changeTransition(_ isTransition: Bool){
-//        self.isTransition = isTransition
-//    }
-//}
 struct ChopsticksView: View {
     @EnvironmentObject var travelData: TravelData
     @EnvironmentObject var roleData: RoleData
@@ -83,16 +46,24 @@ struct ChopsticksView: View {
     @State var winner: String = ""
     @State var winnerHeight: Double = 0
     @State var winnerIndex: Bool = false
+    @State private var isTimeEnded: Bool = false
+    @Binding var isSheetShowing: Bool
     var body: some View {
         ZStack{
             Section{
                 VStack{
                     VStack{
-                        Image("LogoBig")
+                        Spacer().frame(height: screenHeight/5)
+                        Image("Cloud")
                             .resizable()
                             .frame(width: 261, height: 90)
-                        Spacer().frame(height: screenHeight/115)
-                        if(!isGameResult){
+                            .overlay{
+                                Text("젓가락뽑기")
+                                    .font(.custom("Happiness-Sans-Bold", size: 28) )
+                                    .foregroundColor(Color("TrolGreen"))
+                            }
+                        Spacer().frame(height: screenHeight/70)
+                        if(isTapped.contains(false)){
                             Text("정해진 순서에 젓가락을 뽑아주세요")
                                 .font(.custom("Happiness-Sans-Bold", size: 17))
                                 .foregroundColor(Color.gray)
@@ -170,22 +141,46 @@ struct ChopsticksView: View {
                             }
                         }
                     }
-                }.position(x: screenWidth/2, y: screenHeight/2)
+                }.position(x: screenWidth/2, y: screenHeight/1.5)
             }
             VStack{
+                if(isGameStarted){
+                Button(action: {
+                    isGameStarted.toggle()
+                }, label: {
+                    GameButton()
+                        .overlay{
+                            Text("시작하기")
+                                .foregroundColor(Color("TrolGreen"))
+                        }
+                })
+                }
+                if(isGameEnded){
+                    Text("")
+                        .frame(width: 0, height: 0)
+                        .task(delayTime)
+                }
+                if(isGameResult){
+                    NavigationLink(destination: ChopsticksResultView(isSheetShowing: $isSheetShowing, randomHeight: randomHeight, winnerHeight: winnerHeight), isActive: $isGameResult, label: {Text("")})
+                }
                 Spacer()
                 if(isTapped.contains(false)){
                     container()
-                        .frame(width: screenWidth, height: screenHeight/2, alignment: .bottom)
+                        .frame(width: screenWidth, height: screenHeight/2.5, alignment: .bottom)
                         .transition(.move(edge: .bottom))
                         .animation(.spring())
                         .onDisappear(){
-                            isGameEnded.toggle()
+                            isGameEnded = true
                         }
                 }
             }
             .ignoresSafeArea()
         }
+    }
+    func delayTime() async {
+        try? await Task.sleep(nanoseconds: 2_500_000_000)
+                isTimeEnded = true
+        isGameResult.toggle()
     }
 }
 struct container: View{
