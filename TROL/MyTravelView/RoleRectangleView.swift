@@ -17,7 +17,7 @@ struct RoleRectangleView: View {
         ZStack {
             RoundedRectangle(cornerRadius: 10)
                 .frame(width: 354, height: 160)
-                .foregroundColor(Color("trolYellow"))
+                .foregroundColor(Color("TrolYellow"))
                 .padding(.horizontal)
             
             Image("normalTROL")
