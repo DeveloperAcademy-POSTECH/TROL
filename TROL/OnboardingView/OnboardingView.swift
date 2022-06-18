@@ -29,6 +29,7 @@ struct OnboardingPage1View: View{
                 
         VStack{
         //로고
+            Spacer()
         Image("LogoBig")
             .resizable()
             .frame(width: 267, height: 92)
@@ -37,6 +38,8 @@ struct OnboardingPage1View: View{
             Text("트롤에 오신 것을")
             Text("환영합니다!")
         }.font(.custom("Happiness-Sans-Bold", size: 28))
+            Spacer()
+            Spacer()
         //다음으로 버튼
         Button(action: {
             pageIndex = 1
@@ -50,6 +53,7 @@ struct OnboardingPage1View: View{
                         .bold()
                 )
         }
+        .padding()
     }//vstack
             
         }//zstack
