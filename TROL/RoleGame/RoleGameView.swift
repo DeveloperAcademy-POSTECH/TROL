@@ -17,7 +17,7 @@ struct RoleGameView: View {
     @State var isSheetShowing: Bool = false
     @State var gameName: String = ""
     var body: some View {
-        
+        NavigationView{
         if travelData.travel.isExist {
             VStack{
                 Image("LogoBig")
@@ -54,6 +54,7 @@ struct RoleGameView: View {
             .navigationBarHidden(true)} else {
                 EmptyMyTravelView().navigationBarHidden(true)
             }
+        }
         
     }
 }
@@ -70,6 +71,7 @@ struct GameTap:View{
                 Spacer()
                 HStack(){
                     Text("\(gameName)")
+                        .font(.custom("Happiness-Sans-Regular", size: 17))
                         .foregroundColor(.black)
                         .padding()
                     Spacer()
