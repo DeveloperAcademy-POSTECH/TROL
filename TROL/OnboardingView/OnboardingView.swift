@@ -29,6 +29,7 @@ struct OnboardingPage1View: View{
                 
         VStack{
         //로고
+            Spacer()
         Image("LogoBig")
             .resizable()
             .frame(width: 267, height: 92)
@@ -37,19 +38,22 @@ struct OnboardingPage1View: View{
             Text("트롤에 오신 것을")
             Text("환영합니다!")
         }.font(.custom("Happiness-Sans-Bold", size: 28))
+            Spacer()
+            Spacer()
         //다음으로 버튼
         Button(action: {
             pageIndex = 1
         }) {
             RoundedRectangle(cornerRadius: 10)
                 .fill(Color("TrolGreen"))
-                .frame(width: 354, height: 50)
+                .frame(width: 354, height: 56)
                 .overlay(
                     Text("다음으로")
                         .foregroundColor(Color.white)
                         .bold()
                 )
         }
+        .padding()
     }//vstack
             
         }//zstack
@@ -115,7 +119,7 @@ struct OnboardingPage2View:View {
             }) {
                 RoundedRectangle(cornerRadius: 10)
                     .fill(Color("TrolGreen"))
-                    .frame(width: 354, height: 50)
+                    .frame(width: 354, height: 56)
                     .overlay(
                         Text("새로운 여행 시작하기")
                             .foregroundColor(Color.white)

@@ -14,7 +14,7 @@ struct PickRoleView: View {
     @EnvironmentObject var tempUsers: TempUsers
     
     @State var selectedRole: Role = Role.defaultRoles[0]
-    private let columns = [ GridItem(.adaptive(minimum: 100)) ]
+    private let columns = [ GridItem(.flexible()), GridItem(.flexible()),GridItem(.flexible())]
     
     @State private var usingRoles: [Role] = [Role.defaultRoles[0], Role.defaultRoles[1],Role.defaultRoles[2],Role.defaultRoles[3],Role.defaultRoles[4],Role.defaultRoles[5]]
     
@@ -75,7 +75,7 @@ struct PickRoleView: View {
             }
             
             
-            LazyVGrid(columns: columns, spacing: 13) {
+            LazyVGrid(columns: columns, spacing: 3) {
                 ForEach(travelData.travel.usingRoles.indices, id: \.self) { index in
                     Button {
                         
@@ -101,13 +101,8 @@ struct PickRoleView: View {
                                     .fill(Color.black)
                                     .frame(width: 110, height: 110)
                                     .opacity(0.5)
-//                                    .overlay{
-//                                        Text("\(travelData.travel.users[order-1].name)")
-//                                            .font(.custom("Happiness-Sans-Bold", size: 28))
-//                                            .foregroundColor(.white)
-//                                    }
                             }
-                        }
+                        }.padding(.vertical, -15)
                     }
                 }
             }

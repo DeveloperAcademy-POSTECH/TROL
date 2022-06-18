@@ -28,6 +28,7 @@ struct GridView: View {
                 )
             
             Text(testFriend.name)
+                .font(.custom("Happiness-Sans-Regular", size: 17))
                 .foregroundColor(.black)
                 .offset(x: -33, y: 40)
         }

@@ -11,7 +11,7 @@ struct CustomGridView: View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 10)
-                .fill(Color("TrolDimGray"))
+                .fill(Color("TrolYellow"))
                 .foregroundColor(.black)
                 .frame(width: 110, height: 110)
             

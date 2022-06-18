@@ -14,8 +14,15 @@ struct EmptyMyTravelView: View {
     var body: some View {
         
         // 진행중인 여행이 없을때 띄울 뷰
-        NavigationView{
+//        NavigationView{
             VStack() {
+                HStack{
+                Image("LogoSingle")
+                    .resizable()
+                    .frame(width: 97, height: 23)
+                    .padding(.horizontal)
+                    Spacer()
+                }
                 HStack{
                 Text("진행중인 여행")
                     .font(.system(size: 28))
@@ -56,7 +63,7 @@ struct EmptyMyTravelView: View {
                 
             }
             .navigationBarHidden(true)
-        }
+//        }
     }
 }
 

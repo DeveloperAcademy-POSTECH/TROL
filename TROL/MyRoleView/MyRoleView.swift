@@ -9,7 +9,7 @@ import SwiftUI
 
 var dateformat: DateFormatter {
     let formatter = DateFormatter()
-    formatter.dateFormat = "YYYY.MM.d"
+    formatter.dateFormat = "YYYY.MM.dd"
     return formatter
 }
 
@@ -26,7 +26,13 @@ struct MyRoleView: View {
                 ScrollView{
                     VStack(alignment: .leading) {
                         VStack(alignment: .leading){
-                            
+                            HStack{
+                            Image("LogoSingle")
+                                .resizable()
+                                .frame(width: 97, height: 23)
+                                .padding(.horizontal)
+                                Spacer()
+                            }
                             HStack{
                                 Text("나의 여행티켓")
                                     .font(.system(size: 28))
@@ -52,6 +58,13 @@ struct MyRoleView: View {
                     VStack(spacing: 0) {
                         VStack(){
                             HStack{
+                            Image("LogoSingle")
+                                .resizable()
+                                .frame(width: 97, height: 23)
+                                .padding(.horizontal)
+                                Spacer()
+                            }
+                            HStack{
                                 Text("나의 여행티켓")
                                     .font(.system(size: 28))
                                     .bold()
@@ -67,7 +80,8 @@ struct MyRoleView: View {
                         }
                         Spacer()//.frame(height: 149)
                         VStack(alignment: .center){
-                            Text("아직 나의 역할이 분배되지 않았어요!")//.font(.system(size: 12))
+                            Text("아직 나의 역할이 분배되지 않았어요!")
+                                .font(.custom("Happiness-Sans-Regular", size: 12))
                             //역할 분배하러가기 버튼(TabBar) RoleGameView
                             Button {
                                 selection = 1
@@ -136,6 +150,7 @@ struct TicketContentView: View{
                 Text("\(travelData.travel.name)")
                     .font(.system(size: 20))
                     .bold()
+                    .padding(.top, 7)
                 Text("\(travelData.travel.startDate, formatter: dateformat) ~ \(travelData.travel.endDate, formatter: dateformat)")
                     .font(.system(size: 12))
             }
