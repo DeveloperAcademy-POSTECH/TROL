@@ -8,6 +8,13 @@
 import SwiftUI
 import UIKit
 
+//
+//var dateformat: DateFormatter {
+//    let formatter = DateFormatter()
+//    formatter.dateFormat = "YYYY.MM.dd"
+//    return formatter
+//}
+
 struct ProgressingMyTravelView: View {
     
     @EnvironmentObject var travelData: TravelData
@@ -49,7 +56,7 @@ struct ProgressingMyTravelView: View {
                                     .font(.custom("Happiness-Sans-Bold", size: 20))
                                 //                                .bold()
                                 
-                                Text("2022.06.26~2022.07.01")
+                                Text("\(travelData.travel.startDate, formatter: dateformat) ~ \(travelData.travel.endDate, formatter: dateformat)")
                                     .font(.system(size: 12))
                             }
                             Spacer()
