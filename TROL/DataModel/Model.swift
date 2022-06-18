@@ -9,7 +9,7 @@ import Foundation
 
 // 전체적인 Travel 관리
 final class TravelData: ObservableObject {
-    @Published var travel: Travel = Travel(isExist: false, name: "여행", startDate: Date(), endDate: Date(), users: [User(name: "밀키", myRole: nil, toDoList: ToDoList.defaultToDo)], usingRoles: [], travelCode: "3BF67A")
+    @Published var travel: Travel = Travel(isExist: false, name: "여행", startDate: Date(), endDate: Date(), users: [User(name: "밀키", myRole: nil, toDoList: [])], usingRoles: [], travelCode: "3BF67A")
     
     func saveTravel(isExist: Bool, name: String, startDate: Date, endDate: Date, usingRoles: [Role]) {
         self.travel.isExist = true
@@ -55,6 +55,7 @@ struct Role {
     var introducingSentence: String
     var isChecked: Bool
     var trolImage: String
+    var toDoList: [ToDoList] = []
 }
 
 struct ToDoList: Identifiable {

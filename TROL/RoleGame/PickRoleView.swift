@@ -144,7 +144,7 @@ struct PickRoleView: View {
                 for index in 0..<travelData.travel.users.count{
                     if(travelData.travel.usingRoles[index].isChecked){
                         travelData.travel.users[0].myRole = selectedRole
-                        
+                        travelData.travel.users[0].toDoList = selectedRole.toDoList
                     }
                     else{
                         if(index == 0){
@@ -152,14 +152,17 @@ struct PickRoleView: View {
                         }
                         else{
                             travelData.travel.users[index].myRole = travelData.travel.usingRoles[index]
+                            travelData.travel.users[index].toDoList = travelData.travel.usingRoles[index].toDoList
                         }
                     }
                 }
                 for index in 0..<travelData.travel.users.count{
                     if let _ = travelData.travel.users[index].myRole{} else{
                         travelData.travel.users[index].myRole = tempRole
+                        travelData.travel.users[index].toDoList = tempRole.toDoList
                     }
                 }
+                print(travelData.travel.users[0].toDoList)
 //                if(userIndex < (travelData.travel.users.count - 1)){
 //                    userIndex += 1
 //                }
