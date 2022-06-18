@@ -11,12 +11,12 @@ struct RoleDictionaryView: View {
     
     @EnvironmentObject var roleData: RoleData
 
-    let columns = [ GridItem(.adaptive(minimum: 100)) ]
+    let columns = [ GridItem(.adaptive(minimum: 116, maximum: 116)) ]
     
     var body: some View {
         VStack{
             ScrollView{
-                LazyVGrid(columns: columns, spacing: 20) {
+                LazyVGrid(columns: columns, spacing: 16) {
                     ForEach(roleData.roles.indices, id: \.self) { i in
                         NavigationLink(destination:{
                             RoleDictionaryDetailView(selection: i)

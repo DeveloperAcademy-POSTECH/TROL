@@ -40,6 +40,13 @@ struct ProgressingMyTravelView: View {
             // 타이틀
             VStack() {
                 HStack{
+                Image("LogoSingle")
+                    .resizable()
+                    .frame(width: 97, height: 23)
+                    .padding(.horizontal)
+                    Spacer()
+                }
+                HStack{
                 Text("진행중인 여행")
                     .font(.system(size: 28))
                     .bold()
@@ -62,7 +69,7 @@ struct ProgressingMyTravelView: View {
                             Spacer()
                             //설정 들어가기 버튼
                             NavigationLink(destination:{
-                                EmptyView()
+                                AddTravelView()
                             }, label:{
                                 Image(systemName: "gearshape.fill")
                                     .foregroundColor(.black)

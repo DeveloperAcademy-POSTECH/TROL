@@ -12,8 +12,8 @@ struct RoleGameView: View {
     @EnvironmentObject var travelData: TravelData
     @EnvironmentObject var roleData: RoleData
     let gameNames: [String] = ["젓가락 뽑기", "랜덤 다이스","탭탭 무한탭", "업 앤 다운"]
-    let columns = [GridItem(.flexible()),
-                   GridItem(.flexible())]
+    let columns = [GridItem(.adaptive(minimum: 180, maximum: 180)),
+                   GridItem(.adaptive(minimum: 180, maximum: 180))]
     @State var isSheetShowing: Bool = false
     @State var gameName: String = ""
     var body: some View {
@@ -30,22 +30,15 @@ struct RoleGameView: View {
                     .padding(12)
                 
                 Spacer()
-                LazyVGrid(columns: columns, spacing: 20){
+                LazyVGrid(columns: columns, spacing: 15){
                     ForEach(gameNames, id:\.self){ name in
                         Button {
                             isSheetShowing = true
                             gameName = name
                         } label: {
                             GameTap(gameName: name)
-                        }.fullScreenCover(isPresented: $isSheetShowing, content:{ GameCollectionView(gameName: $gameName, isSheetShowing: $isSheetShowing)})
-
-//                        Button(action: {isSheetShowing = true}) {
-//                            GameTap(gameName: name)
-//                        }.fullScreenCover(isPresented: $isSheetShowing, content:{ GameCollectionView(gameName: name)})
-                        //                        NavigationLink(destination: GameCollectionView(gameName: name), label: {
-                        //                            GameTap(gameName: name)
-                        //                        })
-                        
+                        }
+                        .fullScreenCover(isPresented: $isSheetShowing, content:{ GameCollectionView(gameName: $gameName, isSheetShowing: $isSheetShowing)})
                     }
                 }
                 Spacer()
@@ -74,6 +67,7 @@ struct GameTap:View{
                         .font(.custom("Happiness-Sans-Regular", size: 17))
                         .foregroundColor(.black)
                         .padding()
+                        .padding(.horizontal, 14)
                     Spacer()
                 }
             }

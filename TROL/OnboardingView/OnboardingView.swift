@@ -46,7 +46,7 @@ struct OnboardingPage1View: View{
         }) {
             RoundedRectangle(cornerRadius: 10)
                 .fill(Color("TrolGreen"))
-                .frame(width: 354, height: 50)
+                .frame(width: 354, height: 56)
                 .overlay(
                     Text("다음으로")
                         .foregroundColor(Color.white)
@@ -119,7 +119,7 @@ struct OnboardingPage2View:View {
             }) {
                 RoundedRectangle(cornerRadius: 10)
                     .fill(Color("TrolGreen"))
-                    .frame(width: 354, height: 50)
+                    .frame(width: 354, height: 56)
                     .overlay(
                         Text("새로운 여행 시작하기")
                             .foregroundColor(Color.white)

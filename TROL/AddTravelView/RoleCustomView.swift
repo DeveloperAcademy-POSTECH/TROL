@@ -30,7 +30,7 @@ struct RoleCustomView: View {
                     ).modifier(ClearButton(text: $roleName))
                     .disableAutocorrection(true)
                     .padding(.trailing, -12)
-                    
+                    .font(.custom("Happiness-Sans-Regular", size: 17))
                     Rectangle()
                         .frame(width: 354, height: 1)
                         .offset(y: 5)
@@ -48,7 +48,7 @@ struct RoleCustomView: View {
                         HStack(alignment: .firstTextBaseline) {
                             if roleInfo[i].isEmpty {
                                 Image(systemName: "checkmark")
-//                                    .foregroundColor(Color("DeepGray"))
+                                    .foregroundColor(Color("GoodGray"))
                                     .font(Font.body.weight(.bold))
                             } else {
                                 Image(systemName: "checkmark")
@@ -58,6 +58,7 @@ struct RoleCustomView: View {
                             
                             
                             TextField("최대 4개의 소개까지 입력할 수 있어요", text: $roleInfo[i])
+                                .font(.custom("Happiness-Sans-Regular", size: 17))
                                 .onSubmit {
                                     if roleInfo.count < 4 {
                                         roleInfo.append("")
@@ -80,7 +81,7 @@ struct RoleCustomView: View {
                         HStack(alignment: .firstTextBaseline) {
                             if roleGuide[i].isEmpty {
                                 Image(systemName: "quote.opening")
-//                                    .foregroundColor(Color("DeepGray"))
+                                    .foregroundColor(Color("GoodGray"))
                                     .font(Font.body.weight(.bold))
                             } else {
                                 Image(systemName: "quote.opening")
@@ -90,6 +91,7 @@ struct RoleCustomView: View {
                             
                             
                             TextField("최대 4개의 가이드까지 입력할 수 있어요", text: $roleGuide[i])
+                                .font(.custom("Happiness-Sans-Regular", size: 17))
                                 .onSubmit {
                                     if roleGuide.count < 4 {
                                         roleGuide.append("")

@@ -17,6 +17,13 @@ struct EmptyMyTravelView: View {
 //        NavigationView{
             VStack() {
                 HStack{
+                Image("LogoSingle")
+                    .resizable()
+                    .frame(width: 97, height: 23)
+                    .padding(.horizontal)
+                    Spacer()
+                }
+                HStack{
                 Text("진행중인 여행")
                     .font(.system(size: 28))
                     .bold()

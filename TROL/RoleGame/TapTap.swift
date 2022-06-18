@@ -22,7 +22,12 @@ struct BeforeTap: View{
                 //설명란
                 VStack(alignment: .leading){
                     Text("시작하고 3초후 5초간 화면을 탭해주세요!")
+                        .padding(.leading, -15)
+                        .padding(.top, 17)
                     Text("가장많이 탭한 사람이 승리합니다!")
+                        .padding(.leading, -15)
+//                        .padding(.top, 3)
+                    Spacer()
                 }.frame(width: 354, height:192)
                     .font(.custom("Happiness-Sans-Regular", size: 17))
                     .background(Color("TrolIvory"))
@@ -74,6 +79,7 @@ struct TapTap: View {
                 VStack(spacing: 11){
                     //아무데나 탭하세요
                     Text(startTime >= 1 ? "\(startTime)초 뒤에 게임이 시작해요" : "아무데나 탭하세요")
+                        .font(.custom("Happiness-Sans-Regular", size: 17))
                         .foregroundColor(.black)
                         .onReceive(timer){_ in
                             startTime -= 1
@@ -164,7 +170,7 @@ struct AfterGame:View{
                 HStack{
                     Text("랭킹 살펴보기")
                         .padding()
-                        .font(.custom("Happiness-Sans-Title", size: 28))
+                        .font(.custom("Happiness-Sans-Bold", size: 28))
                     Spacer()
                 }
                 

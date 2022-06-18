@@ -14,6 +14,7 @@ struct RoleDictionaryDetailView: View {
         TabView(selection: $selection){
             ForEach(roleData.roles.indices, id: \.self) { i in
                 //역할 이름 & 이미지
+                ScrollView{
                 VStack(alignment: .leading, spacing: 33){
 //                    Spacer().frame(height: 15)
                     ZStack{
@@ -67,6 +68,7 @@ struct RoleDictionaryDetailView: View {
                                         .font(.system(size: 17))
                                         .foregroundColor(.black)
                                         .multilineTextAlignment(.leading)
+                                        .lineLimit(100)
                                 }
                                 .padding(.bottom, 14)
                             }
@@ -101,11 +103,13 @@ struct RoleDictionaryDetailView: View {
                     
                     Spacer()
                 }.tag(i)//vstack
+                }
                 
             }//foreach
            
         }//tabview
         .tabViewStyle(.page(indexDisplayMode: .always)).foregroundColor(Color.gray)
+//        .navigationBarHidden(true)
         .navigationTitle("")
         //.navigationTitle("역할 도감")
         

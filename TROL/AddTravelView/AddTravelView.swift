@@ -26,7 +26,7 @@ struct AddTravelView: View {
                 Text("진행중인 여행")
                     .font(.system(size: 28))
                     .bold()
-                    .padding()
+                    .padding(.vertical)
                     Spacer()
                 }
                 // 여행명 & 여행명 입력
@@ -35,15 +35,16 @@ struct AddTravelView: View {
                         .font(.custom("Happiness-Sans-Bold", size: 22))
                     
                     TextField(
-                        "여행 명을 입력해주세요",
+                        "여행 명을 입력해주세요"
+                        ,
                         text: $travelName
                     ).modifier(ClearButton(text: $travelName))
                     .disableAutocorrection(true)
                     .padding(.trailing, -12)
-                    
+                    .font(.custom("Happiness-Sans-Regular", size: 17))
                     Rectangle()
                         .frame(width: 354, height: 1)
-//                        .foregroundColor()
+                        .foregroundColor(Color("GoodGray"))
                         .offset(y: 5)
                 }
                 .padding(.bottom)
@@ -101,6 +102,7 @@ struct AddTravelView: View {
                         Spacer()
                         
                         Text("👀")
+                            .font(.custom("Happiness-Sans-Regular", size: 30))
                     }
                     .padding()
                     .background(Color("TrolIvory"))
