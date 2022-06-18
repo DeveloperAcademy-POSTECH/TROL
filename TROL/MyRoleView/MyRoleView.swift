@@ -9,7 +9,7 @@ import SwiftUI
 
 var dateformat: DateFormatter {
     let formatter = DateFormatter()
-    formatter.dateFormat = "YYYY.MM.d"
+    formatter.dateFormat = "YYYY.MM.dd"
     return formatter
 }
 
