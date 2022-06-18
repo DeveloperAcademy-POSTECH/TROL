@@ -17,7 +17,7 @@ struct GridView: View {
                 .fill(Color("TrolDimGray"))
                 .frame(width: 110, height: 110)
             
-            Image("normalTROL")
+            Image("\(testFriend.myRole?.trolImage ?? "normalTROL")")
                 .resizable()
                 .scaledToFill()
                 .offset(x: 10, y: 20)
