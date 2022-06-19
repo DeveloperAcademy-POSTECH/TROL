@@ -62,7 +62,7 @@ struct PickRoleView: View {
             }
             .padding()
             .background(Color("TrolIvory"))
-            .cornerRadius(10)
+            .cornerRadius(7)
             
             VStack {
                 Text("지금 역할을 고를 사람은?")
@@ -97,7 +97,7 @@ struct PickRoleView: View {
                         ZStack{
                             RoleGridView(role: $travelData.travel.usingRoles[index])
                             if isTapped[index] {
-                                RoundedRectangle(cornerRadius: 10)
+                                RoundedRectangle(cornerRadius: 7)
                                     .fill(Color.black)
                                     .frame(width: 110, height: 110)
                                     .opacity(0.5)
@@ -121,7 +121,7 @@ struct PickRoleView: View {
             //                    .foregroundColor(.white)
             //                    .frame(width: 354, height: 54)
             //                    .background(Color("TrolGreen"))
-            //                    .cornerRadius(10)
+            //                    .cornerRadius(7)
             //            }
             
             
@@ -168,7 +168,7 @@ struct PickRoleView: View {
                     .foregroundColor(.white)
                     .frame(width: 354, height: 54)
                     .background(Color("TrolGreen"))
-                    .cornerRadius(10)
+                    .cornerRadius(7)
             })
         }
         .navigationBarHidden(true)

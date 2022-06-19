@@ -115,7 +115,7 @@ struct RoleCustomView: View {
                     .bold()
                     .frame(width: 354, height: 54)
                     .background(Color("TrolGreen"))
-                    .cornerRadius(10)
+                    .cornerRadius(7)
             }
         }
         .padding()

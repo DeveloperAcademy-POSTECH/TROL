@@ -78,7 +78,7 @@ struct TodoUpdateView: View {
                 travelData.travel.users[0].toDoList[todoId].title = updateTodo
                 presentation.wrappedValue.dismiss()
             }) {
-                RoundedRectangle(cornerRadius: 10)
+                RoundedRectangle(cornerRadius: 7)
                     .fill(Color("TrolGreen"))
                     .frame(width: 354, height: 50)
                     .overlay(

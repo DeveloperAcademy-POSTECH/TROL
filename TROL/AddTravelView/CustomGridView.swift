@@ -10,7 +10,7 @@ import SwiftUI
 struct CustomGridView: View {
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 10)
+            RoundedRectangle(cornerRadius: 7)
                 .fill(Color("TrolYellow"))
                 .foregroundColor(.black)
                 .frame(width: 110, height: 110)

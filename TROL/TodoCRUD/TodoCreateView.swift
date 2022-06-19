@@ -44,14 +44,13 @@ struct TodoCreateView: View {
             TextField(
                 "내용을 적어 주세요!",
                 text: $newTodo
-            )
-            .offset(x: -100)
+            ).foregroundColor(Color.black)
+            .multilineTextAlignment(.leading)
             .modifier(ClearButton(text: $newTodo))
                 .disableAutocorrection(true)
                 .padding(.leading, 18)
                 .padding(.top, 8)
                 .font(.system(size: 17))
-//                .offset(x: -100)
        
             Divider()
                 .frame(height: 1)
@@ -71,7 +70,7 @@ struct TodoCreateView: View {
                 presentation.wrappedValue.dismiss()
                 
             }) {
-                RoundedRectangle(cornerRadius: 10)
+                RoundedRectangle(cornerRadius: 7)
                     .fill(Color("TrolGreen"))
                     .frame(width: 354, height: 50)
                     .overlay(
@@ -81,7 +80,7 @@ struct TodoCreateView: View {
                     )
             }.padding([.leading], 18.5)
             
-            
+            Spacer()
         }
     }
 }
@@ -104,6 +103,11 @@ struct ClearButton: ViewModifier {
 }
 
 struct TodoInfoView: View {
+    
+    @EnvironmentObject var travelData: TravelData
+    @State private var isShowModal = false
+    @State var selectedFriend: User = User.myself
+    
     var body: some View {
         HStack{
             VStack(alignment: .leading){
@@ -119,14 +123,23 @@ struct TodoInfoView: View {
                     .padding(.leading, 10)
             }
             Spacer()
-            Text("📒")
-                .font(.system(size: 30))
-                .padding(.trailing, 10)
+            Button(action: {
+                self.isShowModal = true
+                selectedFriend = travelData.travel.users[0]
+            }, label: {
+                Text("📒")
+                    .font(.system(size: 30))
+                    .padding(.trailing, 10)
+                    .sheet(isPresented: self.$isShowModal){
+                        FriendRoleView(testFriend: $selectedFriend)
+                    }
+            })
+            
             
         }
         .frame(width: 354, height: 60)
         .background(Color("TrolIvory"))
-        .cornerRadius(10)
+        .cornerRadius(7)
         
         
     }
