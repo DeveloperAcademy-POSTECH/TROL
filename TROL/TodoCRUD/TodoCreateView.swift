@@ -44,14 +44,13 @@ struct TodoCreateView: View {
             TextField(
                 "내용을 적어 주세요!",
                 text: $newTodo
-            )
+            ).foregroundColor(Color.black)
             .multilineTextAlignment(.leading)
             .modifier(ClearButton(text: $newTodo))
                 .disableAutocorrection(true)
                 .padding(.leading, 18)
                 .padding(.top, 8)
                 .font(.system(size: 17))
-//                .offset(x: -100)
        
             Divider()
                 .frame(height: 1)
