@@ -13,7 +13,7 @@ struct GridView: View {
     
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 10)
+            RoundedRectangle(cornerRadius: 7)
                 .fill(Color("TrolDimGray"))
                 .frame(width: 110, height: 110)
             
@@ -23,7 +23,7 @@ struct GridView: View {
                 .offset(x: 10, y: 20)
                 .frame(width: 150, height: 150)
                 .mask(
-                    RoundedRectangle(cornerRadius: 10)
+                    RoundedRectangle(cornerRadius: 7)
                         .frame(width: 110, height: 110)
                 )
             

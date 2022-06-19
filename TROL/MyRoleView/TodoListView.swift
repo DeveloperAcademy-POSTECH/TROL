@@ -39,7 +39,7 @@ struct TodoListView: View {
                     }
                     .padding()
                     .overlay(
-                        RoundedRectangle(cornerRadius: 10)
+                        RoundedRectangle(cornerRadius: 7)
                             .strokeBorder(Color.gray, lineWidth: 1)
                             .frame(width: 354, height: 50)
                     )

@@ -93,7 +93,7 @@ struct MyRoleView: View {
                                     .bold()
                                     .frame(width: 354, height: 54)
                                     .background(Color("TrolGreen"))
-                                    .cornerRadius(10)
+                                    .cornerRadius(7)
                                     .padding(.bottom)
                             }
                         }
@@ -109,7 +109,7 @@ struct TicketBackgroundView: View{
     @State private var tempImage: String = ""
     var body: some View{
         ZStack{
-            RoundedRectangle(cornerRadius: 10)
+            RoundedRectangle(cornerRadius: 7)
                 .fill(Color("TrolYellow"))
                 .frame(width: 354, height: 174)
             
@@ -122,7 +122,7 @@ struct TicketBackgroundView: View{
                 .frame(width: 250, height: 200)
                 .offset(x: 110, y: 30)
                 .mask(
-                    RoundedRectangle(cornerRadius: 10)
+                    RoundedRectangle(cornerRadius: 7)
                         .frame(width: 354, height: 174)
                 )
                 .onAppear(){

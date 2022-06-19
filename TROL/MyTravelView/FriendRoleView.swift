@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FriendRoleView: View {
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @Environment(\.presentationMode) var presentation
     
     @Binding var testFriend: User
     
@@ -29,12 +29,16 @@ struct FriendRoleView: View {
             }
             HStack{
                 Spacer()
+                
+                
+                
                 Button() {
-                    self.presentationMode.wrappedValue.dismiss()
+                    presentation.wrappedValue.dismiss()
                 } label: {
                     Text("닫기")
                         .font(.system(size: 17))
-                        .padding(.horizontal)
+                        .padding(.trailing, 18)
+                        .padding(.top, 1)
                         .foregroundColor(.black)
                 }
             }

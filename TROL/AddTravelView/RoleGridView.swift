@@ -14,12 +14,12 @@ struct RoleGridView: View {
     var body: some View {
         ZStack {
             if role.isChecked {
-                RoundedRectangle(cornerRadius: 10)
+                RoundedRectangle(cornerRadius: 7)
                     .stroke(Color("TrolGreen"), lineWidth: 3)
                     .background(Color("TrolYellow"))
                     .frame(width: 110, height: 110)
             } else {
-            RoundedRectangle(cornerRadius: 10)
+            RoundedRectangle(cornerRadius: 7)
                     .fill(Color("TrolYellow"))
                     .frame(width: 110, height: 110)
             }
@@ -30,7 +30,7 @@ struct RoleGridView: View {
                 .offset(x: 10, y: 20)
                 .frame(width: 150, height: 150)
                 .mask(
-                    RoundedRectangle(cornerRadius: 10)
+                    RoundedRectangle(cornerRadius: 7)
                         .frame(width: 110, height: 110)
                 )
             

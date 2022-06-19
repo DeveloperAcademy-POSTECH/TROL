@@ -44,7 +44,7 @@ struct OnboardingPage1View: View{
         Button(action: {
             pageIndex = 1
         }) {
-            RoundedRectangle(cornerRadius: 10)
+            RoundedRectangle(cornerRadius: 7)
                 .fill(Color("TrolGreen"))
                 .frame(width: 354, height: 56)
                 .overlay(
@@ -110,14 +110,14 @@ struct OnboardingPage2View:View {
             }
             .padding()
             .background(Color("TrolIvory"))
-            .cornerRadius(10)
+            .cornerRadius(7)
             Spacer()
             //시작 버튼
             Button(action: {
                 ShowOnBoarding.toggle()
                 
             }) {
-                RoundedRectangle(cornerRadius: 10)
+                RoundedRectangle(cornerRadius: 7)
                     .fill(Color("TrolGreen"))
                     .frame(width: 354, height: 56)
                     .overlay(

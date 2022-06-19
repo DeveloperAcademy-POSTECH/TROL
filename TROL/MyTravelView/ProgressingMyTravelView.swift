@@ -91,7 +91,7 @@ struct ProgressingMyTravelView: View {
                                     .foregroundColor(.black)
                                     .frame(width: screenWidth - 39*2, height: 44, alignment: .leading)
                                     .background(.white)
-                                    .cornerRadius(10)
+                                    .cornerRadius(7)
                             })
                         }
                         
@@ -101,7 +101,7 @@ struct ProgressingMyTravelView: View {
                     //                    .padding(25)
                     //                    .frame(width: screenWidth-19*2, height: 176)
                     //                    .background(Color("TrolYellow"))
-                    //                    .cornerRadius(10)
+                    //                    .cornerRadius(7)
                     
                     //선
                     Line()
@@ -130,7 +130,7 @@ struct ProgressingMyTravelView: View {
                             .padding()
                             .frame(width: screenWidth - 39*2, height: 44)
                             .background(.white)
-                            .cornerRadius(10)
+                            .cornerRadius(7)
                             .disableAutocorrection(true) //자동수정 막기
                             .font(.custom("Happiness-Sans-Regular", size: 15))
                         
@@ -145,12 +145,12 @@ struct ProgressingMyTravelView: View {
                     //                    .padding(25)
                     //                    .frame(width: screenWidth - 19*2, height: 104)
                     //                    .background(Color("TrolYellow"))
-                    //                    .cornerRadius(10)
+                    //                    .cornerRadius(7)
                     
                 }.padding(25)
                     .frame(width: screenWidth - 19*2, height: 280)
                     .background(Color("TrolYellow"))
-                    .cornerRadius(10)
+                    .cornerRadius(7)
                    
                 
                 // 친구들의 역할

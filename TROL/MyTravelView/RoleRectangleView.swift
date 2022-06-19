@@ -15,7 +15,7 @@ struct RoleRectangleView: View {
         
         // 친구 역할 설명 뷰
         ZStack {
-            RoundedRectangle(cornerRadius: 10)
+            RoundedRectangle(cornerRadius: 7)
                 .frame(width: 354, height: 160)
                 .foregroundColor(Color("TrolYellow"))
                 .padding(.horizontal)
@@ -64,7 +64,7 @@ struct RoleRectangleView: View {
 //
 //        // 친구 역할 설명 뷰
 //        ZStack {
-//            RoundedRectangle(cornerRadius: 10)
+//            RoundedRectangle(cornerRadius: 7)
 //                .frame(width: 354, height: 160)
 //                .foregroundColor(Color("TrolYellow"))
 //                .padding(.horizontal)

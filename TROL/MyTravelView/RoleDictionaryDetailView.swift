@@ -18,7 +18,7 @@ struct RoleDictionaryDetailView: View {
                 VStack(alignment: .leading, spacing: 33){
 //                    Spacer().frame(height: 15)
                     ZStack{
-                        RoundedRectangle(cornerRadius: 10)
+                        RoundedRectangle(cornerRadius: 7)
                             .frame(width: 354, height: 120)
                             .foregroundColor(Color("TrolYellow"))
                             .padding(.horizontal)

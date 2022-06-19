@@ -165,7 +165,7 @@ struct AfterGame:View{
             }.foregroundColor(Color("TrolGreen"))
             
                 .frame(width:354,height:146)
-                .background(RoundedRectangle(cornerRadius: 8).fill(Color("TrolIvory")))
+                .background(RoundedRectangle(cornerRadius: 7).fill(Color("TrolIvory")))
             VStack{
                 HStack{
                     Text("랭킹 살펴보기")
@@ -204,7 +204,7 @@ struct AfterGame:View{
             Button(action: {
                 confirmResult = true
             }, label:{
-                RoundedRectangle(cornerRadius: 10)
+                RoundedRectangle(cornerRadius: 7)
                     .fill(Color("TrolGreen"))
                     .frame(width: 354, height: 50)
                     .overlay(
@@ -266,7 +266,7 @@ struct AfterGame:View{
 //                    }
 //                    .padding()
 //                    .background(Color("TrolIvory"))
-//                    .cornerRadius(10)
+//                    .cornerRadius(7)
 //
 //
 //                    LazyVGrid(columns: columns, alignment: .center, spacing: 20){
