@@ -38,8 +38,8 @@
 		83F59FCB2859F67400D3751E /* GameCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F59FCA2859F67400D3751E /* GameCollectionView.swift */; };
 		BF21EA0D2858BBCE00560BD3 /* RoleDictionaryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF21EA0C2858BBCE00560BD3 /* RoleDictionaryDetailView.swift */; };
 		BF21EA0F2858BC0300560BD3 /* RoleDictionaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF21EA0E2858BC0300560BD3 /* RoleDictionaryView.swift */; };
+		BFA89D8328601A8F0077E34A /* confetti.gif in Resources */ = {isa = PBXBuildFile; fileRef = BFA89D8228601A8F0077E34A /* confetti.gif */; };
 		BFA9F3762854870B0026D60D /* TapTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA9F3752854870B0026D60D /* TapTap.swift */; };
-		BFDEAF32285C0DE600702FA7 /* confetti.gif in Resources */ = {isa = PBXBuildFile; fileRef = BFDEAF31285C0DE600702FA7 /* confetti.gif */; };
 		BFDEAF34285C0DFF00702FA7 /* GifImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDEAF33285C0DFF00702FA7 /* GifImage.swift */; };
 		BFE12828285B0BBC00335C5D /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE12827285B0BBC00335C5D /* OnboardingView.swift */; };
 		E14989592858E395001F9D08 /* TodoUpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14989582858E395001F9D08 /* TodoUpdateView.swift */; };
@@ -106,8 +106,8 @@
 		83F59FCA2859F67400D3751E /* GameCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCollectionView.swift; sourceTree = "<group>"; };
 		BF21EA0C2858BBCE00560BD3 /* RoleDictionaryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleDictionaryDetailView.swift; sourceTree = "<group>"; };
 		BF21EA0E2858BC0300560BD3 /* RoleDictionaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleDictionaryView.swift; sourceTree = "<group>"; };
+		BFA89D8228601A8F0077E34A /* confetti.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = confetti.gif; sourceTree = "<group>"; };
 		BFA9F3752854870B0026D60D /* TapTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapTap.swift; sourceTree = "<group>"; };
-		BFDEAF31285C0DE600702FA7 /* confetti.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = confetti.gif; sourceTree = "<group>"; };
 		BFDEAF33285C0DFF00702FA7 /* GifImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifImage.swift; sourceTree = "<group>"; };
 		BFE12827285B0BBC00335C5D /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		E14989582858E395001F9D08 /* TodoUpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoUpdateView.swift; sourceTree = "<group>"; };
@@ -286,7 +286,7 @@
 		BFDEAF30285C0DD000702FA7 /* gif */ = {
 			isa = PBXGroup;
 			children = (
-				BFDEAF31285C0DE600702FA7 /* confetti.gif */,
+				BFA89D8228601A8F0077E34A /* confetti.gif */,
 				BFDEAF33285C0DFF00702FA7 /* GifImage.swift */,
 			);
 			path = gif;
@@ -428,7 +428,7 @@
 				E15840B32851C25900F39095 /* Happiness-Sans-Title.ttf in Resources */,
 				E15840B12851C25900F39095 /* Happiness-Sans-Bold.ttf in Resources */,
 				E15840B22851C25900F39095 /* Happiness-Sans-Regular.ttf in Resources */,
-				BFDEAF32285C0DE600702FA7 /* confetti.gif in Resources */,
+				BFA89D8328601A8F0077E34A /* confetti.gif in Resources */,
 				835443BA284F4C7500AF2F1F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
