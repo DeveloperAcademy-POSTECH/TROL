@@ -312,9 +312,9 @@ struct TempUserRank {
 class TempUsers: ObservableObject{
     @Published var tempRank = [
         TempUserRank(name: "밀키", countTap: 34),
-        TempUserRank(name: "준", countTap: 22),
-        TempUserRank(name: "버킬", countTap: 28),
-        TempUserRank(name: "오션", countTap: 32),
+        TempUserRank(name: "준", countTap: 12),
+        TempUserRank(name: "버킬", countTap: 18),
+        TempUserRank(name: "오션", countTap: 22),
         TempUserRank(name: "린다", countTap: 11),
         TempUserRank(name: "데일", countTap: 18)
     ]
