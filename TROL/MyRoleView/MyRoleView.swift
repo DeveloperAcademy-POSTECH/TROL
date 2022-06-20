@@ -151,8 +151,13 @@ struct TicketContentView: View{
                     .font(.system(size: 20))
                     .bold()
                     .padding(.top, 7)
+                if(travelData.travel.isExist){
                 Text("\(travelData.travel.startDate, formatter: dateformat) ~ \(travelData.travel.endDate, formatter: dateformat)")
                     .font(.system(size: 12))
+                }
+                else{
+                    
+                }
             }
             HStack(spacing: 41){
                 VStack(alignment:.leading) {
