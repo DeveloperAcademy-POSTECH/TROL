@@ -24,9 +24,9 @@ Insert gif or link to demo
 
 
 ## :sparkles: Skills & Tech Stack
-<img alt="Html" src ="https://img.shields.io/badge/Swift.svg?&style=for-the-badge&logo=F05138&logoColor=orange"/>
-<img alt="Html" src ="https://img.shields.io/badge/Notion.svg?&style=for-the-badge&logo=000000&logoColor=black"/>
-<img alt="Html" src ="https://img.shields.io/badge/GitHub.svg?&style=for-the-badge&logo=181717&logoColor=purple"/>
+<img src ="https://img.shields.io/badge/Swift.svg?&style=for-the-badge&logo=F05138&logoColor=orange"/>
+<img src ="https://img.shields.io/badge/Notion.svg?&style=for-the-badge&logo=000000&logoColor=black"/>
+<img src ="https://img.shields.io/badge/GitHub.svg?&style=for-the-badge&logo=181717&logoColor=purple"/>
 
 ## :books: Documentation
 
