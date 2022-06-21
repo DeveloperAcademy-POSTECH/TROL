@@ -8,13 +8,6 @@ TROL은 모두가 여행에 참여할 수 있도록 만들어줍니다
 :---|:---|:---|:---|:---|:---
 <img width="200" src="https://user-images.githubusercontent.com/73656470/174745793-0f27149b-9337-4677-8c52-69be53f192ad.jpeg">| <img width="200" src="https://user-images.githubusercontent.com/73656470/174745793-0f27149b-9337-4677-8c52-69be53f192ad.jpeg"> | <img width="200" src="https://user-images.githubusercontent.com/73656470/174745814-c3396807-0946-4b3e-9c2a-e95c47d7c854.png"> | <img width="200" src="https://user-images.githubusercontent.com/73656470/174745812-e92ba07e-8299-491a-ac93-b7ed57137ce2.png"> | <img width="200" src="https://user-images.githubusercontent.com/73656470/174745821-0b23ee41-2c83-40fc-bd1b-27c61b104ad2.png"> | <img width="200" src="https://user-images.githubusercontent.com/73656470/174745827-30f8564f-f2f8-4f73-80cb-945d8c5519c1.png">
 
-<img width="200" src="https://user-images.githubusercontent.com/73656470/174745793-0f27149b-9337-4677-8c52-69be53f192ad.jpeg">.
-<img width="200" src="https://user-images.githubusercontent.com/73656470/174745793-0f27149b-9337-4677-8c52-69be53f192ad.jpeg">.
-<img width="200" src="https://user-images.githubusercontent.com/73656470/174745814-c3396807-0946-4b3e-9c2a-e95c47d7c854.png">.
-<img width="200" src="https://user-images.githubusercontent.com/73656470/174745812-e92ba07e-8299-491a-ac93-b7ed57137ce2.png">.
-<img width="200" src="https://user-images.githubusercontent.com/73656470/174745821-0b23ee41-2c83-40fc-bd1b-27c61b104ad2.png">.
-<img width="200" src="https://user-images.githubusercontent.com/73656470/174745827-30f8564f-f2f8-4f73-80cb-945d8c5519c1.png">.
-
 
 ## :framed_picture: Demo
 ![Hi-Fi](https://user-images.githubusercontent.com/67789254/174730573-25a5e149-6d39-45b9-a439-3f65faa28b6d.png)
