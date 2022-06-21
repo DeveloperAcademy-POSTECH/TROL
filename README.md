@@ -14,13 +14,13 @@ Insert gif or link to demo
 
 
 ## :fireworks: Screenshots
-<img width="250" alt="나의 역할" src="https://user-images.githubusercontent.com/73656470/174737543-dc619818-ffb3-49c3-8943-170ab59d5f8d.png">
-<img width="250" alt="역할도감" src="https://user-images.githubusercontent.com/73656470/174737555-bfce2d54-098f-4c05-b3e8-2ad991e76c26.png">
-<img width="250" alt="DJ" src="https://user-images.githubusercontent.com/73656470/174737559-170d9fc7-fccf-4b5e-8ce9-f21a1704cc67.png">
-<img width="250" alt="탭게임시작전" src="https://user-images.githubusercontent.com/73656470/174737561-f0ac24c7-1e3e-4d59-a290-a5d9d6f74418.png">
-<img width="250" alt="탭게임" src="https://user-images.githubusercontent.com/73656470/174737564-2fb1cf9f-9b54-4233-bd95-33633b5e6f73.png">
-<img width="250" alt="점수" src="https://user-images.githubusercontent.com/73656470/174737567-16f49199-a6b0-4565-a8f1-363d98442daa.png">
-<img width="250" alt="진행중인 여행" src="https://user-images.githubusercontent.com/73656470/174737569-43168282-a74d-44b3-b9a9-a2cec9a4cea5.png">
+<img width="250" alt="나의 역할" src="https://user-images.githubusercontent.com/73656470/174737543-dc619818-ffb3-49c3-8943-170ab59d5f8d.png">.
+<img width="250" alt="역할도감" src="https://user-images.githubusercontent.com/73656470/174737555-bfce2d54-098f-4c05-b3e8-2ad991e76c26.png">.
+<img width="250" alt="DJ" src="https://user-images.githubusercontent.com/73656470/174737559-170d9fc7-fccf-4b5e-8ce9-f21a1704cc67.png">.
+<img width="250" alt="탭게임시작전" src="https://user-images.githubusercontent.com/73656470/174737561-f0ac24c7-1e3e-4d59-a290-a5d9d6f74418.png">.
+<img width="250" alt="탭게임" src="https://user-images.githubusercontent.com/73656470/174737564-2fb1cf9f-9b54-4233-bd95-33633b5e6f73.png">.
+<img width="250" alt="점수" src="https://user-images.githubusercontent.com/73656470/174737567-16f49199-a6b0-4565-a8f1-363d98442daa.png">.
+<img width="250" alt="진행중인 여행" src="https://user-images.githubusercontent.com/73656470/174737569-43168282-a74d-44b3-b9a9-a2cec9a4cea5.png">.
 
 
 ## :sparkles: Skills & Tech Stack
