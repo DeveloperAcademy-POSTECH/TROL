@@ -14,13 +14,13 @@ Insert gif or link to demo
 
 
 ## :fireworks: Screenshots
-
-![진행중인 여행]([https://dummyimage.com/250x500/000/fff.png](https://user-images.githubusercontent.com/73656470/174736379-00337c06-70a4-4c46-a5b7-6ff71a47e90e.png))
-![역할도감](https://user-images.githubusercontent.com/73656470/174736393-3986cf57-90bd-47b9-9023-e594ecf56f30.png")
-![이미지]([https://dummyimage.com/250x500/000/fff.png](https://user-images.githubusercontent.com/73656470/174736396-3cafc58a-f088-4c9f-864b-d334ab7b7ac1.png))
-![나의 역할](https://user-images.githubusercontent.com/73656470/174736402-7725b8fe-001b-4bbf-8084-7fc0d34f11da.png)
-![DJ]([https://dummyimage.com/250x500/000/fff.png](https://user-images.githubusercontent.com/73656470/174736406-5cb425ae-5797-4677-848e-ed8676397af0.png))
-![App Screenshot](https://dummyimage.com/250x500/000/fff.png)
+<img width="250" alt="나의 역할" src="https://user-images.githubusercontent.com/73656470/174737543-dc619818-ffb3-49c3-8943-170ab59d5f8d.png">
+<img width="250" alt="역할도감" src="https://user-images.githubusercontent.com/73656470/174737555-bfce2d54-098f-4c05-b3e8-2ad991e76c26.png">
+<img width="250" alt="DJ" src="https://user-images.githubusercontent.com/73656470/174737559-170d9fc7-fccf-4b5e-8ce9-f21a1704cc67.png">
+<img width="250" alt="탭게임시작전" src="https://user-images.githubusercontent.com/73656470/174737561-f0ac24c7-1e3e-4d59-a290-a5d9d6f74418.png">
+<img width="250" alt="탭게임" src="https://user-images.githubusercontent.com/73656470/174737564-2fb1cf9f-9b54-4233-bd95-33633b5e6f73.png">
+<img width="250" alt="점수" src="https://user-images.githubusercontent.com/73656470/174737567-16f49199-a6b0-4565-a8f1-363d98442daa.png">
+<img width="250" alt="진행중인 여행" src="https://user-images.githubusercontent.com/73656470/174737569-43168282-a74d-44b3-b9a9-a2cec9a4cea5.png">
 
 
 ## :sparkles: Skills & Tech Stack
