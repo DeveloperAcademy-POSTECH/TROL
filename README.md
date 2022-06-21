@@ -24,13 +24,10 @@ Insert gif or link to demo
 
 
 ## :sparkles: Skills & Tech Stack
-<img alt="Html" src ="https://img.shields.io/badge/Swift.svg?&style=for-the-Swift&logo=F05138&logoColor=orange"/>
-<img alt="Html" src ="https://img.shields.io/badge/Notion.svg?&style=for-the-Notion&logo=000000&logoColor=black"/>
-<img alt="Html" src ="https://img.shields.io/badge/GitHub.svg?&style=for-the-GitHub&logo=181717&logoColor=purple"/>
+<img src ="https://img.shields.io/badge/Swift-F05138?&style=for-the-badge&logo=Swift&logoColor=orange"/>
+<img src ="https://img.shields.io/badge/Notion-000000?&style=for-the-badge&logo=Notion&logoColor=black"/>
+<img src ="https://img.shields.io/badge/GitHub-181717?&style=for-the-badge&logo=GitHub&logoColor=purple"/>
 
-## :books: Documentation
-
-[Documentation](https://linktodocumentation)
 
 
 ## :lock_with_ink_pen: License
