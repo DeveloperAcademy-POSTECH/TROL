@@ -8,7 +8,7 @@ TROL은 모두가 여행에 참여할 수 있도록 만들어줍니다
 
 
 ## :framed_picture: Demo
-(https://user-images.githubusercontent.com/67789254/174730573-25a5e149-6d39-45b9-a439-3f65faa28b6d.png)
+https://user-images.githubusercontent.com/67789254/174730573-25a5e149-6d39-45b9-a439-3f65faa28b6d.png
 
 Insert gif or link to demo
 
