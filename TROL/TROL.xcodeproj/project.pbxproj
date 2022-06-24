@@ -232,7 +232,6 @@
 				835443BE284F4C7500AF2F1F /* Persistence.swift */,
 				835443C0284F4C7500AF2F1F /* TROL.xcdatamodeld */,
 				835443BB284F4C7500AF2F1F /* Preview Content */,
-				835443E4284F4CA100AF2F1F /* TabBarView.swift */,
 				835443E8284F4CD400AF2F1F /* RoleGameView.swift */,
 			);
 			path = TROL;
@@ -266,6 +265,7 @@
 		838273A32851D4A400FC6301 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
+				835443E4284F4CA100AF2F1F /* TabBarView.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
