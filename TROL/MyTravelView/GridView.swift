@@ -13,20 +13,24 @@ struct GridView: View {
     
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 10)
+            RoundedRectangle(cornerRadius: 7)
                 .fill(Color("TrolDimGray"))
                 .frame(width: 110, height: 110)
             
-            Text(testFriend.name)
-                .foregroundColor(.black)
-                .offset(x: -33, y: 40)
-            
-            Image("HiBear")
+            Image("\(testFriend.myRole?.trolImage ?? "normalTROL")")
                 .resizable()
                 .scaledToFill()
-                .offset(x: 15, y: 30)
-                .frame(width: 110, height: 110)
-                .clipped()
+                .offset(x: 10, y: 20)
+                .frame(width: 150, height: 150)
+                .mask(
+                    RoundedRectangle(cornerRadius: 7)
+                        .frame(width: 110, height: 110)
+                )
+            
+            Text(testFriend.name)
+                .font(.custom("Happiness-Sans-Regular", size: 17))
+                .foregroundColor(.black)
+                .offset(x: -33, y: 40)
         }
     }
 }

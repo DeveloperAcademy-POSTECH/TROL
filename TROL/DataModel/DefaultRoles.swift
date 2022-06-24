@@ -17,7 +17,13 @@ extension Role {
         ], guide: [
             "친구들의 여행 스타일을 조사해보세요!",
             "플랜 B를 꼭 준비하세요!"
-        ], introducingSentence: "돈 관리는 내가 한다!", isChecked: false),
+        ], introducingSentence: "돈 관리는 내가 한다!", isChecked: false
+            , trolImage: "managerTROL",
+             toDoList: [ToDoList(id: 0, title: "여행 즐겁게 하기", isChecked: false),
+                        ToDoList(id: 1, title: "서로 예쁜말 하기", isChecked: false),
+                        ToDoList(id: 2, title: "항공권 예약하기", isChecked: false),
+                        ToDoList(id: 3, title: "숙소+항공권 가격 정산", isChecked: false),
+                        ToDoList(id: 4, title: "내 계좌 알려주기", isChecked: false)]),
         
         Role(name: "길라잡이", info: [
             "모두의 이동을 책임져줄 인간 내비게이터!",
@@ -28,7 +34,13 @@ extension Role {
             "국내는 카카오맵, 해외는 구글맵을 통해 길을 찾는 것을 추천해요!",
             "GPS를 킨 채로 나의 현재 위치를 보며 길을 찾으면 편리해요!",
             "우리가 갈 곳을 지도 앱에 찍어 모두에게 공유해보아요!"
-        ], introducingSentence: "길찾기는 내가 한다!", isChecked: false),
+        ], introducingSentence: "길찾기는 내가 한다!", isChecked: false
+            , trolImage: "guideTROL",
+             toDoList: [ToDoList(id: 0, title: "여행 즐겁게 하기", isChecked: false),
+                        ToDoList(id: 1, title: "서로 예쁜말 하기", isChecked: false),
+                        ToDoList(id: 2, title: "여행 목적지 위치 저장하기", isChecked: false),
+                        ToDoList(id: 3, title: "목적지까지 가는 경로 탐색하기", isChecked: false),
+                        ToDoList(id: 4, title: "목적지 찾을때 앞장서기", isChecked: false)]),
         
         
         Role(name: "드라이버", info: [
@@ -40,7 +52,13 @@ extension Role {
             "네비게이션을 미리 업그레이드 해둬요",
             "음주 예정이라면 다른 이동수단을 선택할 수 있도록 여행원들에게 알려요",
             "주유 예정이라면 근처에 가장 저렴한 곳을 미리 체크해둬요"
-        ], introducingSentence: "운전은 내가 한다!", isChecked: false),
+        ], introducingSentence: "운전은 내가 한다!", isChecked: false
+             , trolImage: "driverTROL",
+             toDoList: [ToDoList(id: 0, title: "여행 즐겁게 하기", isChecked: false),
+                        ToDoList(id: 1, title: "서로 예쁜말 하기", isChecked: false),
+                        ToDoList(id: 2, title: "렌트할 때 미리 차 사진 찍어놓기", isChecked: false),
+                        ToDoList(id: 3, title: "연료확인 하기", isChecked: false),
+                        ToDoList(id: 4, title: "안전운전 하기", isChecked: false)]),
         
         
         Role(name: "사진가", info: [
@@ -51,7 +69,12 @@ extension Role {
             "여행에 떠나기 전, 사진 핫플레이스를 미리 조사해보세요!",
             "단체포즈와 컨셉을 미리 기획해두면 더 즐거운 추억으로 남길 수 있어요!",
             "사진 어플을 여러개 준비해요!"
-        ], introducingSentence: "사진은 내가 찍는다!", isChecked: false),
+        ], introducingSentence: "사진은 내가 찍는다!", isChecked: false
+             , trolImage: "photoTROL",
+             toDoList: [ToDoList(id: 0, title: "여행 즐겁게 하기", isChecked: false),
+                        ToDoList(id: 1, title: "서로 예쁜말 하기", isChecked: false),
+                        ToDoList(id: 2, title: "장소가 바뀔 때마다 사진 찍기", isChecked: false),
+                        ToDoList(id: 3, title: "친구들 프로필 사진 건져주기", isChecked: false)]),
         
         
         Role(name: "계획자", info: [
@@ -62,7 +85,12 @@ extension Role {
             "여행원이 가고싶은 장소들을 미리 받아 계획을 하면 모두 만족하는 여행이 될 수 있어요",
             "관광지나 카페 등의 영업시간을 미리 체크해보아요",
             "플랜 B를 고려해서 예상치 못한 상황에도 자연스럽게 넘어갈 수 있도록 해요"
-        ], introducingSentence: "계획은 내가 한다!", isChecked: false),
+        ], introducingSentence: "계획은 내가 한다!", isChecked: false
+             , trolImage: "plannerTROL",
+             toDoList: [ToDoList(id: 0, title: "여행 즐겁게 하기", isChecked: false),
+                        ToDoList(id: 1, title: "서로 예쁜말 하기", isChecked: false),
+                        ToDoList(id: 2, title: "여행 구성원들이 가고 싶은 장소 합의하여 정하기", isChecked: false),
+                        ToDoList(id: 3, title: "정해진 장소에 맞춰 일정 짜기", isChecked: false)]),
         
         
         Role(name: "커뮤니케이터", info: [
@@ -73,7 +101,11 @@ extension Role {
             "여행을 떠나기 전, 인삿말과 같은 기본 회화는 연습해 보는게 좋아요!",
             "외국어를 몰라도 우리에겐 구글 번역과 파파고, 제스처가 있어요!",
             "실수해도 괜찮아요, 외국어니까요!"
-        ], introducingSentence: "외국어는 내가 한다!", isChecked: false),
+        ], introducingSentence: "외국어는 내가 한다!", isChecked: false
+             , trolImage: "papagoTROL",
+             toDoList: [ToDoList(id: 0, title: "여행 즐겁게 하기", isChecked: false),
+                        ToDoList(id: 1, title: "서로 예쁜말 하기", isChecked: false),
+                        ToDoList(id: 2, title: "식당에서 주문하기", isChecked: false)]),
         
         
         Role(name: "광대", info: [
@@ -83,7 +115,12 @@ extension Role {
         ], guide: [
             "재미있는 우리들의 추억들을 꺼내주세요!",
             "MZ처럼 재미있는 유행어를 만들고 활용해요!"
-        ], introducingSentence: "나도 이젠 모르겠다!", isChecked: false),
+        ], introducingSentence: "나도 이젠 모르겠다!", isChecked: false
+             , trolImage: "clownTROL",
+             toDoList: [ToDoList(id: 0, title: "여행 즐겁게 하기", isChecked: false),
+                        ToDoList(id: 1, title: "서로 예쁜말 하기", isChecked: false),
+                        ToDoList(id: 2, title: "재미있는 주제던지기", isChecked: false),
+                        ToDoList(id: 3, title: "분위기 살리기", isChecked: false)]),
         
         
         Role(name: "DJ", info: [
@@ -94,7 +131,12 @@ extension Role {
             "친구들의 노래 스타일을 조사해보세요!",
             "여행에 떠나기 전, 미리 플레이리스트를 만들어요",
             "효과음도 준비해두면 매 순간이 예능이 될 수 있어요"
-        ], introducingSentence: "음악은 내가 튼다!", isChecked: false),
+        ], introducingSentence: "음악은 내가 튼다!", isChecked: false
+             , trolImage: "djTROL",
+             toDoList: [ToDoList(id: 0, title: "여행 즐겁게 하기", isChecked: false),
+                        ToDoList(id: 1, title: "서로 예쁜말 하기", isChecked: false),
+                        ToDoList(id: 2, title: "블루투스 스피커 관리하기", isChecked: false),
+                        ToDoList(id: 3, title: "재미있는 노래 틀기", isChecked: false)]),
         
         
         Role(name: "요리사", info: [
@@ -105,17 +147,26 @@ extension Role {
             "내가 할 수 있는 요리가 무엇인지 친구들에게 미리 알려줘요",
             "설거지는 쉐프의 담당이 아니라는 점 잊지 말아요",
             "혼자서 여러 명의 요리를 담당하기 힘들 땐 도움을 요청해요"
-        ], introducingSentence: "요리는 내가 한다!", isChecked: false),
+        ], introducingSentence: "요리는 내가 한다!", isChecked: false
+             , trolImage: "chefTROL",
+             toDoList: [ToDoList(id: 0, title: "여행 즐겁게 하기", isChecked: false),
+                        ToDoList(id: 1, title: "서로 예쁜말 하기", isChecked: false),
+                        ToDoList(id: 2, title: "고기굽기", isChecked: false),
+                        ToDoList(id: 3, title: "요리하기", isChecked: false)]),
         
         
         Role(name: "인간공유기", info: [
-            "아름다운 사람은 머문 자리도 아름답다! 어지럽힌 자리를 정리하는 역할이에요",
-            "설거지, 일반쓰레기 배출 뿐 아니라 분리수거까지 담당해요"
+            "데이터 로밍은 내가 한다!",
+            "외국에 나갔을 때 로밍을 해서 데이터를 공유해줘요"
         ], guide: [
-            "설거지가 필요한 것부터 걷어낸 후, 자리를 정리하면 편해요",
-            "설거지는 기름기 있는 걸 나중에! 기름기 있는 건 뜨거운 물로!",
-            "카페에 갔다면 냅킨과 물티슈를 꼭 챙겨요"
-        ], introducingSentence: "뒷정리는 내가 한다!", isChecked: false),
+            "외국에 나가게 될 경우, 와이파이 도시락을 대여 받아요",
+            "혹시 모를 경우를 대비해서 외국에 나갈 경우 데이터 로밍을 진행해요"
+        ], introducingSentence: "뒷정리는 내가 한다!", isChecked: false
+             , trolImage: "wifiTROL",
+             toDoList: [ToDoList(id: 0, title: "여행 즐겁게 하기", isChecked: false),
+                        ToDoList(id: 1, title: "서로 예쁜말 하기", isChecked: false),
+                        ToDoList(id: 2, title: "와이파이 도시락 관리하기", isChecked: false),
+                        ToDoList(id: 3, title: "필요하면 핫스팟 켜주기", isChecked: false)]),
         
         
         Role(name: "짐꾼", info: [
@@ -126,7 +177,12 @@ extension Role {
             "짐을 들더라도 내가 무리할 정도의 무게라면 친구와 같이 들어요",
             "들고있는 가방에 들어갈 정도인지 가늠하고 물건을 받아요",
             "들고 있던 짐은 짐꾼이 나눠주지 말고 친구들이 직접 찾아가도록 한 곳에 모아둬요"
-        ], introducingSentence: "짐은 내가 든다!", isChecked: false),
+        ], introducingSentence: "짐은 내가 든다!", isChecked: false
+             , trolImage: "porterTROL",
+             toDoList: [ToDoList(id: 0, title: "여행 즐겁게 하기", isChecked: false),
+                        ToDoList(id: 1, title: "서로 예쁜말 하기", isChecked: false),
+                        ToDoList(id: 2, title: "에코백 들고나가기", isChecked: false),
+                        ToDoList(id: 3, title: "친구들의 자그마한 짐은 내 가방에 넣어주기", isChecked: false)]),
 
 
         Role(name: "메이드", info: [
@@ -136,6 +192,11 @@ extension Role {
             "설거지가 필요한 것부터 걷어낸 후, 자리를 정리하면 편해요",
             "설거지는 기름기 있는 걸 나중에! 기름기 있는 건 뜨거운 물로!",
             "카페에 갔다면 냅킨과 물티슈를 꼭 챙겨요"
-        ], introducingSentence: "뒷정리는 내가 한다!", isChecked: false),
+        ], introducingSentence: "뒷정리는 내가 한다!", isChecked: false
+             , trolImage: "maidTROL",
+             toDoList: [ToDoList(id: 0, title: "여행 즐겁게 하기", isChecked: false),
+                        ToDoList(id: 1, title: "서로 예쁜말 하기", isChecked: false),
+                        ToDoList(id: 2, title: "설거지 하기", isChecked: false),
+                        ToDoList(id: 3, title: "분리수거 하기", isChecked: false)]),
     ]
 }

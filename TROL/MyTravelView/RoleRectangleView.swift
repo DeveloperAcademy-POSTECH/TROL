@@ -15,15 +15,15 @@ struct RoleRectangleView: View {
         
         // 친구 역할 설명 뷰
         ZStack {
-            RoundedRectangle(cornerRadius: 10)
+            RoundedRectangle(cornerRadius: 7)
                 .frame(width: 354, height: 160)
-                .foregroundColor(Color("trolYellow"))
+                .foregroundColor(Color("TrolYellow"))
                 .padding(.horizontal)
             
-            Image("HiBear")
+            Image(testFriend.myRole?.trolImage ?? "normalTROL")
                 .resizable()
                 .scaledToFill()
-                .frame(width: 150, height: 160)
+                .frame(width: 230, height: 230)
                 .offset(x: 80, y: 30)
                 .mask {
                     VStack {
@@ -64,7 +64,7 @@ struct RoleRectangleView: View {
 //
 //        // 친구 역할 설명 뷰
 //        ZStack {
-//            RoundedRectangle(cornerRadius: 10)
+//            RoundedRectangle(cornerRadius: 7)
 //                .frame(width: 354, height: 160)
 //                .foregroundColor(Color("TrolYellow"))
 //                .padding(.horizontal)

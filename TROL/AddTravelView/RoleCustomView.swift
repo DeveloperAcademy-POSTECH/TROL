@@ -22,10 +22,21 @@ struct RoleCustomView: View {
             VStack(alignment: .leading) {
                 Text("역할명")
                     .font(.custom("Happiness-Sans-Bold", size: 22))
-                
-                TextField("6자 이내의 역할명을 입력해주세요", text: $roleName)
+                    
+                VStack {
+                    TextField(
+                        "6자 이내의 역할명을 입력해주세요",
+                        text: $roleName
+                    ).modifier(ClearButton(text: $roleName))
+                    .disableAutocorrection(true)
+                    .padding(.trailing, -12)
+                    .font(.custom("Happiness-Sans-Regular", size: 17))
+                    Rectangle()
+                        .frame(width: 354, height: 1)
+                        .offset(y: 5)
+                }
+                .padding(.vertical)
             }
-            .padding()
             
             VStack(alignment: .leading) {
                 Text("역할 소개")
@@ -37,7 +48,7 @@ struct RoleCustomView: View {
                         HStack(alignment: .firstTextBaseline) {
                             if roleInfo[i].isEmpty {
                                 Image(systemName: "checkmark")
-                                    .foregroundColor(Color("TrolDimGray"))
+                                    .foregroundColor(Color("GoodGray"))
                                     .font(Font.body.weight(.bold))
                             } else {
                                 Image(systemName: "checkmark")
@@ -47,6 +58,7 @@ struct RoleCustomView: View {
                             
                             
                             TextField("최대 4개의 소개까지 입력할 수 있어요", text: $roleInfo[i])
+                                .font(.custom("Happiness-Sans-Regular", size: 17))
                                 .onSubmit {
                                     if roleInfo.count < 4 {
                                         roleInfo.append("")
@@ -57,7 +69,7 @@ struct RoleCustomView: View {
                     }
                 }
             }
-            .padding()
+//            .padding(.bottom)
             
             VStack(alignment: .leading) {
                 Text("역할 가이드")
@@ -69,7 +81,7 @@ struct RoleCustomView: View {
                         HStack(alignment: .firstTextBaseline) {
                             if roleGuide[i].isEmpty {
                                 Image(systemName: "quote.opening")
-                                    .foregroundColor(Color("TrolDimGray"))
+                                    .foregroundColor(Color("GoodGray"))
                                     .font(Font.body.weight(.bold))
                             } else {
                                 Image(systemName: "quote.opening")
@@ -79,6 +91,7 @@ struct RoleCustomView: View {
                             
                             
                             TextField("최대 4개의 가이드까지 입력할 수 있어요", text: $roleGuide[i])
+                                .font(.custom("Happiness-Sans-Regular", size: 17))
                                 .onSubmit {
                                     if roleGuide.count < 4 {
                                         roleGuide.append("")
@@ -89,10 +102,11 @@ struct RoleCustomView: View {
                     }
                 }
             }
-            .padding()
+            
+            Spacer()
             
             Button {
-                roleData.roles.append(Role(name: roleName, info: roleInfo, guide: roleGuide, introducingSentence: "", isChecked: false))
+                roleData.roles.append(Role(name: roleName, info: roleInfo, guide: roleGuide, introducingSentence: "", isChecked: false, trolImage: "normalTROL"))
                 self.presentationMode.wrappedValue.dismiss()
             } label: {
                 Text("새로운 역할 저장하기")
@@ -101,9 +115,10 @@ struct RoleCustomView: View {
                     .bold()
                     .frame(width: 354, height: 54)
                     .background(Color("TrolGreen"))
-                    .cornerRadius(10)
+                    .cornerRadius(7)
             }
         }
+        .padding()
         .navigationTitle("역할 커스텀하기")
     }
 }

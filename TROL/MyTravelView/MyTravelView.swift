@@ -13,10 +13,14 @@ struct MyTravelView: View {
     @EnvironmentObject var roleData: RoleData
     
     var body: some View {
+        NavigationView{
         if travelData.travel.isExist {
             ProgressingMyTravelView()
+                .navigationBarHidden(true)
         } else {
             EmptyMyTravelView()
+                .navigationBarHidden(true)
+        }
         }
     }
 }
